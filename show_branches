@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# show branches with most recent commits
+# https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'
