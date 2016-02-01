@@ -1,0 +1,14 @@
+#!/bin/sh
+# backup by cloning
+
+for repos in /cygdrive/e/backups/emcapms2_backup_clone /cygdrive/e/backups/emcapms_backup_clone
+do
+	echo $repos
+	cd $repos
+	git fetch --all
+	git --no-pager log --all -1
+	git gc --auto
+ 	echo '------------------------'
+done
+
+
