@@ -1,0 +1,23 @@
+#!/bin/sh
+# tag where I am so I can find it again
+
+AASTAT=`git status --porcelain`
+if [[ $? -ne 0 ]]; then
+	echo "not in git repos??"
+    	exit 1
+fi
+
+if [ ! -z "${AASTAT}" ]; then 
+  # Working directory clean
+	echo "git seems unhappy - exiting"
+	git status --porcelain
+	exit 1
+fi
+
+AADATE=`date '+%A-%F-%H-%M-%S'`
+AABRANCH=`git branch | grep ^*  | awk '{print $2}'`
+
+git tag apsherma/${AABRANCH}-${AADATE}
+# print last tag in this branch
+git describe --tags
+
