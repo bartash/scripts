@@ -1,0 +1,10 @@
+export http_proxy="www-proxy.us.oracle.com:80"
+file=$*
+short=`echo $file | sed 's?.*/??'`
+echo short is $short
+wget $file
+cat $short | tr  -d "\\342\\200" | \
+	tr "\\224" "-" | \
+	tr "\\234" "'" | \
+	tr "\\235" "'" | \
+	tr  "\\231" "'" > X$short
