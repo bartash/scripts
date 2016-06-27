@@ -1,0 +1,2 @@
+# sum counts for lines
+awk '{count[$1]++} END {for (j in count) print j, count[j]}' 
