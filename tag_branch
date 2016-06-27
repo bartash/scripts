@@ -17,6 +17,7 @@ fi
 AADATE=`date '+%A-%F-%H-%M-%S'`
 AABRANCH=`git branch | grep ^*  | awk '{print $2}'`
 
+echo git tag apsherma/${AABRANCH}-${AADATE}
 git tag apsherma/${AABRANCH}-${AADATE}
 # print last tag in this branch
 git describe --tags
