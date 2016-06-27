@@ -2,4 +2,14 @@
 #
 # show branches with most recent commits
 # https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
-git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+if [ "$#" -eq 1 ]
+then
+ # number of branches to show
+ AANUM=$1
+else
+ # default is 10
+ AANUM=10
+fi
+
+git for-each-ref --count=$AANUM --sort=-committerdate refs/heads/ --format='%(refname:short)'
