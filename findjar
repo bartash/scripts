@@ -1,0 +1,7 @@
+echo findjar
+for i in `find . -name '*.jar' -print`; 
+do 
+  # jar tvf $i | grep $1;  
+  # echo that was $i; 
+  jar tvf $i | grep -i $1 &&  echo match in $i; 
+done
