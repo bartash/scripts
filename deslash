@@ -1,0 +1,2 @@
+# for windows, convert backlash to slash
+echo "$1" | sed 's?\\?/?g'
