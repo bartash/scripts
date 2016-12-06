@@ -6,7 +6,7 @@ alias h=history
 alias pu=pushd
 alias po=popd
 alias a=alias
-alias fin='find . -type f -print > xref.all'
+alias fin='find . -type f -print  | fgrep -v /.git/  > xref.all'
 
 # setup a 3node
 3node() {
