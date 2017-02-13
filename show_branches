@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# show branches with most recent commits
+# List the most recently used branches
 # https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
 
 if [ "$#" -eq 1 ]
