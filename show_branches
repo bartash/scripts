@@ -5,8 +5,22 @@
 
 if [ "$#" -eq 1 ]
 then
- # number of branches to show
- AANUM=$1
+    if [[ $1 == -* ]] 
+    then
+	AANEW=`echo "$1" | cut -c2-`
+    else
+        AANEW=$1
+    fi
+    if [ "$AANEW" -eq "$AANEW" ] 2>/dev/null
+    then
+        # echo "$AANEW is an integer !!"
+        # number of branches to show
+        AANUM=$AANEW
+    else	
+	echo "parameter '$AANEW' is not an integer"
+	echo "usage: $0 [numberOfBranches]"
+	exit 1
+    fi
 else
  # default is 10
  AANUM=10
