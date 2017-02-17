@@ -8,6 +8,12 @@ alias po=popd
 alias a=alias
 alias fin='find . -type f -print  | fgrep -v /.git/  > xref.all'
 
+alias vvs='vncserver -geometry 1450x980 :2'
+alias vvb='vncserver -geometry 1900x1050  :1'
+alias vv='vncserver -geometry 1900x1000  :1'
+alias ff='/scratch/apsherma/bin/firefox/firefox'
+
+
 # setup a 3node
 3node() {
   node1=$1
