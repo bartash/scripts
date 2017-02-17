@@ -28,3 +28,5 @@ alias ff='/scratch/apsherma/bin/firefox/firefox'
       export APMAAS_EMAAS_REGISTRYSERVICE_URL="http://${node1}.us.oracle.com:7004/registry/servicemanager/registry/v1/"
   fi
 }
+
+unset SSH_ASKPASS
