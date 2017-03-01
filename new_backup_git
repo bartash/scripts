@@ -9,7 +9,13 @@ do
 	# https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
         for remote in `git branch -r | grep -v HEAD`; 
         do 
-                git branch --track ${remote#origin/} $remote; 
+		local=`echo $remote | sed 's?origin/??'`
+		exists=`git show-ref refs/heads/$local`
+		# echo exists="X${exists}X"
+                if [ -z "$exists" ]; then
+                    # echo "branch $remote not exists!"
+                    git branch --track ${remote#origin/} $remote; 
+	        fi
         done
 	git --no-pager log --all -1
 	git gc --auto
