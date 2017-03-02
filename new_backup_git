@@ -1,16 +1,17 @@
 #!/bin/sh
 # backup by cloning
-
+BTMP=c:/tmp/gback$$.txt
 for repos in /cygdrive/e/backups/emcapms2_backup_clone /cygdrive/e/backups/emcapms_backup_clone
 do
 	echo $repos
 	cd $repos
 	git fetch --all
+	git branch | sed 's/*//' | sed 's/ //g' > $BTMP
 	# https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
         for remote in `git branch -r | grep -v HEAD`; 
         do 
 		local=`echo $remote | sed 's?origin/??'`
-		exists=`git show-ref refs/heads/$local`
+		exists=`grep ^${local}$ $BTMP`
 		# echo exists="X${exists}X"
                 if [ -z "$exists" ]; then
                     # echo "branch $remote not exists!"
