@@ -6,6 +6,7 @@ alias h=history
 alias pu=pushd
 alias po=popd
 alias a=alias
+alias cx='chmod a+x'
 alias fin='find . -type f -print  | fgrep -v /.git/  > xref.all'
 
 alias vvs='vncserver -geometry 1450x980 :2'
