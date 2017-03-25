@@ -9,9 +9,10 @@ alias a=alias
 alias cx='chmod a+x'
 alias fin='find . -type f -print  | fgrep -v /.git/  > xref.all'
 
-alias vvs='vncserver -geometry 1450x980 :2'
+alias vvbtlinux43='vncserver -geometry 1450x980 :2'
 alias vvb='vncserver -geometry 1900x1050  :1'
 alias vv='vncserver -geometry 1900x1000  :1'
+alias vvlenovo='vncserver -geometry 1350x710 :3'
 alias ff='/scratch/apsherma/bin/firefox/firefox'
 
 
