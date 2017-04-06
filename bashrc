@@ -15,6 +15,9 @@ alias vv='vncserver -geometry 1900x1000  :1'
 alias vvlenovo='vncserver -geometry 1300x680 :3'
 alias ff='/scratch/apsherma/bin/firefox/firefox'
 
+alias sethttp='export http_proxy=www-proxy.us.oracle.com:80 ; export https_proxy=www-proxy.us.oracle.com:80'
+alias unsethttp='unset http_proxy ; unset https_proxy'
+
 
 # setup a 3node
 3node() {
