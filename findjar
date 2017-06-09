@@ -1,3 +1,4 @@
+# find jars containing a string
 echo findjar
 for i in `find . -name '*.jar' -print`; 
 do 
