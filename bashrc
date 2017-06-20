@@ -2,6 +2,7 @@
 # aliases
 alias ll='ls -l'
 alias la='ls -a'
+alias l='ls -F'
 alias h=history
 alias pu=pushd
 alias po=popd
