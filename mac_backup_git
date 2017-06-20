@@ -1,9 +1,10 @@
 #!/bin/sh
 # backup by cloning
 BTMP=/tmp/gback$$.txt
-for repos in /Volumes/Elvis/backups/cdh/hive
-# created with 'git clone ~/git/cdh/hive'
+for repoName in cdh/hive cdh/hive-iml asf/hive asf/hive-iml
+# created with 'cd cdh; git clone ~/git/cdh/hive'
 do
+	repos=/Volumes/Elvis/backups/$repoName
 	echo $repos
 	cd $repos
 	git fetch --all
