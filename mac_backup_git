@@ -1,6 +1,6 @@
 #!/bin/sh
 # backup by cloning
-BTMP=c:/tmp/gback$$.txt
+BTMP=/tmp/gback$$.txt
 for repos in /Volumes/Elvis/backups/cdh/hive
 # created with 'git clone ~/git/cdh/hive'
 do
