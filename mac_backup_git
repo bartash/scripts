@@ -1,0 +1,27 @@
+#!/bin/sh
+# backup by cloning
+BTMP=c:/tmp/gback$$.txt
+for repos in /Volumes/Elvis/backups/cdh/hive
+# created with 'git clone ~/git/cdh/hive'
+do
+	echo $repos
+	cd $repos
+	git fetch --all
+	git branch | sed 's/*//' | sed 's/ //g' > $BTMP
+	# https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
+        for remote in `git branch -r | grep -v HEAD`; 
+        do 
+		local=`echo $remote | sed 's?origin/??'`
+		exists=`grep ^${local}$ $BTMP`
+		# echo exists="X${exists}X"
+                if [ -z "$exists" ]; then
+                    # echo "branch $remote not exists!"
+                    git branch --track ${remote#origin/} $remote; 
+	        fi
+        done
+	git --no-pager log --all -1
+	git gc --auto
+ 	echo '------------------------'
+done
+
+
