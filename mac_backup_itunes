@@ -1,4 +1,5 @@
 #
-cd /cygdrive
+cd /Volumes
 # rsync -av --delete --max-delete=100 e g/back
-rsync -av --delete e g/back
+# rsync -av --delete e g/back
+rsync --dry-run -av --delete Elvis Gaga/back
