@@ -1,0 +1,4 @@
+#
+cd /cygdrive
+# rsync -av --delete --max-delete=100 e g/back
+rsync -av --delete e g/back
