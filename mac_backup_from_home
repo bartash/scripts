@@ -1,0 +1,6 @@
+#
+cd /cygdrive
+# copy from home (d) to e
+rsync -av --delete  g/backup e/from_home
+# copy itunes back
+rsync -av --delete  e/itunes g/andrew_itunes
