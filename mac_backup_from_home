@@ -1,6 +1,6 @@
 #
 cd /Volumes
 # copy from home (Blondie) to Elvis
-rsync -av --delete --dry-run Blondie/backup Elvis/from_home
+rsync -av --delete  Blondie/backup Elvis/from_home
 # copy itunes back
-rsync -av --delete --dry-run Elvis/itunes Blondie/andrew_itunes
+rsync -av --delete Elvis/itunes Blondie/andrew_itunes
