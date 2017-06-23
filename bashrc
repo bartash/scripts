@@ -10,29 +10,26 @@ alias a=alias
 alias cx='chmod a+x'
 alias fin='find . -type f -print  | fgrep -v /.git/  > xref.all'
 
-alias vvbtlinux43='vncserver -geometry 1450x980 :2'
-alias vvb='vncserver -geometry 1900x1050  :1'
-alias vv='vncserver -geometry 1900x1000  :1'
+# alias vvbtlinux43='vncserver -geometry 1450x980 :2'
+# alias vvb='vncserver -geometry 1900x1050  :1'
+# alias vv='vncserver -geometry 1900x1000  :1'
 alias vvlenovo='vncserver -geometry 1300x680 :3'
-alias ff='/scratch/apsherma/bin/firefox/firefox'
+# alias ff='/scratch/apsherma/bin/firefox/firefox'
 
-alias sethttp='export http_proxy=www-proxy.us.oracle.com:80 ; export https_proxy=www-proxy.us.oracle.com:80'
 alias unsethttp='unset http_proxy ; unset https_proxy'
 
+# https://stackoverflow.com/questions/30247603
+alias amend='EDITOR=gvim git commit --amend'
 
-# setup a 3node
-3node() {
-  node1=$1
-  if [ -z $node1 ];
-  then
-      echo INTERNAL_HTTPS_REGISTRYSERVICE_URL = $INTERNAL_HTTPS_REGISTRYSERVICE_URL
-      echo EXTERNAL_REGISTRYSERVICE_URL =  $EXTERNAL_REGISTRYSERVICE_URL
-      echo APMAAS_EMAAS_REGISTRYSERVICE_URL = $APMAAS_EMAAS_REGISTRYSERVICE_URL
-  else
-      export INTERNAL_HTTPS_REGISTRYSERVICE_URL="https://${node1}.us.oracle.com:7005/registry/servicemanager/registry/v1/"
-      export EXTERNAL_REGISTRYSERVICE_URL="https://${node1}.us.oracle.com:4443/registry/"
-      export APMAAS_EMAAS_REGISTRYSERVICE_URL="http://${node1}.us.oracle.com:7004/registry/servicemanager/registry/v1/"
-  fi
-}
+# stop errors like "readlink: illegal option -- f"
+# export SPARK_HOME=foo
+export HIVE_SKIP_SPARK_ASSEMBLY=true
+export PATH="/usr/local/opt/protobuf@2.5/bin:$PATH"
 
-unset SSH_ASKPASS
+export AAHADOOP_VERSION=2.8.0
+alias hstart="/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/start-yarn.sh"
+alias hstop="/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/stop-dfs.sh"
+
+
+# after brew install findutils
+alias find=gfind
