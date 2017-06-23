@@ -19,7 +19,7 @@ alias vvlenovo='vncserver -geometry 1300x680 :3'
 alias unsethttp='unset http_proxy ; unset https_proxy'
 
 # https://stackoverflow.com/questions/30247603
-alias amend='EDITOR=gvim git commit --amend'
+alias amend='EDITOR="gvim -f" git commit --amend'
 
 # stop errors like "readlink: illegal option -- f"
 # export SPARK_HOME=foo
