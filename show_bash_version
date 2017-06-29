@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# runs bash from PATH
+echo $BASH_VERSION
+
