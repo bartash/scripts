@@ -17,3 +17,10 @@ alias vvlenovo='vncserver -geometry 1300x680 :3'
 
 alias unsethttp='unset http_proxy ; unset https_proxy'
 
+# needs bash v4
+# https://superuser.com/questions/857250/how-to-update-bash-on-mac-os-x-yosemite
+PROMPT_DIRTRIM=3
+# put pwd in prompt 
+# https://www.gnu.org/software/bash/manual/html_node/Controlling-the-Prompt.html#Controlling-the-Prompt
+PS1='[\w]\$ ' 
+
