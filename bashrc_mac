@@ -17,3 +17,8 @@ alias hstop="/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/stop-yarn.sh;/usr
 alias find=gfind
 
 alias beeline="./beeline -u jdbc:hive2://localhost:10000/default -n hive -p hive"
+
+
+# run yetus
+# https://cwiki.apache.org/confluence/display/Hive/Running+Yetus
+export FINDBUGS_HOME=~/bin/findbugs-3.0.1/
