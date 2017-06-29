@@ -33,3 +33,5 @@ alias hstop="/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/stop-yarn.sh;/usr
 
 # after brew install findutils
 alias find=gfind
+
+alias beeline="./beeline -u jdbc:hive2://localhost:10000/default -n hive -p hive"
