@@ -19,6 +19,9 @@ alias find=gfind
 alias beeline="./beeline -u jdbc:hive2://localhost:10000/default -n hive -p hive"
 
 
-# run yetus
+# setup to run yetus
 # https://cwiki.apache.org/confluence/display/Hive/Running+Yetus
 export FINDBUGS_HOME=~/bin/findbugs-3.0.1/
+
+# make patch as described in https://wiki.cloudera.com/display/~vihang/Hive+Developer+Environment+Setup
+alias make_patch='git show --full-index --no-prefix'
