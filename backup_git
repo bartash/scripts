@@ -1,8 +1,8 @@
 #!/bin/sh
 # backup by cloning
 BTMP=/tmp/gback$$.txt
-# create clone with 'cd cdh; git clone --mirror ~/git/cdh/hive'
-for repoName in cdh/hive.git cdh/hive-iml.git asf/hive.git asf/hive-iml.git
+# create clone with 'cd /Volumes/Elvis/backups/cdh; git clone --mirror ~/git/cdh/hive'
+for repoName in cdh/hive.git cdh/hive2.git cdh/hive-iml.git asf/hive.git asf/hive-iml.git
 do
 	repos=/Volumes/Elvis/backups/$repoName
 	echo $repos
