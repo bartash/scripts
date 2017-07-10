@@ -1,0 +1,17 @@
+# Interactively delete branches matching a pattern
+AATMP=/tmp/gdbr$$
+if [ "$#" -ne 1 ]
+then
+ echo "usage $0 regexp"
+ exit 1
+fi
+AAREGEX=$1
+echo "# branchs to be deleted - edit" > $AATMP
+git branch | grep "$AAREGEX" | awk '{print $1}' >> $AATMP
+vi $AATMP
+grep -v ^# $AATMP | xargs git branch -D
+
+
+
+
+
