@@ -7,7 +7,7 @@ alias pu=pushd
 alias po=popd
 alias a=alias
 alias cx='chmod a+x'
-alias fin='find . -type f -print  | fgrep -v /.git/  > xref.all'
+alias fin='find . -type f -print  | fgrep -v /.git/ | fgrep -v /.m2/ > xref.all'
 
 alias git_head='git symbolic-ref --short HEAD'
 alias mvn='mvn -Dmaven.repo.local=`git rev-parse --show-toplevel`/.m2/repository'
