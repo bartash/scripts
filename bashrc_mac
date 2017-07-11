@@ -26,3 +26,16 @@ export FINDBUGS_HOME=~/bin/findbugs-3.0.1/
 
 # make patch as described in https://wiki.cloudera.com/display/~vihang/Hive+Developer+Environment+Setup
 alias make_patch='git show --full-index --no-prefix'
+
+#	curl http://github.mtv.cloudera.com/raw/CDH/cdh/cdh6.x/gbn-m2-settings.xml > gbn-m2-settings.xml
+#
+#	To build your CDH component against a specific
+#	Global Build Number (GBN), use this Maven
+#	settings file with "mvn -s gbn-m2-settings.xml" and
+#	the environment variable CDH_GBN=... set.
+#	
+#	For example, to build against the latest build,
+#	
+#	$ export CDH_GBN=$(curl 'http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=6.x&tag=official')
+#	$ mvn -s gbn-m2-settings.xml install -DskipTests
+export CDH_GBN=$(curl 'http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=6.x&tag=official')
