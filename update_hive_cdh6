@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-AAHIVE=`pwd`/packaging/target/apache-hive-1.1.0-cdh5.13.0-SNAPSHOT-bin/apache-hive-1.1.0-cdh5.13.0-SNAPSHOT-bin 
+AAHIVE_VERS=2.1.1
+AACDH_VERS=cdh6.x
+AAHIVE=`pwd`/packaging/target/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin 
 AAGIT=`pwd`
 if [ ! -d  $AAHIVE ]; then
 	echo cannot find $AAHIVE
