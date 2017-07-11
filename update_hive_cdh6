@@ -10,7 +10,7 @@ fi
 cd ~/git/cdh/hive-iml
 cp hive-site.xml $AAHIVE/conf
 cp  hive-log4j.properties ../hive/service/target/classes
-sed "s?XXXX?${AAGIT}?"  < hive-env.sh > $AAHIVE/conf/hive-env.sh
+# sed "s?XXXX?${AAGIT}?"  < hive-env.sh > $AAHIVE/conf/hive-env.sh
 cd $AAHIVE/bin
 echo '(rm -f option to readlink)'
 sleep 2
