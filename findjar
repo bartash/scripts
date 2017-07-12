@@ -1,8 +1,11 @@
 # find jars containing a string
+if [ "$#" -ne 1 ]
+then
+ echo "usage $0 regexp"
+ exit 1
+fi
 echo findjar
 for i in `find . -name '*.jar' -print`; 
 do 
-  # jar tvf $i | grep $1;  
-  # echo that was $i; 
   jar tvf $i | grep -i $1 &&  echo match in $i; 
 done
