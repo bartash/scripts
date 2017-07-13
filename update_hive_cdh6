@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 AAHIVE_VERS=2.1.1
 AACDH_VERS=cdh6.x
-AAHIVE=`pwd`/packaging/target/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin 
+AADEV=`pwd`
+AAHIVE=${AADEV}/packaging/target/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin 
 AAGIT=`pwd`
 if [ ! -d  $AAHIVE ]; then
 	echo cannot find $AAHIVE
 	exit 1;
 fi
-cd ~/git/cdh/hive-iml
+cd ~/git/cdh/hive2-iml
 cp hive-site.xml $AAHIVE/conf
-cp  hive-log4j.properties ../hive/service/target/classes
+cp  hive-log4j.properties ${AADEV}/service/target/classes
 # sed "s?XXXX?${AAGIT}?"  < hive-env.sh > $AAHIVE/conf/hive-env.sh
 cd $AAHIVE/bin
 echo '(rm -f option to readlink)'
 sleep 2
 vi ./hive
-./schematool -dbType derby -initSchema
+# ./schematool -dbType derby -initSchema
+echo not running schematol as using mysql
 
