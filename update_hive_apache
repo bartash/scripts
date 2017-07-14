@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-AAIML=~/git/cdh/hive2-iml
-AAHIVE_VERS=2.1.1
-AACDH_VERS=cdh6.x
+set -e
+AAIML=~/git/asf/hive-iml
+AAHIVE_VERS=3.0.0
 AADEV=`pwd`
-AAHIVE=${AADEV}/packaging/target/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin/apache-hive-${AAHIVE_VERS}-${AACDH_VERS}-SNAPSHOT-bin 
+# AACDH_VERS=cdh6.x
+# note apache has no cdh
+AAHIVE=${AADEV}/packaging/target/apache-hive-${AAHIVE_VERS}-SNAPSHOT-bin/apache-hive-${AAHIVE_VERS}-SNAPSHOT-bin 
 AAGIT=`pwd`
 if [ ! -d  $AAHIVE ]; then
 	echo cannot find $AAHIVE
@@ -17,6 +19,5 @@ cd $AAHIVE/bin
 echo '(rm -f option to readlink)'
 sleep 2
 vi ./hive
-# ./schematool -dbType derby -initSchema
-echo not running schematol as using mysql
+./schematool -dbType derby -initSchema
 
