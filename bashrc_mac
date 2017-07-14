@@ -19,8 +19,7 @@ alias find=gfind
 # visual diff
 alias vdiff=gvimdiff
 
-# alias beeline="./beeline -u jdbc:hive2://localhost:10000/default -n hive -p hive"
-alias beeline='./beeline -u jdbc:hive2://localhost:10000/default -n asherman -p hive'
+alias bl='./beeline -u jdbc:hive2://localhost:10000/default -n asherman -p hive'
 
 
 # setup to run yetus
