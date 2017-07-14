@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 AAIML=~/git/cdh/hive2-iml
 AAHIVE_VERS=2.1.1
 AACDH_VERS=cdh6.x

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 AAHIVE=`pwd`/packaging/target/apache-hive-1.1.0-cdh5.13.0-SNAPSHOT-bin/apache-hive-1.1.0-cdh5.13.0-SNAPSHOT-bin 
 AAGIT=`pwd`
 if [ ! -d  $AAHIVE ]; then
