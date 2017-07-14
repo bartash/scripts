@@ -13,7 +13,7 @@ if [ ! -d  $AAHIVE ]; then
 fi
 # cd ${AAIML}
 cp ${AAIML}/hive-site.xml $AAHIVE/conf
-cp ${AAIML}/hive-log4j.properties ${AADEV}/common/target/classes
+cp ${AAIML}/hive-log4j2.properties ${AADEV}/common/target/classes
 # sed "s?XXXX?${AAGIT}?"  < hive-env.sh > $AAHIVE/conf/hive-env.sh
 cd $AAHIVE/bin
 echo '(rm -f option to readlink)'
