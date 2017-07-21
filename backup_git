@@ -1,6 +1,10 @@
 #!/bin/sh
 # backup by cloning
 # create clone with 'cd /Volumes/Elvis/backups/cdh; git clone --mirror ~/git/cdh/hive'
+#
+# try 'git config gc.auto 256' to force more packing 
+# see https://stackoverflow.com/questions/16337498/understanding-git-gc-auto
+#
 BACKUP_HOME=/Volumes/Elvis/backups
 for repoName in cdh/hive.git \
 		cdh/hive2.git \
