@@ -7,7 +7,9 @@
 #
 while getopts g opts; do
    case ${opts} in
-      g) GC=true ;;
+      g) 
+	GC=true 
+	;;
       *) 
 	echo "usage: $0 [-g]"
         exit 0
