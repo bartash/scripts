@@ -37,7 +37,7 @@ do
 	echo $repos
 	cd $repos
 	git remote update
-echo $GC
+
 	if [ -z "$GC" ]
 	then
 		# echo no gc
