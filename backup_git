@@ -5,16 +5,37 @@
 # try 'git config gc.auto 256' to force more packing 
 # see https://stackoverflow.com/questions/16337498/understanding-git-gc-auto
 #
+while getopts g opts; do
+   case ${opts} in
+      g) GC=true ;;
+      *) 
+	echo "usage: $0 [-g]"
+        exit 0
+        ;;
+   esac
+done
 
 # where backups are stored
 BACKUP_HOME=/Volumes/Elvis/backups
-REPO_NAMES=(cdh/hive.git  cdh/hive2.git  cdh/hive3.git  cdh/hive-iml.git  asf/hive.git   asf/hive2.git   asf/hive-iml.git  scripts.git  cdh/hive2-iml.git)
+# list of repos to backup
+REPO_NAMES=( \
+	cdh/hive.git \
+	cdh/hive2.git \
+	cdh/hive3.git \
+	cdh/hive-iml.git \
+	asf/hive.git  \
+	asf/hive2.git  \
+	asf/hive-iml.git \
+	scripts.git \
+	cdh/hive2-iml.git \
+	)
 for repoName in "${REPO_NAMES[@]}"
 do
 	repos=${BACKUP_HOME}/$repoName
 	echo $repos
 	cd $repos
 	git remote update
+echo $GC
 	git gc --auto
  	echo '------------------------'
 done
