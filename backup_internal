@@ -1,0 +1,10 @@
+(set -o igncr) 2>/dev/null && set -o igncr; # comment is needed
+echo backup_internal ...
+
+cd /cygdrive
+
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group --backup --suffix=.bak  g/data o/backup
+
+
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
+
