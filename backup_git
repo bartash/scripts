@@ -21,6 +21,7 @@ done
 BACKUP_HOME=/Volumes/Elvis/backups
 # list of repos to backup
 REPO_NAMES=( \
+	cdh/hadoop.git \
 	cdh/hive.git \
 	cdh/hive2.git \
 	cdh/hive3.git \
