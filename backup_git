@@ -25,6 +25,7 @@ REPO_NAMES=( \
 	cdh/hive2.git \
 	cdh/hive3.git \
 	cdh/hive-iml.git \
+	asf/hadoop.git  \
 	asf/hive.git  \
 	asf/hive2.git  \
 	asf/hive-iml.git \
