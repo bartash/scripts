@@ -21,17 +21,17 @@ done
 BACKUP_HOME=/Volumes/Elvis/backups
 # list of repos to backup
 REPO_NAMES=( \
-	cdh/hadoop.git \
-	cdh/hive.git \
-	cdh/hive2.git \
-	cdh/hive3.git \
-	cdh/hive-iml.git \
 	asf/hadoop.git  \
+	asf/hive-iml.git \
 	asf/hive.git  \
 	asf/hive2.git  \
-	asf/hive-iml.git \
-	scripts.git \
+	cdh/hadoop.git \
+	cdh/hive-iml.git \
+	cdh/hive.git \
 	cdh/hive2-iml.git \
+	cdh/hive2.git \
+	cdh/hive3.git \
+	scripts.git \
 	)
 for repoName in "${REPO_NAMES[@]}"
 do
