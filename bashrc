@@ -11,7 +11,6 @@ alias fin='find . -type f -print  | fgrep -v /.git/ | fgrep -v /.m2/ > xref.all'
 alias vf=cd
 
 alias git_head='git symbolic-ref --short HEAD'
-alias mvn='mvn -Dmaven.repo.local=`git rev-parse --show-toplevel`/.m2/repository'
 
 # alias vvbtlinux43='vncserver -geometry 1450x980 :2'
 # alias vvb='vncserver -geometry 1900x1050  :1'
