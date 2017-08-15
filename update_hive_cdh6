@@ -20,4 +20,4 @@ sleep 2
 vi ./hive
 # ./schematool -dbType derby -initSchema
 echo not running schematol as using mysql
-
+cp ${AAIML}/mysql-connector-java-5.1.43-bin.jar $AAHIVE/lib
