@@ -6,9 +6,9 @@ echo backup_external ...
 
 rsync -av --exclude '*.lnk' --delete  --no-owner --no-group  g/data f/backup
 
-rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/dvd f
-
 rsync -av --exclude '*.lnk' --delete  --no-owner --no-group  f/andrew_itunes g
+
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/dvd f
 
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/downloads f
 
