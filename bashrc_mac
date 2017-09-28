@@ -41,3 +41,6 @@ alias make_patch='git show --full-index --no-prefix'
 #	$ export CDH_GBN=$(curl 'http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=6.x&tag=official')
 #	$ mvn -s gbn-m2-settings.xml install -DskipTests
 export CDH_GBN=$(curl 'http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=6.x&tag=official')
+
+# use python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
