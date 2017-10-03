@@ -27,3 +27,13 @@ PROMPT_DIRTRIM=3
 # https://www.gnu.org/software/bash/manual/html_node/Controlling-the-Prompt.html#Controlling-the-Prompt
 PS1='[\w]\$ ' 
 
+
+# Maximum number of history lines in memory
+export HISTSIZE=50000
+# Maximum number of history lines on disk
+export HISTFILESIZE=50000
+# Ignore duplicate lines
+## export HISTCONTROL=ignoredups:erasedups
+# When the shell exits, append to the history file 
+#  instead of overwriting it
+shopt -s histappend
