@@ -33,6 +33,7 @@ REPO_NAMES=( \
 	cdh/hive3.git \
 	cdh/asherman-jenkins-master.git \
 	scripts.git \
+	jdbc.git \
 	)
 for repoName in "${REPO_NAMES[@]}"
 do
