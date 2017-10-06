@@ -12,6 +12,8 @@ alias vf=cd
 
 alias git_head='git symbolic-ref --short HEAD'
 
+alias exgrep='grep --exclude-dir=.git'
+
 # alias vvbtlinux43='vncserver -geometry 1450x980 :2'
 # alias vvb='vncserver -geometry 1900x1050  :1'
 # alias vv='vncserver -geometry 1900x1000  :1'
