@@ -1,0 +1,5 @@
+# run mvDebug with per-git-repo repo
+AAREPO=`git rev-parse --show-toplevel`/.m2/repository
+echo "using $AAREPO"
+/usr/local/bin/mvnDebug -Dmaven.repo.local=$AAREPO $*
+
