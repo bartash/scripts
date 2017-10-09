@@ -19,6 +19,9 @@ done
 
 # where backups are stored
 BACKUP_HOME=/Volumes/Elvis/backups
+
+cd $BACKUP_HOME || echo "Cannot cd to ${BACKUP_HOME} so  exiting" && exit 1
+
 # list of repos to backup
 REPO_NAMES=( \
 	asf/hadoop.git  \
@@ -39,7 +42,6 @@ for repoName in "${REPO_NAMES[@]}"
 do
 	repos=${BACKUP_HOME}/$repoName
 	echo $repos
-	cd $repos
 	git remote update
 
 	if [ -z "$GC" ]
