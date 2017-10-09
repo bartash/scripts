@@ -5,6 +5,12 @@
 # try 'git config gc.auto 256' to force more packing 
 # see https://stackoverflow.com/questions/16337498/understanding-git-gc-auto
 #
+
+function error_exit {
+    echo "$1" >&2   ## Send message to stderr. Exclude >&2 if you don't want it that way.
+    exit "${2:-1}"  ## Return a code specified by $2 or 1 by default.
+}
+
 while getopts g opts; do
    case ${opts} in
       g) 
@@ -20,7 +26,7 @@ done
 # where backups are stored
 BACKUP_HOME=/Volumes/Elvis/backups
 
-cd $BACKUP_HOME || ( echo "Cannot cd to ${BACKUP_HOME} so  exiting" && exit 1 )
+cd $BACKUP_HOME || error_exit "cannot cd to $BACKUP_HOME"
 
 # list of repos to backup
 REPO_NAMES=( \
