@@ -1,6 +1,13 @@
 #
+BACKUP_VOL=Blondie
 cd /Volumes
+if [ ! -d ${BACKUP_VOL} ]; then
+	echo no blondie
+	exit 1
+else
+	echo found blondie
+fi
 # copy from home (Blondie) to Elvis
-rsync -av --delete --ignore-errors  Blondie/backup Elvis/from_home
+rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup Elvis/from_home
 # copy itunes back
-rsync -av --delete --ignore-errors Elvis/itunes Blondie/andrew_itunes
+rsync -av --delete --ignore-errors Elvis/itunes ${BACKUP_VOL}/andrew_itunes

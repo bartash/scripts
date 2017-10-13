@@ -1,6 +1,13 @@
 #
+BACKUP_VOL=Gaga
 cd /Volumes
+if [ ! -d ${BACKUP_VOL} ]; then
+	echo no gaga
+	exit 1
+else
+	echo found gaga
+fi
 # rsync -av --delete --max-delete=100 e g/back
 # rsync -av --delete e g/back
-# rsync --dry-run -av --delete Elvis Gaga/back
-rsync -av --delete --ignore-errors Elvis Gaga/back
+# rsync --dry-run -av --delete Elvis ${BACKUP_VOL}/back
+rsync -av --delete --ignore-errors Elvis ${BACKUP_VOL}/back
