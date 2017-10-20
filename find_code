@@ -1,5 +1,6 @@
 #!/bin/sh
 # where is my code?
+# find repo with branch matching parameter
 #
 
 if [ "$#" -ne 1 ]
@@ -21,11 +22,11 @@ REPO_NAMES=( \
 for repoName in "${REPO_NAMES[@]}"
 do
 	repos=${GIT_HOME}/$repoName
-	echo $repos
+	# echo $repos
 	cd $repos
-	git branch | egrep "$1"
+	git branch | egrep "$1" && echo "found in $repos\n"
 
- 	echo '------------------------'
+ 	# echo '------------------------'
 done
 
 
