@@ -1,4 +1,4 @@
 #! /bin/sh
-DRIVER=TestSparkCliDriver
+DRIVER=TestSparkPerfCliDriver
 LIST=`fgrep .${DRIVER}. foo | sed 's?.*\[??' | sed 's?\]?.q,?' | tr -d "\n" `
 echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests

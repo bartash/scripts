@@ -1,0 +1,32 @@
+#!/bin/sh
+# where is my code?
+# find repo with log message matching parameter
+#
+
+if [ "$#" -ne 1 ]
+then
+	echo "usage: $0 pattern"
+	exit 1;
+fi
+
+GIT_HOME=~/git
+
+# list of repos to to look at
+REPO_NAMES=( \
+	asf/hive \
+	asf/hive2 \
+	cdh/hive \
+	cdh/hive2 \
+	cdh/hive3 \
+	)
+for repoName in "${REPO_NAMES[@]}"
+do
+	repos=${GIT_HOME}/$repoName
+	# echo $repos
+	cd $repos
+	git log | egrep "$1" && echo "found in $repos\n"
+
+ 	# echo '------------------------'
+done
+
+
