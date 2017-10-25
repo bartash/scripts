@@ -57,6 +57,7 @@ do
 		git gc --auto
 	else
 		# echo with gc
+		chflags -R nouchg *
 		git gc
 		# if you see 
 		#   warning: unable to unlink ./objects/ff/d0439f332f0ac20314b6f413e149596b493411: Operation not permitted
