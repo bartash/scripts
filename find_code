@@ -24,7 +24,7 @@ do
 	repos=${GIT_HOME}/$repoName
 	# echo $repos
 	cd $repos
-	git branch | egrep "$1" && echo "found in $repos\n"
+	git branch | egrep -i "$1" && echo "found in $repos\n"
 
  	# echo '------------------------'
 done
