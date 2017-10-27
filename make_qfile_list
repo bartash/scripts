@@ -1,4 +1,16 @@
 #! /bin/sh
-DRIVER=TestSparkPerfCliDriver
-LIST=`fgrep .${DRIVER}. foo | sed 's?.*\[??' | sed 's?\]?.q,?' | tr -d "\n" `
+if [ "$#" -lt 1 ]
+then
+	echo "usage: $0 file [driver (defaults to TestCliDriver)]"
+	exit 1
+elif [ "$#" -eq 2 ]
+then
+    DRIVER=$2
+else
+    DRIVER=TestCliDriver
+fi
+echo $DRIVER=DRIVER
+AFILE=$1
+echo file = $AFILE
+LIST=`fgrep .${DRIVER}. ${AFILE} | sed 's?.*\[??' | sed 's?\]?.q,?' | tr -d "\n" `
 echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
