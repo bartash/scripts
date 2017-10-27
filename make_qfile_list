@@ -19,6 +19,7 @@ then
 fi
 LIST=`fgrep .${DRIVER}. ${AFILE} | sed 's?.*\[??' | sed 's?\]?.q,?' | tr -d "\n" `
 echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
+echo mvn test  -s gbn-m2-settings.xml -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
 
 # example data
 #
