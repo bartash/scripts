@@ -19,3 +19,14 @@ then
 fi
 LIST=`fgrep .${DRIVER}. ${AFILE} | sed 's?.*\[??' | sed 's?\]?.q,?' | tr -d "\n" `
 echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
+
+# example data
+#
+# org.apache.hadoop.hive.cli.TestSparkCliDriver.testCliDriver[union_remove_15]
+# org.apache.hadoop.hive.cli.TestSparkCliDriver.testCliDriver[union_remove_18]
+# org.apache.hadoop.hive.cli.TestSparkCliDriver.testCliDriver[union_remove_17]
+# org.apache.hadoop.hive.cli.TestSparkCliDriver.testCliDriver[union_remove_16]
+# org.apache.hadoop.hive.cli.TestSparkCliDriver.testCliDriver[union_remove_25]
+# org.apache.hadoop.hive.cli.TestMiniSparkOnYarnCliDriver.testCliDriver[orc_merge2]
+# org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver[vector_partitioned_date_time]
+# org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver[orc_int_type_promotion]
