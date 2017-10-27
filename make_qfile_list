@@ -9,8 +9,13 @@ then
 else
     DRIVER=TestCliDriver
 fi
-echo $DRIVER=DRIVER
+echo DRIVER=${DRIVER}
 AFILE=$1
-echo file = $AFILE
+echo file = ${AFILE}
+if [ ! -f "${AFILE}" ]
+then
+    echo cannot find ${AFILE}
+    exit 1
+fi
 LIST=`fgrep .${DRIVER}. ${AFILE} | sed 's?.*\[??' | sed 's?\]?.q,?' | tr -d "\n" `
 echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
