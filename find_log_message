@@ -24,7 +24,7 @@ do
 	repos=${GIT_HOME}/$repoName
 	# echo $repos
 	cd $repos
-	git log | egrep "$1" && echo "found in $repos\n"
+	git log --all -1000 | egrep "$1" && echo "found in $repos\n"
 
  	# echo '------------------------'
 done
