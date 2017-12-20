@@ -9,5 +9,18 @@ fi
 
 BRANCH=$1
 echo BRANCH=$BRANCH
+git checkout --track origin/$BRANCH
+if [[ $? -ne 0 ]]; then
+	echo "checkout failed"
+    	exit 1
+fi
+git pull
+git cherry-pick d2036cbaf0eaf1cfb26a3828391868ef4b428ac7 
+if [[ $? -ne 0 ]]; then
+	echo "cherry-pick failed"
+    	exit 1
+fi
+
+./cloudera/gerrit_submit_review.sh $BRANCH
 
 
