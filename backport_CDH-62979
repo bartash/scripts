@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# backport a fix to many branhces
+if [ "$#" -ne 1 ]
+then
+ echo "usage $0 branch"
+ exit 1
+fi
+
+BRANCH=$1
+echo BRANCH=$BRANCH
+
+
