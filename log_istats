@@ -1,6 +1,9 @@
 #!/bin/sh
 # store istats
+
 ASTATS=~/tmp/istats.out
+# need to be on main volume
+cd $ASTATS
 while true
 do
     istats >> $ASTATS
