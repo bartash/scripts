@@ -1,0 +1,9 @@
+#!/bin/sh
+# store istats
+ASTATS=~/tmp/istats.out
+while true
+do
+    istats >> $ASTATS
+    date >> $ASTATS
+    sleep 30
+done
