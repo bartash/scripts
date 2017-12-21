@@ -23,4 +23,5 @@ fi
 
 ./cloudera/gerrit_submit_review.sh $BRANCH
 
-
+EXT=`echo $BRANCH | sed 's/cdh5-1.1.0_//' | sed 's/_dev//'`
+echo post-commit job may be https://master-02.jenkins.cloudera.com/view/cdh${EXT}_gerrit/job/CDH${EXT}-Hive-Post-Commit/
