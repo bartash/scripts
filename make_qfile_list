@@ -1,25 +1,63 @@
-#! /bin/sh
+#!/usr/bin/env bash
+
+DRIVER_ARRAY=()
 if [ "$#" -lt 1 ]
 then
 	echo "usage: $0 file [driver (defaults to TestCliDriver)]"
 	exit 1
-elif [ "$#" -eq 2 ]
-then
-    DRIVER=$2
-else
-    DRIVER=TestCliDriver
 fi
-echo DRIVER=${DRIVER}
-AFILE=$1
-echo file = ${AFILE}
-if [ ! -f "${AFILE}" ]
+
+TEST_FILE=$1
+echo file = ${TEST_FILE}
+if [ ! -f "${TEST_FILE}" ]
 then
-    echo cannot find ${AFILE}
+    echo cannot find ${TEST_FILE}
     exit 1
 fi
-LIST=`fgrep .${DRIVER}. ${AFILE} | sed 's?.*\[??' | sed 's?\].*?.q,?' | sed 's/ *(.*)//g' | tr -d "\n" `
-echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
-echo mvn test  -s gbn-m2-settings.xml -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
+
+
+if [ "$#" -eq 2 ]
+then
+    if [[ $2 == -a ]]
+    then
+        # bash 4 only syntax
+        # https://stackoverflow.com/questions/971162/how-to-initialize-a-bash-array-with-output-piped-from-another-command
+        readarray -t DRIVER_ARRAY < <(cat ${TEST_FILE} | awk -F\[ '{print $1}' | sort -u | awk -F. '{print $6}')
+	    # echo use all drivers
+    else
+        DRIVER_ARRAY+=($2)
+    fi
+else
+    DRIVER_ARRAY+=(TestCliDriver)
+fi
+
+
+
+#echo DRIVER=${DRIVER}
+
+echo upstream:
+for DRIVER in "${DRIVER_ARRAY[@]}"
+do
+	# echo driver from array is $DRIVER
+	LIST=`fgrep .${DRIVER}. ${TEST_FILE} | sed 's?.*\[??' | sed 's?\].*?.q,?' | sed 's/ *(.*)//g' | tr -d "\n" `
+    echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
+done
+
+echo
+echo
+
+echo downstream:
+for DRIVER in "${DRIVER_ARRAY[@]}"
+do
+	# echo driver from array is $DRIVER
+	LIST=`fgrep .${DRIVER}. ${TEST_FILE} | sed 's?.*\[??' | sed 's?\].*?.q,?' | sed 's/ *(.*)//g' | tr -d "\n" `
+    echo mvn test  -s gbn-m2-settings.xml -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
+done
+
+
+
+
+
 
 # example data
 #

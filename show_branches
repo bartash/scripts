@@ -7,7 +7,7 @@ if [ "$#" -eq 1 ]
 then
     if [[ $1 == -* ]] 
     then
-	AANEW=`echo "$1" | cut -c2-`
+        AANEW=`echo "$1" | cut -c2-`
     else
         AANEW=$1
     fi
