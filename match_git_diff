@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # 
+# match a string in git diff output
 if [ "$#" -ne 1 ]
 then
- echo "match a string in git diff"
- echo "usage $0 regexp"
+ echo "match a string in git diff output"
+ echo "usage: $0 regexp"
  exit 1
 fi
 AAREGEX=$1
-echo AAREGEX is $AAREGEX
 git status --porcelain | awk '{print $2}'|  while read file 
 do
 	git diff "$file" | grep "$AAREGEX" > /dev/null
