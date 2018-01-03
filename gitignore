@@ -8,10 +8,7 @@ tmp_*
 itests/tmp_*
 itests/qtest/tmp_*
 xref.all
-foo
-goo
-hoo
-koo
+?oo
 .m2
 .idea
 *.iml
