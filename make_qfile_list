@@ -7,14 +7,15 @@ then
 	exit 1
 fi
 
-TEST_FILE=$1
-echo file = ${TEST_FILE}
-if [ ! -f "${TEST_FILE}" ]
+INTEST_FILE=$1
+TEST_FILE=~/tmp/TEST_$$
+if [ ! -f "${INTEST_FILE}" ]
 then
-    echo cannot find ${TEST_FILE}
+    echo cannot find ${INTEST_FILE}
     exit 1
 fi
 
+grep -v ^# $INTEST_FILE > $TEST_FILE
 
 if [ "$#" -eq 2 ]
 then
@@ -30,10 +31,6 @@ then
 else
     DRIVER_ARRAY+=(TestCliDriver)
 fi
-
-
-
-#echo DRIVER=${DRIVER}
 
 echo upstream:
 for DRIVER in "${DRIVER_ARRAY[@]}"
