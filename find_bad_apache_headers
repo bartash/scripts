@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+cat xref.all | \
+while read line; 
+do 
+	head -1  $line | fgrep '/**' > /dev/null
+        if [[ $? -eq 0 ]]; then
+	    head -2 $line | tail -1 | grep Apache > /dev/null
+            if [[ $? -eq 0 ]]; then
+                echo bad license match in $line
+            else
+		echo missing license in $line
+            fi
+        fi
+done
