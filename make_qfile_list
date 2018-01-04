@@ -37,7 +37,7 @@ for DRIVER in "${DRIVER_ARRAY[@]}"
 do
 	# echo driver from array is $DRIVER
 	LIST=`fgrep .${DRIVER}. ${TEST_FILE} | sed 's?.*\[??' | sed 's?\].*?.q,?' | sed 's/ *(.*)//g' | tr -d "\n" `
-    echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
+    echo mvn test -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} 
 done
 
 echo
@@ -48,7 +48,7 @@ for DRIVER in "${DRIVER_ARRAY[@]}"
 do
 	# echo driver from array is $DRIVER
 	LIST=`fgrep .${DRIVER}. ${TEST_FILE} | sed 's?.*\[??' | sed 's?\].*?.q,?' | sed 's/ *(.*)//g' | tr -d "\n" `
-    echo mvn test  -s gbn-m2-settings.xml -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} -Pitests
+    echo mvn test  -s gbn-m2-settings.xml -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} 
 done
 
 
