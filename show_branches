@@ -26,6 +26,7 @@ else
  AANUM=10
 fi
 
+# print current branch then a blank line before branch list
 echo `git rev-parse --abbrev-ref HEAD`
 echo
 
