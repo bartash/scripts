@@ -23,7 +23,7 @@ then
     then
         # bash 4 only syntax
         # https://stackoverflow.com/questions/971162/how-to-initialize-a-bash-array-with-output-piped-from-another-command
-        readarray -t DRIVER_ARRAY < <(cat ${TEST_FILE} | awk -F\[ '{print $1}' | sort -u | awk -F. '{print $6}')
+        readarray -t DRIVER_ARRAY < <(cat ${TEST_FILE} | awk -F\[ '{print $1}' | sed '/^$/d' | sort -u | awk -F. '{print $6}')
 	    # echo use all drivers
     else
         DRIVER_ARRAY+=($2)
