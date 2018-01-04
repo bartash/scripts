@@ -26,4 +26,7 @@ else
  AANUM=10
 fi
 
+echo `git rev-parse --abbrev-ref HEAD`
+echo
+
 git for-each-ref --count=$AANUM --sort=-committerdate refs/heads/ --format='%(refname:short)'
