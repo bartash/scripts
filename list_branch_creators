@@ -1,2 +1,2 @@
 # https://stackoverflow.com/questions/12055198/find-out-git-branch-creator/19135644
-git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=-authordate refs/remotes
+git for-each-ref --format='%(committerdate)%09%(authorname)%09%(refname)' --sort=-authordate
