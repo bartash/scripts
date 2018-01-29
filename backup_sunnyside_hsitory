@@ -1,0 +1,6 @@
+# backup website
+# 25-jun-2017
+cd g:/data/wget/sunnsidehistory
+mv sunnysidehistory.org sunnysidehistory.org_$$
+wget --mirror -p --html-extension --convert-links https://sunnysidehistory.org/  sunnyside_back2
+
