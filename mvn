@@ -23,5 +23,6 @@ else
 	exit 1
 fi
 
+# sometimes this causes problems with quoted paramters...
 ${MVN} -Dmaven.repo.local=$AAREPO $*
 
