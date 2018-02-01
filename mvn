@@ -1,5 +1,21 @@
 # run mvn with per-git-repo repo
 AAREPO=`git rev-parse --show-toplevel`/.m2/repository
 echo "using $AAREPO"
-/usr/local/bin/mvn -Dmaven.repo.local=$AAREPO $*
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	MVN=/usr/bin/mvn
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	MVN=/usr/local/bin/mvn
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+	echo cygwin
+	exit 1
+elif [[ "$OSTYPE" == "msys" ]]; then
+	exit 1
+elif [[ "$OSTYPE" == "win32" ]]; then
+	exit 1
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+	exit 1
+else
+	exit 1
+fi
+${MVN} -Dmaven.repo.local=$AAREPO $*
 
