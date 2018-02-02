@@ -3,7 +3,7 @@
 DRIVER_ARRAY=()
 if [ "$#" -lt 1 ]
 then
-	echo "usage: $0 file [driver (defaults to TestCliDriver)]"
+	echo "usage: $0 [-a] file [driver (defaults to TestCliDriver, use -a for all)]"
 	exit 1
 fi
 
