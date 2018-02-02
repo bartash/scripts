@@ -9,13 +9,15 @@ fi
 
 INTEST_FILE=$1
 TEST_FILE=~/tmp/TEST_$$
+TEST_FILE2=~/tmp/TEST2_$$
 if [ ! -f "${INTEST_FILE}" ]
 then
     echo cannot find ${INTEST_FILE}
     exit 1
 fi
 
-grep -v ^\s*# $INTEST_FILE > $TEST_FILE
+grep -v ^\s*# $INTEST_FILE | grep '\['> $TEST_FILE
+grep -v ^\s*# $INTEST_FILE | grep -v '\[' > $TEST_FILE2
 
 if [ "$#" -eq 2 ]
 then
