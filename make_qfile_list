@@ -15,7 +15,7 @@ then
     exit 1
 fi
 
-grep -v ^# $INTEST_FILE > $TEST_FILE
+grep -v ^\s*# $INTEST_FILE > $TEST_FILE
 
 if [ "$#" -eq 2 ]
 then
