@@ -1,8 +1,8 @@
 # reviewboard for cmf
 # http://github.mtv.cloudera.com/Starship/cmf/blob/master/CONTRIBUTING.md
-REVIEWERS="'andyao, aravind.selvan, dlo, fpang, paolo.milani'"
+REVIEWERS="andyao, aravind.selvan, dlo, fpang, paolo.milani"
 # echo reviewers=$REVIEWERS
-echo rbt post \
+rbt post \
     --server=http://review.infra.cloudera.com \
     --repository cmf \
     --target-groups=cmf \
