@@ -1,3 +1,8 @@
 # configure git for the first time
 git config --global push.default current
 git config --global help.autocorrect 15
+git config --global core.excludesfile ~/scripts/gitignore 
+git config --global user.name "Andrew Sherman"
+
+echo also type
+echo "git config --global user.email asherman@cloudera.com"
