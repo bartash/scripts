@@ -53,6 +53,10 @@ do
     echo mvn test  -s gbn-m2-settings.xml -Dtest.output.overwrite=true  -Dtest=${DRIVER} -Dqfile=${LIST} 
 done
 
+echo
+echo plus these non-qfile failures:
+
+cat $TEST_FILE2
 
 
 
