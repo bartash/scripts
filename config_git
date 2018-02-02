@@ -1,0 +1,3 @@
+# configure git for the first time
+git config --global push.default current
+git config --global help.autocorrect 15
