@@ -63,6 +63,7 @@ fi
 # voilà!
 
 
+# https://superuser.com/questions/292652/change-iterm2-window-and-tab-titles-in-zsh
 # $1 = type; 0 - both, 1 - tab, 2 - title
 # rest = text
 setTerminalText () {
@@ -73,5 +74,5 @@ setTerminalText () {
 stt_both  () { setTerminalText 0 $@; }
 stt_tab   () { setTerminalText 1 $@; }
 stt_title () { setTerminalText 2 $@; }
+set_title () { setTerminalText 2 $@; }
 
-alias set_title='echo -ne "\033];${HOSTNAME}\007"'
