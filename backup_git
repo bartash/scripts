@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # backup by cloning
 # create clone with 'cd /Volumes/Elvis/backups/cdh; git clone --mirror ~/git/cdh/hive'
 #
@@ -51,6 +51,8 @@ do
 	repos=${BACKUP_HOME}/$repoName
 	echo $repos
 	cd $repos
+
+	# should this be git rmeote update -p ??
 	git remote update
 
 	if [ -z "$GC" ]

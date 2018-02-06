@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #
 BACKUP_VOL=Blondie
 SOURCE_VOL=Elvis
