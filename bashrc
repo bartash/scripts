@@ -45,9 +45,8 @@ export VISUAL=vi
 # https://gist.github.com/phette23/5270658
 # put this in your .bash_profile
 if [ $ITERM_SESSION_ID ]; then
-  export PROMPT_COMMAND='echo -ne "\033];${HOSTNAME}:${PWD##*/}\007"; ':"$PROMPT_COMMAND";
+  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
 fi
-
 # Piece-by-Piece Explanation:
 # the if condition makes sure we only screw with $PROMPT_COMMAND if we're in an iTerm environment
 # iTerm happens to give each session a unique $ITERM_SESSION_ID we can use, $ITERM_PROFILE is an option too
@@ -62,3 +61,17 @@ fi
 # see: stackoverflow.com/questions/1371261/get-current-directory-name-without-full-path-in-bash-script
 # then we append the rest of $PROMPT_COMMAND so as not to remove what was already there
 # voilà!
+
+
+# $1 = type; 0 - both, 1 - tab, 2 - title
+# rest = text
+setTerminalText () {
+    # echo works in bash & zsh
+    local mode=$1 ; shift
+    echo -ne "\033]$mode;$@\007"
+}
+stt_both  () { setTerminalText 0 $@; }
+stt_tab   () { setTerminalText 1 $@; }
+stt_title () { setTerminalText 2 $@; }
+
+alias set_title='echo -ne "\033];${HOSTNAME}\007"'
