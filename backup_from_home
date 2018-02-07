@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-BACKUP_VOL=Blondie
+BACKUP_VOL=Clash
 SOURCE_VOL=Elvis
 cd /Volumes
 if [ ! -d ${BACKUP_VOL} ]; then
