@@ -14,10 +14,10 @@ function error_exit {
 while getopts g opts; do
    case ${opts} in
       g) 
-	GC=true 
-	;;
+    GC=true 
+    ;;
       *) 
-	echo "usage: $0 [-g]"
+    echo "usage: $0 [-g]"
         exit 0
         ;;
    esac
@@ -30,51 +30,51 @@ cd $BACKUP_HOME || error_exit "cannot cd to $BACKUP_HOME"
 
 # list of repos to backup
 REPO_NAMES=( \
-	asf/hadoop.git  \
-	asf/hive-iml.git \
-	asf/hive.git  \
-	asf/hive2.git  \
-	cdh/hadoop.git \
-	cdh/hive-iml.git \
-	cdh/hive.git \
-	cdh/hive2-iml.git \
-	cdh/hive2.git \
-	cdh/hive3.git \
-	cdh/asherman-jenkins-master.git \
-	scripts.git \
-	jdbc.git \
+    asf/hadoop.git  \
+    asf/hive-iml.git \
+    asf/hive.git  \
+    asf/hive2.git  \
+    cdh/hadoop.git \
+    cdh/hive-iml.git \
+    cdh/hive.git \
+    cdh/hive2-iml.git \
+    cdh/hive2.git \
+    cdh/hive3.git \
+    cdh/asherman-jenkins-master.git \
+    scripts.git \
+    jdbc.git \
     kitchen/cloudcat-hive-ptest.git \
     starship/cmf.git \
     kitchen/cloudstack-reporting.git \
-	)
+    )
 for repoName in "${REPO_NAMES[@]}"
 do
-	repos=${BACKUP_HOME}/$repoName
-	echo $repos
-	cd $repos
+    repos=${BACKUP_HOME}/$repoName
+    echo $repos
+    cd $repos
 
-	# should this be git rmeote update -p ??
-	git remote update
+    # should this be git rmeote update -p ??
+    git remote update
 
-	if [ -z "$GC" ]
-	then
-		# echo no gc
+    if [ -z "$GC" ]
+    then
+        # echo no gc
 
-		# I don't know if this config even works
-		git config gc.pruneExpire 52.weeks.ago
-		git config gc.reflogExpireUnreachable  24.months.ago
+        # I don't know if this config even works
+        git config gc.pruneExpire 52.weeks.ago
+        git config gc.reflogExpireUnreachable  24.months.ago
 
-		git gc --auto
-	else
-		# echo with gc
-		chflags -R nouchg *
-		git gc
-		# if you see 
-		#   warning: unable to unlink ./objects/ff/d0439f332f0ac20314b6f413e149596b493411: Operation not permitted
-		# then run
-		#   chflags -R nouchg *
-	fi
- 	echo '------------------------'
+        git gc --auto
+    else
+        # echo with gc
+        chflags -R nouchg *
+        git gc
+        # if you see 
+        #   warning: unable to unlink ./objects/ff/d0439f332f0ac20314b6f413e149596b493411: Operation not permitted
+        # then run
+        #   chflags -R nouchg *
+    fi
+     echo '------------------------'
 done
 
 
