@@ -43,8 +43,9 @@ REPO_NAMES=( \
 	cdh/asherman-jenkins-master.git \
 	scripts.git \
 	jdbc.git \
-        kitchen/cloudcat-hive-ptest.git \
-        starship/cmf.git \
+    kitchen/cloudcat-hive-ptest.git \
+    starship/cmf.git \
+    kitchen/cloudstack-reporting.git \
 	)
 for repoName in "${REPO_NAMES[@]}"
 do
