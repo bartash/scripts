@@ -13,13 +13,13 @@ function error_exit {
 
 while getopts g opts; do
    case ${opts} in
-      g) 
-    GC=true 
-    ;;
-      *) 
-    echo "usage: $0 [-g]"
-        exit 0
-        ;;
+        g)
+            GC=true
+            ;;
+        *)
+            echo "usage: $0 [-g]"
+            exit 0
+            ;;
    esac
 done
 
@@ -47,13 +47,15 @@ REPO_NAMES=( \
     starship/cmf.git \
     kitchen/cloudstack-reporting.git \
     )
+
+
 for repoName in "${REPO_NAMES[@]}"
 do
     repos=${BACKUP_HOME}/$repoName
     echo $repos
     cd $repos
 
-    # should this be git rmeote update -p ??
+    # should this be git remote update -p ??
     git remote update
 
     if [ -z "$GC" ]
@@ -74,7 +76,7 @@ do
         # then run
         #   chflags -R nouchg *
     fi
-     echo '------------------------'
+    echo '------------------------'
 done
 
 
