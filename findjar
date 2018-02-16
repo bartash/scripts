@@ -12,7 +12,6 @@ while getopts v opts; do
 done
 shift $((OPTIND -1))
 
-echo arsg count is  $#
 if [ "$#" -ne 1 ]
 then
  echo "usage: $0 [-v] regexp"
