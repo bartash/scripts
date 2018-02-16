@@ -1,11 +1,28 @@
 # find jars containing a string
+while getopts v opts; do
+   case ${opts} in
+        v)
+            VERBOSE=true
+            ;;
+        *)
+            echo "usage: $0 [-v] regexp"
+            exit 0
+            ;;
+   esac
+done
+shift $((OPTIND -1))
+
+echo arsg count is  $#
 if [ "$#" -ne 1 ]
 then
- echo "usage $0 regexp"
+ echo "usage: $0 [-v] regexp"
  exit 1
 fi
 echo findjar
 for i in `find . -name '*.jar' -print`; 
-do 
+do
+  if [[ ! -z "$VERBOSE" ]] ; then
+    echo look at $i
+  fi
   jar tvf $i | grep -i $1 &&  echo match in $i; 
 done
