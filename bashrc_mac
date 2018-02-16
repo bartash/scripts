@@ -44,3 +44,6 @@ export CDH_GBN=$(curl 'http://builddb.infra.cloudera.com:8080/query?product=cdh&
 
 # use python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# not setting this here because paranoia
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
