@@ -6,7 +6,7 @@ cd /cygdrive/g/downloads/newvuze
 if [ "$#" -ne 1 ]
 then
  echo "match a string in git diff output"
- echo "usage: $0 regexp"
+ echo "usage: $0 number_to_delete"
  exit 1
 fi
 NUM=$1
@@ -15,6 +15,7 @@ NUM=$1
 ls -t | tail -${NUM} | while read file 
 do
 	echo file is $file
+	rm -rf "$file"
 done
 
 
