@@ -1,0 +1,11 @@
+# delete downloads
+
+set -v
+cd /cygdrive/g/downloads/newvuze
+
+ls -t | tail -10 | while read file 
+do
+	echo file is $file
+done
+
+
