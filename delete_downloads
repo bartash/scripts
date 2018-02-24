@@ -1,9 +1,18 @@
 # delete downloads
 
-set -v
+set -e
 cd /cygdrive/g/downloads/newvuze
 
-ls -t | tail -10 | while read file 
+if [ "$#" -ne 1 ]
+then
+ echo "match a string in git diff output"
+ echo "usage: $0 regexp"
+ exit 1
+fi
+NUM=$1
+
+
+ls -t | tail -${NUM} | while read file 
 do
 	echo file is $file
 done
