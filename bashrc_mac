@@ -1,7 +1,7 @@
 # mac/hive specific stuff
 
 # https://stackoverflow.com/questions/30247603
-alias amend='EDITOR="gvim -f" git commit --amend'
+alias amend='VISUAL="gvim -f" git commit --amend'
 
 # stop errors like "readlink: illegal option -- f"
 # export SPARK_HOME=foo
