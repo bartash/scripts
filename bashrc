@@ -45,9 +45,9 @@ export VISUAL=vi
 
 # https://gist.github.com/phette23/5270658
 # put this in your .bash_profile
-if [ $ITERM_SESSION_ID ]; then
-  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
-fi
+## if [ $ITERM_SESSION_ID ]; then
+##  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
+## fi
 # Piece-by-Piece Explanation:
 # the if condition makes sure we only screw with $PROMPT_COMMAND if we're in an iTerm environment
 # iTerm happens to give each session a unique $ITERM_SESSION_ID we can use, $ITERM_PROFILE is an option too
