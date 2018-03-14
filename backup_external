@@ -4,7 +4,15 @@ cd /cygdrive
 echo backup_external ...
 
 SOURCE=g
-BACK=h
+BACK=f
+
+
+if [ ! -d ${BACK} ]; then
+	echo Could not find ${BACK} volume
+	exit 1
+else
+	echo found ${BACK}
+fi
 
 rsync  -rltDv --exclude '*.lnk' --delete --modify-window=5  $SOURCE/data $BACK/backup
 
