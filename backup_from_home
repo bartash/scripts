@@ -9,7 +9,7 @@ if [ ! -d ${BACKUP_VOL} ]; then
 else
 	echo found ${BACKUP_VOL}
 fi
-# copy from home
-rsync -av --delete --ignore-errors --modify-window=5 ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
+# copy from home (Blondie) to Elvis
+rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
 # copy itunes back
-rsync -av --delete --ignore-errors --modify-window=5 ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
+rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
