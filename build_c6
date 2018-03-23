@@ -1,0 +1,52 @@
+#
+# build c6
+#
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+echo "Your branch is ${BRANCH}"
+
+case ${BRANCH} in
+*cdh6.x*)
+  BASE=cdh6.x
+  DESCRIPTION="CDH 6.1.x"
+   if [ -z "${CDH_GBN}" ]; then
+    VERSION=6.x
+    TAG=official
+  fi
+  ;;
+*cdh6.0.x*)
+  BASE=cdh6.0.x
+  DESCRIPTION="CDH 6.0.0 GA"
+  if [ -z "${CDH_GBN}" ]; then
+    VERSION=6.0.x
+    TAG=official
+  fi
+  ;;
+*cdh6.0.0_beta1*)
+  BASE=cdh6.0.0_beta1
+  DESCRIPTION="CDH 6.0.0 beta1"
+  if [ -z "${CDH_GBN}" ]; then
+    VERSION=6.0.0
+    TAG=official,beta1
+  fi
+  ;;
+*)
+  echo "I cannot tell what sort of branch you are on."
+  exit 1
+  ;;
+esac
+
+echo The target is ${DESCRIPTION}
+if [ -z "${CDH_GBN}" ]; then
+  echo CDH_GBN is not set so fetching new value
+  GBN=`curl -s "http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=${VERSION}&tag=${TAG}"`
+  echo "You should export CDH_GBN=${GBN}"
+else
+  echo "You have already set CDH_GBN=${CDH_GBN} you must unset this if you want to fetch a new value"
+fi
+
+echo "fetching gbn-m2-settings.xml with BASE=${BASE}"
+curl -s http://github.mtv.cloudera.com/raw/CDH/cdh/${BASE}/gbn-m2-settings.xml -o gbn-m2-settings.xml
+
+
+
