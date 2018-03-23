@@ -9,26 +9,20 @@ case ${BRANCH} in
 *cdh6.x*)
   BASE=cdh6.x
   DESCRIPTION="CDH 6.1.x"
-   if [ -z "${CDH_GBN}" ]; then
-    VERSION=6.x
-    TAG=official
-  fi
+  VERSION=6.x
+  TAG=official
   ;;
 *cdh6.0.x*)
   BASE=cdh6.0.x
   DESCRIPTION="CDH 6.0.0 GA"
-  if [ -z "${CDH_GBN}" ]; then
-    VERSION=6.0.x
-    TAG=official
-  fi
+  VERSION=6.0.x
+  TAG=official
   ;;
 *cdh6.0.0_beta1*)
   BASE=cdh6.0.0_beta1
   DESCRIPTION="CDH 6.0.0 beta1"
-  if [ -z "${CDH_GBN}" ]; then
-    VERSION=6.0.0
-    TAG=official,beta1
-  fi
+  VERSION=6.0.0
+  TAG=official,beta1
   ;;
 *)
   echo "I cannot tell what sort of branch you are on."
