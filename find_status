@@ -1,0 +1,26 @@
+#!/bin/sh
+# where is my code?
+# print out some recent branches
+#
+
+GIT_HOME=~/git
+
+# list of repos to to look at
+REPO_NAMES=( \
+	asf/hive \
+	asf/hive2 \
+	cdh/hive \
+	cdh/hive2 \
+	cdh/hive3 \
+	)
+for repoName in "${REPO_NAMES[@]}"
+do
+	repos=${GIT_HOME}/$repoName
+	echo
+	echo In $repos
+	cd $repos
+	show_branches -4
+ 	echo '------------------------'
+done
+
+
