@@ -25,7 +25,7 @@ case ${USER_BRANCH} in
   TAG=official,beta1
   ;;
 *)
-  echo "I cannot tell what sort of branch you are on."
+  echo "I cannot tell what sort of C6 branch you are on."
   exit 1
   ;;
 esac
