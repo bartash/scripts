@@ -9,19 +9,16 @@ case ${USER_BRANCH} in
 *cdh6.x*)
   BASE_BRANCH=cdh6.x
   DESCRIPTION="CDH 6.1.x"
-  VERSION=6.x
   TAG=official
   ;;
 *cdh6.0.x*)
   BASE_BRANCH=cdh6.0.x
   DESCRIPTION="CDH 6.0.0 GA"
-  VERSION=6.0.x
   TAG=official
   ;;
 *cdh6.0.0_beta1*)
   BASE_BRANCH=cdh6.0.0_beta1
   DESCRIPTION="CDH 6.0.0 beta1"
-  VERSION=6.0.0
   TAG=official,beta1
   ;;
 *)
@@ -31,9 +28,9 @@ case ${USER_BRANCH} in
 esac
 
 
-# GBN=`curl -s "http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=${VERSION}&tag=${TAG}"`
 
-BUILD_DB_URL="http://builddb.infra.cloudera.com:8080/resolvealias?alias=BASE_BRANCH"
+BUILD_DB_URL="http://builddb.infra.cloudera.com:8080/resolvealias?alias=${BASE_BRANCH}"
+echo BUILD_DB_URL="http://builddb.infra.cloudera.com:8080/resolvealias?alias=${BASE_BRANCH}"
 GBN=$(curl $BUILD_DB_URL);
 
 
