@@ -31,7 +31,11 @@ case ${USER_BRANCH} in
 esac
 
 
-GBN=`curl -s "http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=${VERSION}&tag=${TAG}"`
+# GBN=`curl -s "http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=${VERSION}&tag=${TAG}"`
+
+BUILD_DB_URL="http://builddb.infra.cloudera.com:8080/resolvealias?alias=BASE_BRANCH"
+GBN=$(curl $BUILD_DB_URL);
+
 
 echo The target is ${DESCRIPTION}
 if [ -z "${CDH_GBN}" ]; then

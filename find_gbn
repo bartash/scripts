@@ -30,13 +30,17 @@ case ${USER_BRANCH} in
   ;;
 esac
 
+
+GBN=`curl -s "http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=${VERSION}&tag=${TAG}"`
+
 echo The target is ${DESCRIPTION}
 if [ -z "${CDH_GBN}" ]; then
-  echo CDH_GBN is not set so fetching new value
-  GBN=`curl -s "http://builddb.infra.cloudera.com:8080/query?product=cdh&user=jenkins&version=${VERSION}&tag=${TAG}"`
-  echo "You should export CDH_GBN=${GBN}"
+  echo "CDH_GBN is not set"
+  echo "You should: export CDH_GBN=${GBN}"
 else
   echo "You have already set CDH_GBN=${CDH_GBN} you must unset this if you want to fetch a new value"
+  echo "If you want to use the new value then:"
+  echo "You should: export CDH_GBN=${GBN}"
 fi
 
 echo "fetching gbn-m2-settings.xml with BASE_BRANCH=${BASE_BRANCH}"
