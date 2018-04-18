@@ -67,6 +67,9 @@ do
         git config gc.pruneExpire 52.weeks.ago
         git config gc.reflogExpireUnreachable  24.months.ago
 
+        # I think this helps pack more often
+        git config --local gc.auto 256
+
         git gc --auto
     else
         # echo with gc
