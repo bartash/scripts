@@ -1,6 +1,14 @@
 # backup website
 # 25-jun-2017
-cd g:/data/wget/sunnsidehistory
+set -e
+
+TARGET=g:/data/wget/sunnsidehistory
+if [ "$#" -eq 1 ]
+then
+	TARGET=$1
+fi
+
+cd $TARGET
 mv sunnysidehistory.org sunnysidehistory.org_$$
-wget --mirror -p --html-extension --convert-links https://sunnysidehistory.org/  sunnyside_back2
+wget --mirror -p --html-extension --convert-links https://sunnysidehistory.org/
 
