@@ -12,7 +12,6 @@ fi
 BACKUP_HOME=/Volumes/Elvis/backups
 
 # list of repos to to look at
-# list of repos to backup
 REPO_NAMES=( \
     asf/hadoop.git  \
     asf/hive-iml.git \
