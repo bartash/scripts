@@ -9,6 +9,7 @@ alias a=alias
 alias cx='chmod a+x'
 alias fin='find . -type f -print  | fgrep -v /.git/ | fgrep -v .class | fgrep -v /.m2/ > xref.all'
 alias vf=cd
+alias xrags=xargs
 
 alias git_head='git symbolic-ref --short HEAD'
 
