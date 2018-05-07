@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-BACKUP_VOL=Gaga
 SOURCE_VOL=Elvis
+BACKUP_VOL=Gaga
 cd /Volumes
 if [ ! -d ${BACKUP_VOL} ]; then
 	echo Could not find ${BACKUP_VOL} volume
