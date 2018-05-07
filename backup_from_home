@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-BACKUP_VOL=Clash
 SOURCE_VOL=Elvis
+BACKUP_VOL=Clash
 cd /Volumes
 if [ ! -d ${BACKUP_VOL} ]; then
     echo Could not find ${BACKUP_VOL} volume
