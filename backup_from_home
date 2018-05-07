@@ -15,4 +15,5 @@ rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
 
 # copy git stuff
+mkdir ${BACKUP_VOL}/backups
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/backups ${BACKUP_VOL}/backups
