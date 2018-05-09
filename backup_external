@@ -13,6 +13,12 @@ if [ ! -d ${BACK} ]; then
 else
 	echo found ${BACK}
 fi
+if [ ! -d ${SOURCE} ]; then
+	echo Could not find ${SOURCE} volume
+	exit 1
+else
+	echo found ${SOURCE}
+fi
 
 rsync -av --exclude '*.lnk' --delete  --no-owner --no-group   $SOURCE/data $BACK/backup
 

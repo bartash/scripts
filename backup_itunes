@@ -9,4 +9,10 @@ if [ ! -d ${BACKUP_VOL} ]; then
 else
 	echo found ${BACKUP_VOL}
 fi
+if [ ! -d ${SOURCE_VOL} ]; then
+	echo Could not find ${SOURCE_VOL} volume
+	exit 1
+else
+	echo found ${SOURCE_VOL}
+fi
 rsync -av --delete --ignore-errors ${SOURCE_VOL} ${BACKUP_VOL}/back
