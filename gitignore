@@ -13,3 +13,4 @@ xref.all
 .idea
 *.iml
 gbn-m2-settings.xml
+*.tmp
