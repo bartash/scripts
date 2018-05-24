@@ -1,4 +1,3 @@
+#!/usr/bin/env bash
 # add some lines after matching a pattern
-sed -i .tmp '/	numFiles/a\
-	numFilesErasureCoded	0
-' $1
+gsed -i '/	numFiles/a  numFilesErasureCoded	0\t' $1
