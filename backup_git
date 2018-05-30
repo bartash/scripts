@@ -70,6 +70,7 @@ do
         # I think this helps pack more often
         git config --local gc.auto 256
 
+        git prune
         git gc --auto
     else
         # echo with gc
