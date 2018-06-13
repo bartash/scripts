@@ -12,14 +12,14 @@ fi
 GIT_HOME=~/git
 
 # list of repos to to look at
-REPO_NAMES=( \
+SRC_REPOS=( \
 	asf/hive \
 	asf/hive2 \
 	cdh/hive \
 	cdh/hive2 \
 	cdh/hive3 \
 	)
-for repoName in "${REPO_NAMES[@]}"
+for repoName in "${SRC_REPOS[@]}"
 do
 	repos=${GIT_HOME}/$repoName
 	# echo $repos
