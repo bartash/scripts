@@ -6,9 +6,9 @@ then
   INPUT=$1
 fi
 TMP=/tmp/add_lines$$
-grep .q.out  $INPUT | xargs grep -l '\tnumFiles' > $TMP
+grep .q.out  $INPUT | xargs grep -l 'numFiles' > $TMP
 wc -l $TMP
 for file in `cat $TMP`
 do
-    gsed -i '/	numFiles/a\\tnumFilesErasureCoded	0                   ' $file
+    java -cp /Users/asherman/git/bartash/experiments/dice/src  com.bartash.dice.FixNumFilesLine $file
 done
