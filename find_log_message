@@ -11,14 +11,9 @@ fi
 
 GIT_HOME=~/git
 
-# list of repos to to look at
-SRC_REPOS=( \
-	asf/hive \
-	asf/hive2 \
-	cdh/hive \
-	cdh/hive2 \
-	cdh/hive3 \
-	)
+# set SRC_REPOS to a list of repositories to to look at
+. $(dirname "$0")/src_repos.sh
+
 for repoName in "${SRC_REPOS[@]}"
 do
 	repos=${GIT_HOME}/$repoName
