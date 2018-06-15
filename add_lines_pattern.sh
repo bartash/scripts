@@ -6,7 +6,12 @@ then
   INPUT=$1
 fi
 TMP=/tmp/add_lines$$
-grep .q.out  $INPUT | xargs grep -l 'numFiles' > $TMP
+
+pushd /Users/asherman/git/bartash/experiments/dice/src
+javac ./com/bartash/dice/FixNumFilesLine.java
+popd
+
+grep .q.out  $INPUT | grep -v erasurecoding | xargs grep -l 'numFiles' > $TMP
 wc -l $TMP
 for file in `cat $TMP`
 do
