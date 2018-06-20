@@ -51,7 +51,8 @@ do
         # I think this helps pack more often
         git config --local gc.auto 256
 
-        git prune
+        # git prune fixed a one-time problem but it takes too much time
+        # git prune
         git gc --auto
     else
         # echo with gc
