@@ -1,0 +1,4 @@
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export IMPALA_HOME=/scratch/asherman/git/Impala
+export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
+export LC_ALL="en_US.UTF-8"
