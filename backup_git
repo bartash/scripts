@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # backup by cloning
 # create clone with 'cd /Volumes/Elvis/backups/cdh; git clone --mirror ~/git/cdh/hive'
+# or: git clone --mirror asherman-impala-gce-ubuntu16.gce.cloudera.com:git/asf/Impala Impala.gce.git
 #
 # try 'git config gc.auto 256' to force more packing 
 # see https://stackoverflow.com/questions/16337498/understanding-git-gc-auto
