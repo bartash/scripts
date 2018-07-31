@@ -4,8 +4,10 @@ export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
 export LC_ALL="en_US.UTF-8"
 
 AAIMPALA_BIN=${IMPALA_HOME}/bin
-. ${AAIMPALA_BIN}/impala-config.sh
-export PATH="${AAIMPALA_BIN}:$PATH"
+if [ -f "${AAIMPALA_BIN}/impala-config.sh" ]; then
+    . ${AAIMPALA_BIN}/impala-config.sh
+    export PATH="${AAIMPALA_BIN}:$PATH"
+fi
 
 # https://cwiki.apache.org/confluence/display/IMPALA/Using+Gerrit+to+submit+and+review+patches
 # says
