@@ -1,0 +1,2 @@
+export DISPLAY=:3
+bin/clion-2018.2/bin/clion.sh
