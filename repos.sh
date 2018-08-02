@@ -1,5 +1,7 @@
 # set REPO_NAMES to a list of repositories to to look at
 REPO_NAMES=( \
+    asf/Impala.gce.git \
+    asf/Impala.ec2.git \
     asf/hive.git  \
     asf/hive2.git  \
     cdh/hive.git \
@@ -7,8 +9,6 @@ REPO_NAMES=( \
     cdh/hive3.git \
     asf/hadoop.git  \
     asf/hive-iml.git \
-    asf/Impala.gce.git \
-    asf/Impala.ec2.git \
     cdh/asherman-jenkins-master.git \
     cdh/hadoop.git \
     cdh/hive-iml.git \
