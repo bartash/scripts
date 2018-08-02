@@ -1,2 +1,2 @@
 export DISPLAY=:3
-bin/idea-IC-182.3684.101/bin/idea.sh
+~/bin/idea-IC-182.3684.101/bin/idea.sh
