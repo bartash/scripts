@@ -1,2 +1,2 @@
 # restart vnc
-rm -f /tmp/.X3-lock ; rm -f /tmp/.X11-unix/X3 ; vvmac
+rm -f /tmp/.X3-lock ; rm -f /tmp/.X11-unix/X3 ; vncserver -geometry 2500x1460 :3
