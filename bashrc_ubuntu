@@ -13,3 +13,6 @@ fi
 # says
 # set your "GERRIT_USER" environment variable to your Gerrit username
 export GERRIT_USER=bartash
+
+# start hadoop services
+run-all='$IMPALA_HOME/testdata/bin/run-all.sh'
