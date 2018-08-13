@@ -2,6 +2,7 @@
 REPO_NAMES=( \
     asf/Impala.gce.git \
     asf/Impala.ec2.git \
+    asf/Impala.asherman-desktop.git \
     asf/hive.git  \
     asf/hive2.git  \
     cdh/hive.git \
