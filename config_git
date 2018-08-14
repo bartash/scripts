@@ -3,6 +3,9 @@ git config --global push.default current
 git config --global help.autocorrect 15
 git config --global core.excludesfile ~/scripts/gitignore 
 git config --global user.name "Andrew Sherman"
+# put branch names in git log
+git config --global log.decorate auto
 
-echo also type
+
+echo also type email...
 echo "git config --global user.email asherman@cloudera.com"
