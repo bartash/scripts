@@ -4,4 +4,8 @@ if [ -z "$DISPLAY" ]; then
 fi
 
 CLION=`ls -td ~/bin/clion-*`
+
+# on gce I also had 
+# . $IMPALA_HOME/bin/set-classpath.sh
+
 $CLION/bin/clion.sh
