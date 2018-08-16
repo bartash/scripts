@@ -1,5 +1,11 @@
 #! /bin/bash
 # log ip
+
+if [ "$HOSTNAME" != "asherman-desktop" ]; then
+	echo not here
+	exit 1
+fi
+
 IPFILE=/home/asherman/Dropbox/tmp/lastip
 IPBAK=/home/asherman/Dropbox/tmp/lastip.prev
 IPLOG=/home/asherman/tmp/lastip.log
