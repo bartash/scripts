@@ -1,5 +1,17 @@
 #! /bin/bash
 # log ip
-echo >> /home/asherman/Dropbox/tmp/enp0s31f6.log
-date >> /home/asherman/Dropbox/tmp/enp0s31f6.log
-ifconfig enp0s31f6 >> /home/asherman/Dropbox/tmp/enp0s31f6.log
+IPFILE=/home/asherman/Dropbox/tmp/lastip
+IPBAK=/home/asherman/Dropbox/tmp/lastip.prev
+IPLOG=/home/asherman/tmp/lastip.log
+IP=`ifconfig enp0s31f6  | grep 'inet addr' | awk '{print $2}' | awk -F: '{print $2}'`
+OLDIP=`cat $IPFILE`
+date >> $IPLOG
+if [ "$IP" = "$OLDIP" ]; then
+  echo "same ip $OLDIP" >> $IPLOG
+else
+  echo "new ip $IP replaces $OLDIP" >> $IPLOG
+  mv $IPFILE $IPBAK
+  echo $IP > $IPFILE
+fi
+
+
