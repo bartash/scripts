@@ -1,0 +1,5 @@
+#! /bin/bash
+# log ip
+echo >> /home/asherman/Dropbox/tmp/enp0s31f6.log
+date >> /home/asherman/Dropbox/tmp/enp0s31f6.log
+ifconfig enp0s31f6 >> /home/asherman/Dropbox/tmp/enp0s31f6.log

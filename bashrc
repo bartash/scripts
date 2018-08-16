@@ -79,3 +79,5 @@ stt_title () { setTerminalText 2 $@; }
 set_title () { setTerminalText 2 $@; }
 # put set_title in machine .bashrc
 
+
+logip
