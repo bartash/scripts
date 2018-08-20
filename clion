@@ -3,7 +3,8 @@ if [ -z "$DISPLAY" ]; then
   export DISPLAY=:3
 fi
 
-CLION=`ls -td ~/bin/clion-*`
+# run newest clion
+CLION=`ls -td ~/bin/clion-* | head -1`
 
 # on gce I also had 
 # . $IMPALA_HOME/bin/set-classpath.sh
