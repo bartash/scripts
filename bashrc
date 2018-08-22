@@ -15,6 +15,9 @@ alias git_head='git symbolic-ref --short HEAD'
 
 alias exgrep='grep -I --exclude-dir=.git --exclude-dir=.m2 --exclude-dir=target --exclude=*.tgz --exclude=*.class --exclude=*.jar --exclude-dir=testdata --exclude-dir=toolchain'
 
+# https://unix.stackexchange.com/questions/85249/why-not-use-which-what-to-use-then
+alias which='command -v'
+
 # alias vvbtlinux43='vncserver -geometry 1450x980 :2'
 # alias vvb='vncserver -geometry 1900x1050  :1'
 # alias vv='vncserver -geometry 1900x1000  :1'
