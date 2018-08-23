@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# backup desktop
+cd ~/git/asf/Impala
+git fetch -v asherman-desktop
