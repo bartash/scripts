@@ -16,3 +16,5 @@ gbn-m2-settings.xml
 *.tmp
 .DS_Store
 *.swo
+*.cbp
+
