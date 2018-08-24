@@ -1,5 +1,5 @@
 #!/bin/bash
 #
 # classpath to paste into clion
-CP1=`ls /home/asherman/git/asf/Impala/fe/target/dependency/*.jar | tr "\n" ":"`
-echo "/home/asherman/git/asf/Impala/fe/target/classes:$CP1"
+CP1=`ls ${IMPALA_HOME}/fe/target/dependency/*.jar | tr "\n" ":"`
+echo "${IMPALA_HOME}/fe/target/classes:$CP1"
