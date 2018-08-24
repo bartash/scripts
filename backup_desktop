@@ -2,4 +2,4 @@
 #
 # backup desktop
 cd ~/git/asf/Impala
-git fetch -v asherman-desktop
+git remote update  asherman-desktop
