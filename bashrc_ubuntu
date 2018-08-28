@@ -3,6 +3,8 @@ export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
 export LC_ALL="en_US.UTF-8"
 
 a impala1='export IMPALA_HOME=$HOME/git/asf/Impala; . ~/scripts/my_impala.sh'
+a impala2='export IMPALA_HOME=$HOME/git/asf/Impala2; . ~/scripts/my_impala.sh'
+a impala3='export IMPALA_HOME=$HOME/git/asf/Impala3; . ~/scripts/my_impala.sh'
 
 # https://cwiki.apache.org/confluence/display/IMPALA/Using+Gerrit+to+submit+and+review+patches
 # says
