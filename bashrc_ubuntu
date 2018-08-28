@@ -1,22 +1,13 @@
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export IMPALA_HOME=$HOME/git/asf/Impala
 export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
 export LC_ALL="en_US.UTF-8"
 
-AAIMPALA_BIN=${IMPALA_HOME}/bin
-if [ -f "${AAIMPALA_BIN}/impala-config.sh" ]; then
-    . ${AAIMPALA_BIN}/impala-config.sh
-    export PATH="${AAIMPALA_BIN}:$PATH"
-fi
+a impala1='export IMPALA_HOME=$HOME/git/asf/Impala; . ~/scripts/my_impala.sh'
 
 # https://cwiki.apache.org/confluence/display/IMPALA/Using+Gerrit+to+submit+and+review+patches
 # says
 # set your "GERRIT_USER" environment variable to your Gerrit username
 export GERRIT_USER=bartash
-
-# start hadoop services
-alias run-all='$IMPALA_HOME/testdata/bin/run-all.sh'
-alias kill-all='$IMPALA_HOME/testdata/bin/kill-all.sh'
 
 
 export PATH=$PATH:$HOME/bin/dita-ot-3.1.1/bin
