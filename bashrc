@@ -23,7 +23,7 @@ alias which='command -v'
 # alias vv='vncserver -geometry 1900x1000  :1'
 alias vvlenovo='vncserver -geometry 1300x680 :3'
 alias vvmac='vncserver -geometry 2500x1460 :3'
-alias vvmacconsole='vncserver -geometry 1650x940 :3'
+alias vvmacconsole='vncserver -geometry 1650x940 :2'
 # alias ff='/scratch/apsherma/bin/firefox/firefox'
 
 alias unsethttp='unset http_proxy ; unset https_proxy'
