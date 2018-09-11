@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # List the most recently used branches
 # https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
@@ -7,27 +7,27 @@ if [ "$#" -eq 1 ]
 then
     if [[ $1 == -* ]] 
     then
-        AANEW=`echo "$1" | cut -c2-`
+        PARAM=`echo "$1" | cut -c2-`
     else
-        AANEW=$1
+        PARAM=$1
     fi
-    if [ "$AANEW" -eq "$AANEW" ] 2>/dev/null
+    if [ "$PARAM" -eq "$PARAM" ] 2>/dev/null
     then
-        # echo "$AANEW is an integer !!"
+        # echo "$PARAM is an integer !!"
         # number of branches to show
-        AANUM=$AANEW
+        NUM_BRANCHES=$PARAM
     else	
-	echo "parameter '$AANEW' is not an integer"
+	echo "parameter '$PARAM' is not an integer"
 	echo "usage: $0 [numberOfBranches]"
 	exit 1
     fi
 else
  # default is 10
- AANUM=10
+ NUM_BRANCHES=10
 fi
 
 # print current branch then a blank line before branch list
 echo `git rev-parse --abbrev-ref HEAD`
 echo
 
-git for-each-ref --count=$AANUM --sort=-committerdate refs/heads/ --format='%(refname:short)'
+git for-each-ref --count=$NUM_BRANCHES --sort=-committerdate refs/heads/ --format='%(refname:short)'
