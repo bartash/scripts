@@ -10,10 +10,11 @@ unset IMPALA_LZO
 unset METASTORE_DB
 unset SENTRY_POLICY_DB
 
-AAIMPALA_BIN=${IMPALA_HOME}/bin
-if [ -f "${AAIMPALA_BIN}/impala-config.sh" ]; then
-    . ${AAIMPALA_BIN}/impala-config.sh
-    export PATH="${AAIMPALA_BIN}:$PATH"
+IMPALA_BIN=${IMPALA_HOME}/bin
+if [ -f "${IMPALA_BIN}/impala-config.sh" ]; then
+    . ${IMPALA_BIN}/impala-config.sh
+    export PATH="${IMPALA_BIN}:${PATH}"
+    export PATH="${IMPALA_HOME}/toolchain/llvm-5.0.1-p1/bin:${PATH}"
 fi
 # start hadoop services
 
