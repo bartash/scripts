@@ -15,8 +15,9 @@ if [ -f "${IMPALA_BIN}/impala-config.sh" ]; then
     . ${IMPALA_BIN}/impala-config.sh
     export PATH="${IMPALA_BIN}:${PATH}"
     export PATH="${IMPALA_HOME}/toolchain/llvm-5.0.1-p1/bin:${PATH}"
+    export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}
 fi
-# start hadoop services
 
+# scripts to start and stop hadoop services
 alias run-all='$IMPALA_HOME/testdata/bin/run-all.sh'
 alias kill-all='$IMPALA_HOME/testdata/bin/kill-all.sh'
