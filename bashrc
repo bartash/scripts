@@ -18,6 +18,9 @@ alias exgrep='grep -I --exclude-dir=.git --exclude-dir=.m2 --exclude-dir=target 
 # https://unix.stackexchange.com/questions/85249/why-not-use-which-what-to-use-then
 alias which='command -v'
 
+# https://stackoverflow.com/questions/30247603
+alias amend='VISUAL="gvim -f" git commit --amend'
+
 # alias vvbtlinux43='vncserver -geometry 1450x980 :2'
 # alias vvb='vncserver -geometry 1900x1050  :1'
 # alias vv='vncserver -geometry 1900x1000  :1'
