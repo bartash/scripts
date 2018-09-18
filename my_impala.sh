@@ -21,3 +21,4 @@ fi
 # scripts to start and stop hadoop services
 alias run-all='$IMPALA_HOME/testdata/bin/run-all.sh'
 alias kill-all='$IMPALA_HOME/testdata/bin/kill-all.sh'
+alias stop-all=kill-all
