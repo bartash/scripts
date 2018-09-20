@@ -1,2 +1,2 @@
 # print the longest line and the line number
-awk 'length > max { max = length; num = NR ; line = $0} END { print num, line }'
+awk 'length > max { max = length; num = NR ; line = $0} END { printf "%s (line=%d len=%d)\n", line, num, max }'
