@@ -6,6 +6,8 @@ fi
 # run newest clion
 CLION=`ls -td ~/bin/clion-* | head -1`
 
+echo running $CLION
+
 # on gce I also had 
 # . $IMPALA_HOME/bin/set-classpath.sh
 
