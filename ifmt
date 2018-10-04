@@ -1,4 +1,4 @@
 #!/bin/sh
 # 
-# format for impala commits
+# ifmt: format for impala commits
 par -w72
