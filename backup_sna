@@ -1,6 +1,9 @@
 # backup website
 set -e
 
+DOMAIN=sunnysideassociation.wordpress.com
+SITE=https://${DOMAIN}/
+
 TARGET=g:/data/wget/sna
 if [ "$#" -eq 1 ]
 then
@@ -8,6 +11,6 @@ then
 fi
 
 cd $TARGET
-mv www.sunnysideassociation.org www.sunnysideassociation.org_$$
-wget --mirror -p --html-extension --convert-links http://www.sunnysideassociation.org/
+mv ${DOMAIN} ${DOMAIN}_$$
+wget --mirror -p --html-extension --convert-links $SITE
 
