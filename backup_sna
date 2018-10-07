@@ -1,0 +1,13 @@
+# backup website
+set -e
+
+TARGET=g:/data/wget/sna
+if [ "$#" -eq 1 ]
+then
+	TARGET=$1
+fi
+
+cd $TARGET
+mv www.sunnysideassociation.org www.sunnysideassociation.org_$$
+wget --mirror -p --html-extension --convert-links http://www.sunnysideassociation.org/
+
