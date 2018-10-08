@@ -24,7 +24,9 @@ echo SHORTAUTHOR is $SHORTAUTHOR
 MSG=`grep HIVE- $FILE | head -1 | sed 's/^ *//'`
 echo MSG is $MSG
 
-git commit --author="$AUTHOR" -m "${MSG} (${SHORTAUTHOR}, reviewed by Andrew Sherman)"
+COMMITTER=`git config user.name`
+
+git commit --author="$AUTHOR" -m "${MSG} (${SHORTAUTHOR}, reviewed by ${COMMITTER})"
 
 echo
 
