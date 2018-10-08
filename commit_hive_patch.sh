@@ -10,6 +10,12 @@ echo patch file is $FILE
 
 sh ./testutils/ptest2/src/main/resources/smart-apply-patch.sh $FILE
 AUTHOR=`grep Author: $FILE | sed 's/Author: //'`
+if [ -z "$AUTHOR" ]
+then
+    echo could not find AUTHOR
+    exit 1
+fi
+
 echo AUTHOR is $AUTHOR
 
 SHORTAUTHOR=`echo $AUTHOR | sed 's/<.*//' | sed 's/ *$//'`
