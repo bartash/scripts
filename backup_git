@@ -38,8 +38,7 @@ do
     echo $repos
     cd $repos
 
-    # should this be git remote update -p ??
-    git remote update
+    git remote update -p
 
     if [ -z "$GC" ]
     then
