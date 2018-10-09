@@ -39,6 +39,9 @@ do
     cd $repos
 
     # should this be git remote update -p ??
+    # that will remove branches that have been removed remotely
+    # That can prevent errors where people have recreated branches
+    # but means we don't keep a record of my branches forever.
     git remote update
 
     if [ -z "$GC" ]
