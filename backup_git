@@ -27,7 +27,7 @@ done
 # where backups are stored
 BACKUP_HOME=/Volumes/Elvis/backups
 
-cd $BACKUP_HOME || error_exit "cannot cd to $BACKUP_HOME"
+cd $BACKUP_HOME || error_exit "cannot cd to $BACKUP_HOME you may be on the wrong computer"
 
 # set REPO_NAMES to a list of repositories to to look at
 . $(dirname "$0")/repos.sh
