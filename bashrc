@@ -1,15 +1,17 @@
 # aliases
-alias ll='ls -l'
-alias la='ls -a'
-alias l='ls -F'
-alias h=history
-alias pu=pushd
-alias po=popd
 alias a=alias
+alias cl=clion
 alias cx='chmod a+x'
-alias fin='find . -type f -print  | fgrep -v /.git/ | fgrep -v .class | fgrep -v /.m2/ > xref.all'
+alias h=history
+alias la='ls -a'
+alias ll='ls -l'
+alias l='ls -F'
+alias po=popd
+alias pu=pushd
 alias vf=cd
 alias xrags=xargs
+
+alias fin='find . -type f -print  | fgrep -v /.git/ | fgrep -v .class | fgrep -v /.m2/ > xref.all'
 
 alias git_head='git symbolic-ref --short HEAD'
 
@@ -21,7 +23,6 @@ alias which='command -v'
 # https://stackoverflow.com/questions/30247603
 alias amend='VISUAL="gvim -f" git commit --amend'
 
-# alias vvbtlinux43='vncserver -geometry 1450x980 :2'
 # alias vvb='vncserver -geometry 1900x1050  :1'
 # alias vv='vncserver -geometry 1900x1000  :1'
 alias vvlenovo='vncserver -geometry 1300x680 :3'
