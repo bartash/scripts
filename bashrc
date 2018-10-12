@@ -11,6 +11,10 @@ alias pu=pushd
 alias vf=cd
 alias xrags=xargs
 
+
+# visual diff (is on mac and linux)
+alias vdiff=gvimdiff
+
 alias fin='find . -type f -print  | fgrep -v /.git/ | fgrep -v .class | fgrep -v /.m2/ > xref.all'
 
 alias git_head='git symbolic-ref --short HEAD'
