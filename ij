@@ -5,4 +5,5 @@ fi
 
 IJ=`ls -td ~/bin/idea-IC-* | head -1`
 echo running $IJ
-$IJ/bin/idea.sh
+# allow ij diff file1 file2
+$IJ/bin/idea.sh $*
