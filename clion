@@ -11,4 +11,5 @@ echo running $CLION
 # on gce I also had 
 # . $IMPALA_HOME/bin/set-classpath.sh
 
-$CLION/bin/clion.sh
+# allow clion diff file1 file2
+$CLION/bin/clion.sh $*
