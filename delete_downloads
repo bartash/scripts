@@ -5,7 +5,6 @@ cd /cygdrive/g/downloads/newvuze
 
 if [ "$#" -ne 1 ]
 then
- echo "match a string in git diff output"
  echo "usage: $0 number_to_delete"
  exit 1
 fi
