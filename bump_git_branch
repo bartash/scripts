@@ -3,3 +3,9 @@
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 
 echo branch is $BRANCH
+
+PREFIX=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/' | awk '{print $1}'`
+SUFFIX=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/' | awk '{print $2}'`
+
+echo prefix = $PREFIX
+echo suffix = $SUFFIX
