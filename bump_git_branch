@@ -2,13 +2,13 @@
 
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 
-echo branch is $BRANCH
+echo current branch is $BRANCH
 
 PREFIX=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/' | awk '{print $1}'`
 SUFFIX=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/' | awk '{print $2}'`
 
-echo prefix = $PREFIX
-echo suffix = $SUFFIX
+# echo prefix = $PREFIX
+# echo suffix = $SUFFIX
 
 if [ -z "$SUFFIX" ]
 then
@@ -24,5 +24,8 @@ fi
 
 NEW=`expr $SUFFIX + 1`
 
-echo NEW = $NEW
-echo new branch = ${PREFIX}_${NEW}
+# echo NEW = $NEW
+NEW_BRANCH=${PREFIX}_${NEW}
+echo new branch = ${NEW_BRANCH}
+
+git checkout -b ${NEW_BRANCH}
