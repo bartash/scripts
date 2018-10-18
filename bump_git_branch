@@ -9,3 +9,20 @@ SUFFIX=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/' | awk '{print $2}'`
 
 echo prefix = $PREFIX
 echo suffix = $SUFFIX
+
+if [ -z "$SUFFIX" ]
+then
+    echo no suffix
+    exit 1
+fi
+
+if [ "$SUFFIX" -ne "$SUFFIX" ] 2>/dev/null
+then
+    echo "$SUFFIX is not an integer !!"
+    exit 1
+fi
+
+NEW=`expr $SUFFIX + 1`
+
+echo NEW = $NEW
+echo new branch = ${PREFIX}_${NEW}
