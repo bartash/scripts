@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# For branches of the form xxxx_dd checkout a branch of the form xxxx_dd++
 
 set -e
 
