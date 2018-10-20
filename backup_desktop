@@ -3,3 +3,7 @@
 # backup desktop
 cd ~/git/asf/Impala
 git remote update  asherman-desktop
+
+
+cd ~/git/kitchen/jenkins-master
+git remote update  asherman-desktop
