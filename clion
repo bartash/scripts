@@ -12,4 +12,4 @@ echo running $CLION
 # . $IMPALA_HOME/bin/set-classpath.sh
 
 # allow clion diff file1 file2
-$CLION/bin/clion.sh $*
+$CLION/bin/clion.sh $* |& grep -v 'Everything has changed'

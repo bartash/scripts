@@ -6,4 +6,4 @@ fi
 IJ=`ls -td ~/bin/idea-IC-* | head -1`
 echo running $IJ
 # allow ij diff file1 file2
-$IJ/bin/idea.sh $*
+$IJ/bin/idea.sh $* |& grep -v 'Everything has changed'
