@@ -7,8 +7,9 @@ BRANCH=`git rev-parse --abbrev-ref HEAD`
 
 echo current branch is $BRANCH
 
-PREFIX=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/' | awk '{print $1}'`
-SUFFIX=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/' | awk '{print $2}'`
+PARSED_BRANCH=`echo $BRANCH | sed 's/\(.*\)_\(\d*\)/\1 \2/'`
+PREFIX=`echo ${PARSED_BRANCH} | awk '{print $1}'`
+SUFFIX=`echo ${PARSED_BRANCH} | awk '{print $2}'`
 
 # echo prefix = $PREFIX
 # echo suffix = $SUFFIX
