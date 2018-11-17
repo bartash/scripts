@@ -2,15 +2,21 @@
 set -e
 
 DOMAIN=sunnysideassociation.wordpress.com
+IMAGE_DOMAIN=sunnysideassociation.files.wordpress.com
 SITE=https://${DOMAIN}/
 
-TARGET=g:/data/wget/sna
+TARGET=g:/data/wget/sna_images
 if [ "$#" -eq 1 ]
 then
 	TARGET=$1
 fi
 
 cd $TARGET
-mv ${DOMAIN} ${DOMAIN}_$$
+# mv ${DOMAIN} ${DOMAIN}_$$
+
+# https://superuser.com/questions/129085/make-wget-download-page-resources-on-a-different-domain
 wget --mirror -p --html-extension --convert-links $SITE
+wget --mirror -p --html-extension --convert-links --span-hosts  --domains=$DOMAIN,$IMAGE_DOMAIN $SITE
+# wget --recursive --level=inf --page-requisites --convert-links \
+     # --adjust-extension --span-hosts --domains=$DOMAIN,domainB domainA
 
