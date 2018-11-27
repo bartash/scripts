@@ -4,6 +4,13 @@ if [ -z "$DISPLAY" ]; then
 fi
 
 IJ=`ls -td ~/bin/idea-IC-* | head -1`
+
+if [ -z "$IJ" ];
+then
+   echo no intellij in bin
+   exit 1
+fi
+
 echo running $IJ
 # allow ij diff file1 file2
 $IJ/bin/idea.sh $* |& grep -v 'Everything has changed'

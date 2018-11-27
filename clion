@@ -6,6 +6,12 @@ fi
 # run newest clion
 CLION=`ls -td ~/bin/clion-* | head -1`
 
+if [ -z "$CLION" ];
+then
+   echo no clion in bin
+   exit 1
+fi
+
 echo running $CLION
 
 # on gce I also had 
