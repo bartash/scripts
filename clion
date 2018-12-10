@@ -12,6 +12,13 @@ then
    exit 1
 fi
 
+if [ "$#" -ge 5 ]
+then
+    # prevent 'cl *' which really sucks
+	echo "$0: too many arguments, are you sure?"
+	exit 1;
+fi
+
 echo running $CLION
 
 # on gce I also had 

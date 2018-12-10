@@ -11,6 +11,13 @@ then
    exit 1
 fi
 
+if [ "$#" -ge 5 ]
+then
+    # prevent 'ij *' which really sucks
+	echo "$0: too many arguments, are you sure?"
+	exit 1;
+fi
+
 echo running $IJ
 # allow ij diff file1 file2
 $IJ/bin/idea.sh $* |& grep -v 'Everything has changed'
