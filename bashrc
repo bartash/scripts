@@ -49,6 +49,7 @@ export HISTSIZE=50000
 # Maximum number of history lines on disk
 export HISTFILESIZE=50000
 # Ignore duplicate lines
+export HISTCONTROL=ignoredups
 ## export HISTCONTROL=ignoredups:erasedups
 # When the shell exits, append to the history file 
 #  instead of overwriting it
