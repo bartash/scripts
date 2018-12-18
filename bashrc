@@ -26,6 +26,8 @@ alias which='command -v'
 
 # https://stackoverflow.com/questions/30247603
 alias amend='VISUAL="gvim -f" git commit --amend'
+# sublime text
+alias samend='VISUAL="subl -w" git commit --amend'
 
 # alias vvb='vncserver -geometry 1900x1050  :1'
 # alias vv='vncserver -geometry 1900x1000  :1'
