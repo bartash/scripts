@@ -1,0 +1,10 @@
+#
+# print long lines in last commit
+#
+AFILES=/tmp/ll$$
+git show --pretty="" --name-only > $AFILES
+for i in `cat $AFILES`; 
+do 
+	echo $i
+	git show $i | grep ^+ | awk 'length > 90' 
+done
