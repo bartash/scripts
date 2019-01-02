@@ -1,10 +1,13 @@
 #
 # print long lines in last commit
 #
-AFILES=/tmp/ll$$
+AFILES=/tmp/longl$$
 git show --pretty="" --name-only > $AFILES
 for i in `cat $AFILES`; 
 do 
-	echo $i
-	git show $i | grep ^+ | awk 'length > 90' 
+	long=`git show $i | grep ^+ | awk 'length > 90'`
+	if [ ! -z "$long" ]; then 
+		echo "**** $i has long lines ****"
+		echo $long
+	fi
 done
