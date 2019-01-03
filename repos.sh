@@ -16,6 +16,7 @@ REPO_NAMES=( \
     kitchen/cloudcat-hive-ptest.git \
     kitchen/cloudstack-reporting.git \
     scripts.git \
+    scripts-asherman-desktop.git \
     ssh.git \
     starship/cmf.git \
     )
