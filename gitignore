@@ -9,6 +9,7 @@ itests/tmp_*
 itests/qtest/tmp_*
 xref.all
 ?oo
+bar
 .m2
 .idea
 *.iml
