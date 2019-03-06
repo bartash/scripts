@@ -19,4 +19,5 @@ gbn-m2-settings.xml
 *.swo
 *.cbp
 .swp
+metastore_db
 
