@@ -1,6 +1,7 @@
 # set REPO_NAMES to a list of repositories to to look at
 REPO_NAMES=( \
     asf/Impala.asherman-desktop.git \
+    asf/Impala.andrew-desktop.git \
     asf/hive.git  \
     asf/hive2.git  \
     cdh/hive.git \
