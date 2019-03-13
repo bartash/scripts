@@ -5,8 +5,10 @@ export LC_ALL="en_US.UTF-8"
 a impala1='export IMPALA_HOME=$HOME/git/asf/Impala; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
 a impala2='export IMPALA_HOME=$HOME/git/asf/Impala2; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
 a impala3='export IMPALA_HOME=$HOME/git/asf/Impala3; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
-a impala_cdh='export IMPALA_HOME=$HOME/git/cdh/Impala; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
-a cdh_impala=impala_cdh
+a impala_cdh1='export IMPALA_HOME=$HOME/git/cdh/Impala; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
+a cdh_impala1=impala_cdh1
+a impala_cdh2='export IMPALA_HOME=$HOME/git/cdh/Impala2; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
+a cdh_impala2=impala_cdh2
 
 # https://cwiki.apache.org/confluence/display/IMPALA/Using+Gerrit+to+submit+and+review+patches
 # says
