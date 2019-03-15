@@ -10,6 +10,7 @@ SRC_REPOS=( \
     asf/Impala2 \
     asf/Impala3 \
     cdh/Impala \
+    cdh/Impala2 \
     )
 
 for repoName in "${SRC_REPOS[@]}"
