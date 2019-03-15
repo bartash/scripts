@@ -19,6 +19,9 @@ alias fin='find . -type f -print  | fgrep -v /.git/ | fgrep -v .class | fgrep -v
 
 alias git_head='git symbolic-ref --short HEAD'
 
+# git log with subject only (git log--pretty=oneine has hash)
+alias git1='git log --pretty=%s --no-decorate'
+
 alias exgrep='grep -I --exclude-dir=.git --exclude-dir=.m2 --exclude-dir=target --exclude=*.tgz --exclude=*.class --exclude=*.jar --exclude-dir=testdata --exclude-dir=toolchain --exclude-dir=.idea'
 
 # https://unix.stackexchange.com/questions/85249/why-not-use-which-what-to-use-then
