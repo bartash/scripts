@@ -9,7 +9,9 @@ alias l='ls -F'
 alias po=popd
 alias pu=pushd
 alias vf=cd
+# I cannot type
 alias xrags=xargs
+alias gti=git
 
 
 # visual diff (is on mac and linux)
