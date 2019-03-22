@@ -20,9 +20,6 @@ alias bl='./beeline -u jdbc:hive2://localhost:10000/default -n asherman -p hive'
 # https://cwiki.apache.org/confluence/display/Hive/Running+Yetus
 export FINDBUGS_HOME=~/bin/findbugs-3.0.1/
 
-# make patch as described in https://wiki.cloudera.com/display/~vihang/Hive+Developer+Environment+Setup
-alias make_patch='git show --full-index --no-prefix'
-
 #	curl http://github.mtv.cloudera.com/raw/CDH/cdh/cdh6.x/gbn-m2-settings.xml > gbn-m2-settings.xml
 #
 #	To build your CDH component against a specific

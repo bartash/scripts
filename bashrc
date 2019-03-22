@@ -43,6 +43,9 @@ alias vvmacconsole='vncserver -geometry 1650x940 :2'
 
 alias unsethttp='unset http_proxy ; unset https_proxy'
 
+# make patch as described in https://wiki.cloudera.com/display/~vihang/Hive+Developer+Environment+Setup
+alias make_patch='git show --full-index --no-prefix'
+
 # needs bash v4
 # https://superuser.com/questions/857250/how-to-update-bash-on-mac-os-x-yosemite
 PROMPT_DIRTRIM=3
