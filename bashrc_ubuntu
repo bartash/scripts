@@ -21,3 +21,5 @@ export PATH=$PATH:$HOME/bin/dita-ot-3.1.1/bin
 # the default vnc client, already installed
 alias vnc=remmina
 
+# set this by default so the native toolchain build will not fail at the end
+export PUBLISH_DEPENDENCIES=0
