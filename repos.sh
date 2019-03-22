@@ -21,4 +21,5 @@ REPO_NAMES=( \
     ssh.git \
     starship/cmf.git \
     autopatch.config.git \
+    cloudera/native-toolchain.git \
     )
