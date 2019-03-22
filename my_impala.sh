@@ -2,7 +2,7 @@ if [ -z "$IMPALA_HOME" ]; then
     echo "Need to set IMPALA_HOME"
     return 1
 fi  
-unset IMPALA_TOOLCHAIN
+# unset IMPALA_TOOLCHAIN
 unset IMPALA_LOGS_DIR
 unset IMPALA_AUX_TEST_HOME
 unset HADOOP_LZO
