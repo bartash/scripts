@@ -34,11 +34,9 @@ alias amend='VISUAL="gvim -f" git commit --amend'
 # sublime text
 alias samend='VISUAL="subl -w" git commit --amend'
 
-# alias vvb='vncserver -geometry 1900x1050  :1'
-# alias vv='vncserver -geometry 1900x1000  :1'
-alias vvlenovo='vncserver -geometry 1300x680 :1'
-alias vvmac='vncserver -geometry 2500x1460 :3'
-alias vvmacconsole='vncserver -geometry 1650x940 :2'
+alias vvlenovo='env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS vncserver -geometry 1300x680 :1'
+alias vvmac='env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS vncserver -geometry 2500x1460 :3'
+alias vvmacconsole='env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS vncserver -geometry 1650x940 :2'
 # alias ff='/scratch/apsherma/bin/firefox/firefox'
 
 alias unsethttp='unset http_proxy ; unset https_proxy'
