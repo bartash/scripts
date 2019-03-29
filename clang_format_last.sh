@@ -14,6 +14,9 @@ then
 fi
 
 # see https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=65868536
-git diff -U0 --no-color "$AARG"^ | "${IMPALA_TOOLCHAIN}/llvm-${IMPALA_LLVM_VERSION}/share/clang/clang-format-diff.py" -binary "${IMPALA_TOOLCHAIN}/llvm-${IMPALA_LLVM_VERSION}/bin/clang-format" -style=file -p1 -i -v
+git diff -U0 --no-color "$AARG"^ | \
+	"${IMPALA_TOOLCHAIN}/llvm-${IMPALA_LLVM_VERSION}/share/clang/clang-format-diff.py" \
+	-binary "${IMPALA_TOOLCHAIN}/llvm-${IMPALA_LLVM_VERSION}/bin/clang-format" \
+	-style=file -p1 -i -v
 
 print_long_lines_in_commit
