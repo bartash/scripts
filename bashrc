@@ -44,6 +44,8 @@ alias unsethttp='unset http_proxy ; unset https_proxy'
 # make patch as described in https://wiki.cloudera.com/display/~vihang/Hive+Developer+Environment+Setup
 alias make_patch='git show --full-index --no-prefix'
 
+alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
+
 # get aws creds per https://wiki.cloudera.com/pages/viewpage.action?pageId=68501666
 alias get_aws='source <(ssh -o "StrictHostKeyChecking=no" s3@cloudcat.infra.cloudera.com impaladev --style env); export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN;'
 
