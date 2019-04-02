@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/ImpalaJDBC41.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/TCLIServiceClient.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/commons-codec-1.3.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/commons-logging-1.1.1.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/hive_metastore.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/hive_service.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/httpclient-4.1.3.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/httpcore-4.1.3.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/libfb303-0.9.0.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/libthrift-0.9.0.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/log4j-1.2.14.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/ql.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/slf4j-api-1.5.11.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/slf4j-log4j12-1.5.11.jar,/home/tarmstrong/Downloads/ClouderaImpalaJDBC_2.5.43.1063/ClouderaImpalaJDBC41_2.5.43/zookeeper-3.4.6.jar</stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="ppl" enabled="true">
+        <stringProp name="TestPlan.comments">
+</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <longProp name="ThreadGroup.start_time">1523320957000</longProp>
+        <longProp name="ThreadGroup.end_time">1523320957000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Impalad1" enabled="true">
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">select version()</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="dataSource">impalad1</stringProp>
+          <stringProp name="dbUrl">jdbc:impala://localhost:21050/</stringProp>
+          <stringProp name="driver">com.cloudera.impala.jdbc41.Driver</stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password"></stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Impalad2" enabled="true">
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">select version()</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="dataSource">impalad2</stringProp>
+          <stringProp name="dbUrl">jdbc:impala://localhost:21051/</stringProp>
+          <stringProp name="driver">com.cloudera.impala.jdbc41.Driver</stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password"></stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Impalad3" enabled="true">
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">select version()</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="dataSource">impalad3</stringProp>
+          <stringProp name="dbUrl">jdbc:impala://localhost:21052/</stringProp>
+          <stringProp name="driver">com.cloudera.impala.jdbc41.Driver</stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password"></stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request" enabled="true">
+          <stringProp name="dataSource">impalad1</stringProp>
+          <stringProp name="query">/*pool1*/
+select * from functional_parquet.alltypes order by random() limit 1</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request" enabled="true">
+          <stringProp name="dataSource">impalad2</stringProp>
+          <stringProp name="query">/*pool2*/
+select * from functional_parquet.alltypes order by random() limit 2</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request" enabled="true">
+          <stringProp name="dataSource">impalad3</stringProp>
+          <stringProp name="query">/*pool3*/
+select * from functional_parquet.alltypes order by random() limit 3</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
