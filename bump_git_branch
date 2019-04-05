@@ -33,3 +33,4 @@ NEW_BRANCH=${PREFIX}_${NEW_SUFFIX}
 echo new branch = ${NEW_BRANCH}
 
 git checkout -b ${NEW_BRANCH}
+
