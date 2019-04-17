@@ -20,6 +20,7 @@ rsync -av \
     --exclude  'IndexedDB' \
     --exclude  'File System' \
     --exclude  'Pepper Data' \
+    --exclude  'Azureus' \
     --exclude  'Extensions' \
     --exclude  'Plex Media Server' \
     --delete --ignore-errors ${SOURCE_VOL} ${BACKUP_VOL}/back
