@@ -21,6 +21,7 @@ rsync -av \
     --exclude  'File System' \
     --exclude  'Pepper Data' \
     --exclude  'Extensions' \
+    --exclude  'Plex Media Server' \
     --delete --ignore-errors ${SOURCE_VOL} ${BACKUP_VOL}/back
 
 rsync -av --delete --ignore-errors ~/Incoming ${BACKUP_VOL}/back
