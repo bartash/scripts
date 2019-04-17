@@ -28,6 +28,7 @@ rsync -av --exclude '*.lnk' \
     --exclude  'File System' \
     --exclude  'Pepper Data' \
     --exclude  'Azureus' \
+    --exclude  'cache2' \
     --exclude  'Extensions' \
     --exclude  'Plex Media Server' \
     --delete  --no-owner --no-group   c/Users $BACK/backup

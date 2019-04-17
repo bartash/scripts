@@ -22,6 +22,7 @@ rsync -av --delete \
     --exclude  'File System' \
     --exclude  'Pepper Data' \
     --exclude  'Azureus' \
+    --exclude  'cache2' \
     --exclude  'Extensions' \
     --exclude  'Plex Media Server' \
     --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
