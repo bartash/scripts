@@ -16,7 +16,15 @@ else
 	echo found ${SOURCE_VOL}
 fi
 # copy from home (Blondie) to Elvis
-rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
+rsync -av --delete \
+    --exclude  '*Cache*' \
+    --exclude  'IndexedDB' \
+    --exclude  'File System' \
+    --exclude  'Pepper Data' \
+    --exclude  'Azureus' \
+    --exclude  'Extensions' \
+    --exclude  'Plex Media Server' \
+    --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
 # copy itunes back
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
 
