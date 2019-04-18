@@ -1,2 +1,3 @@
 alias gvim='C:/Program\ Files\ \(x86\)/Vim/vim80/gvim.exe'
 alias subl="C:/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"
+export SUBL="C:/Program\ Files/Sublime\ Text\ 3/sublime_text.exe"

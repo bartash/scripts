@@ -17,6 +17,7 @@ alias find=gfind
 alias bl='./beeline -u jdbc:hive2://localhost:10000/default -n asherman -p hive'
 
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+export SUBL='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 alias gvim='/usr/local/Cellar/macvim/8.1-155/bin/gvim'
 

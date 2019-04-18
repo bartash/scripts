@@ -23,3 +23,5 @@ alias vnc=remmina
 
 # set this by default so the native toolchain build will not fail at the end
 export PUBLISH_DEPENDENCIES=0
+
+export SUBL=/usrt/bin/subl
