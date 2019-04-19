@@ -1,3 +1,6 @@
 #
 # https://superuser.com/questions/647396/reload-mac-audio-drivers-without-rebooting
 ps aux | grep 'coreaudio[d]' | awk '{print $2}' | xargs sudo kill
+
+# Lars says:
+# sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`
