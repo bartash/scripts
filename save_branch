@@ -1,0 +1,12 @@
+# make a save branch 
+
+set -e
+
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+echo current branch is $BRANCH
+
+NEW_BRANCH=${BRANCH}_save
+git checkout -b ${NEW_BRANCH}
+# echo new branch = ${NEW_BRANCH}
+git checkout -
+
