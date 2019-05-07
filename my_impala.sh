@@ -24,3 +24,11 @@ alias kill-all='$IMPALA_HOME/testdata/bin/kill-all.sh'
 alias stop-all=kill-all
 alias stop-impala-cluster='start-impala-cluster.py --kill'
 alias ihome="cd $IMPALA_HOME"
+
+# https://cloudera.atlassian.net/wiki/spaces/XENG/pages/86147111/Tips+for+Faster+Impala+Builds
+export BUILD_FARM="vc0332.halxg.cloudera.com/96,lzo vc0336.halxg.cloudera.com/96,lzo"
+source "${IMPALA_HOME}"/bin/distcc/distcc_env.sh
+# May be required to update the build parallelism if you changed BUILD_FARM.
+switch_compiler distcc
+# sudo ln -s $IMPALA_HOME/toolchain /opt/Impala-Toolchain
+
