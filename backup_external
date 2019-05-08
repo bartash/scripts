@@ -32,6 +32,7 @@ rsync -av --exclude '*.lnk' \
     --exclude  'Azureus' \
     --exclude  'cache2' \
     --exclude  'Extensions' \
+    --exclude  'ConstraintIndex' \
     --exclude  'CertificateTransparency' \
     --exclude  'Plex Media Server' \
     --delete  --no-owner --no-group   c/Users $BACK/backup
