@@ -32,6 +32,7 @@ rsync -av --exclude '*.lnk' \
     --exclude  'Azureus' \
     --exclude  'cache2' \
     --exclude  'Extensions' \
+    --exclude  'Temp' \
     --exclude  'ConstraintIndex' \
     --exclude  'CertificateTransparency' \
     --exclude  'Plex Media Server' \
