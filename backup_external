@@ -22,6 +22,8 @@ fi
 
 rsync -av --exclude '*.lnk' --delete  --no-owner --no-group   $SOURCE/data $BACK/backup
 
+rsync -av --exclude '*.lnk' --delete  --no-owner --no-group  $BACK/andrew_itunes $SOURCE
+
 rsync -av --exclude '*.lnk' \
     --exclude  '*Cache*' \
     --exclude  'IndexedDB' \
@@ -32,8 +34,6 @@ rsync -av --exclude '*.lnk' \
     --exclude  'Extensions' \
     --exclude  'Plex Media Server' \
     --delete  --no-owner --no-group   c/Users $BACK/backup
-
-rsync -av --exclude '*.lnk' --delete  --no-owner --no-group  $BACK/andrew_itunes $SOURCE
 
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd $BACK
 
