@@ -26,7 +26,8 @@ alias stop-impala-cluster='start-impala-cluster.py --kill'
 alias ihome="cd $IMPALA_HOME"
 
 # https://cloudera.atlassian.net/wiki/spaces/ENG/pages/100832437/Tips+for+Faster+Impala+Builds
-export BUILD_FARM="vc0332.halxg.cloudera.com/96,lzo vc0336.halxg.cloudera.com/96,lzo 172.16.34.44/8,lzo"
+# export BUILD_FARM="vc0332.halxg.cloudera.com/96,lzo vc0336.halxg.cloudera.com/96,lzo 172.16.34.252/16,lzo impala-desktop.pa.cloudera.com/16,lzo impala-distcc-server.gce.cloudera.com/16,lzo 172.16.34.44/8,lzo"
+export BUILD_FARM="vc0332.halxg.cloudera.com/96,lzo vc0336.halxg.cloudera.com/96,lzo 172.16.34.252/16,lzo impala-desktop.pa.cloudera.com/16,lzo 172.16.34.44/8,lzo"
 source "${IMPALA_HOME}"/bin/distcc/distcc_env.sh
 # May be required to update the build parallelism if you changed BUILD_FARM.
 switch_compiler distcc
