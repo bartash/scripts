@@ -4,7 +4,7 @@ if [ -z "$DISPLAY" ]; then
 fi
 
 if [ $IMPALA_HOME ]; then
-    echo plaese use clion
+    echo please use clion
     exit 1
 fi
 
