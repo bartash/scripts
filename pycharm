@@ -3,6 +3,11 @@ if [ -z "$DISPLAY" ]; then
   export DISPLAY=:3
 fi
 
+if [ $IMPALA_HOME ]; then
+    echo plaese use clion
+    exit 1
+fi
+
 cd $IMPALA_HOME
 
 set -euo pipefail
