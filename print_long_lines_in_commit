@@ -5,7 +5,7 @@ AFILES=/tmp/longl$$
 git show --pretty="" --name-only > $AFILES
 for i in `cat $AFILES`; 
 do 
-	long=`git show $i | grep ^+ | awk 'length > 91'`
+	long=`git show $i | grep -v +++  | grep ^+ | awk 'length > 91'`
 	if [ ! -z "$long" ]; then 
 		echo "**** $i has long lines ****"
 		echo $long
