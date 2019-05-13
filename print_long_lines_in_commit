@@ -2,7 +2,7 @@
 # print long lines in last commit
 #
 AFILES=/tmp/longl$$
-git show --pretty="" --name-only > $AFILES
+git show --pretty="" --name-only | grep -v metrics.json  > $AFILES
 for i in `cat $AFILES`; 
 do 
 	long=`git show $i | grep -v +++  | grep ^+ | awk 'length > 91'`
