@@ -2,6 +2,7 @@
 REPO_NAMES=( \
     asf/Impala.asherman-desktop.git \
     asf/Impala.andrew-desktop.git \
+    cloudera/native-toolchain.git \
     asf/hive.git  \
     asf/hive2.git  \
     cdh/hive.git \
@@ -21,5 +22,4 @@ REPO_NAMES=( \
     ssh.git \
     starship/cmf.git \
     autopatch.config.git \
-    cloudera/native-toolchain.git \
     )

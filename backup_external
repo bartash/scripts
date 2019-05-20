@@ -32,6 +32,7 @@ rsync -av --exclude '*.lnk' \
     --exclude  'Azureus' \
     --exclude  'cache2' \
     --exclude  'Extensions' \
+    --exclude  'CertificateRevocation' \
     --exclude  'Temp' \
     --exclude  'ConstraintIndex' \
     --exclude  'CertificateTransparency' \
