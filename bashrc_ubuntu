@@ -26,5 +26,3 @@ export PUBLISH_DEPENDENCIES=0
 
 export SUBL=/usr/bin/subl
 
-# https://github.com/scheib/chromium-latest-linux.git
-alias chromium='cd ~/git/chromium-latest-linux; ./update-and-run.sh'
