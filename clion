@@ -27,8 +27,14 @@ echo running $CLION
 cd $IMPALA_HOME
 
 set -euo pipefail
-. $IMPALA_HOME/bin/report_build_error.sh
-setup_report_build_error
+
+if [ -f $IMPALA_HOME/bin/report_build_error.sh ] 
+then
+    . $IMPALA_HOME/bin/report_build_error.sh
+    setup_report_build_error
+else
+    echo "no report_build_error (expected on branches older than 2018)"
+fi
    
 . $IMPALA_HOME/bin/set-pythonpath.sh
 
