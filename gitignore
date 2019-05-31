@@ -20,4 +20,5 @@ gbn-m2-settings.xml
 *.cbp
 .swp
 metastore_db
+.vscode
 
