@@ -49,6 +49,9 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 # get aws creds per https://wiki.cloudera.com/pages/viewpage.action?pageId=68501666
 alias get_aws='source <(ssh -o "StrictHostKeyChecking=no" s3@cloudcat.infra.cloudera.com impaladev --style env); export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN;'
 
+# use 'tmux detach' to detach 
+alias autopatch="ssh -t autopatch-local.vpc.cloudera.com \"tmux attach || tmux new\""
+
 # needs bash v4
 # https://superuser.com/questions/857250/how-to-update-bash-on-mac-os-x-yosemite
 PROMPT_DIRTRIM=3
