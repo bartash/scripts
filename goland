@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+if [ -z "$DISPLAY" ]; then
+  # for cloudcat machines
+  export DISPLAY=:3
+fi
+
+# run newest clion
+GOLAND=`ls -td ~/bin/GoLand-* | head -1`
+
+if [ -z "$GOLAND" ];
+then
+   echo no goland in bin
+   exit 1
+fi
+
+if [ "$#" -ge 5 ]
+then
+    # prevent 'goland *' which really sucks
+	echo "$0: too many arguments, are you sure?"
+	exit 1;
+fi
+
+echo running $GOLAND
+
+# allow goland diff file1 file2
+$GOLAND/bin/goland.sh $*
