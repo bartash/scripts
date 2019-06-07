@@ -47,4 +47,4 @@ python "$PY_DIR/bootstrap_virtualenv.py"
 
 
 # allow clion diff file1 file2
-$CLION/bin/clion.sh $* |& grep -v 'Everything has changed'
+$CLION/bin/clion.sh $*
