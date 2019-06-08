@@ -2,6 +2,8 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
 export LC_ALL="en_US.UTF-8"
 
+export GOROOT=/usr/local/go
+
 a impala1='export IMPALA_HOME=$HOME/git/asf/Impala; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
 a impala2='export IMPALA_HOME=$HOME/git/asf/Impala2; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
 a impala3='export IMPALA_HOME=$HOME/git/asf/Impala3; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
@@ -25,4 +27,6 @@ alias vnc=remmina
 export PUBLISH_DEPENDENCIES=0
 
 export SUBL=/usr/bin/subl
+
+alias stingo='export GOPATH=$HOME/git/bartash/stingo; . ~/scripts/gosetup.sh; cd $GOPATH'
 
