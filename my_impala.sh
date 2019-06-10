@@ -45,7 +45,6 @@ asherman-desktop*)
 
 *)
   echo "not enabling distcc"
-  exit 1
   ;;
 esac
 
