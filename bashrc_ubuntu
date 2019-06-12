@@ -2,6 +2,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
 export LC_ALL="en_US.UTF-8"
 
+# on ubuntu, go is in /usr/local
 export GOROOT=/usr/local/go
 
 a impala1='export IMPALA_HOME=$HOME/git/asf/Impala; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
@@ -29,4 +30,6 @@ export PUBLISH_DEPENDENCIES=0
 export SUBL=/usr/bin/subl
 
 alias stingo='export GOPATH=$HOME/git/bartash/stingo; . ~/scripts/gosetup.sh; cd $GOPATH'
+# for dwx GOPATH does not matter
+alias dwx1='export GOPATH=$HOME/git/go; export GO111MODULE=on ; export DWX_HOME=~/git/cdh/dwx ;. ~/scripts/gosetup.sh; cd $DWX_HOME'
 
