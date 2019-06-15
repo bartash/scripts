@@ -34,7 +34,7 @@ alias amend='VISUAL="gvim -f" git commit --amend'
 # sublime text
 alias samend='VISUAL="$SUBL -w" git commit --amend'
 
-alias vvlenovo='env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS vncserver -geometry 1300x680 :1'
+alias vvlenovo='env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS vncserver -geometry 1350x700 :1'
 alias vvmac='env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS vncserver -geometry 2500x1460 :3'
 alias vvmacconsole='env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS vncserver -geometry 1650x940 :2'
 # alias ff='/scratch/apsherma/bin/firefox/firefox'
