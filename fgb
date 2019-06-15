@@ -3,8 +3,12 @@ import urllib, json
 url = "https://layer.bicyclesharing.net/map/v1/fgb/map-inventory"
 response = urllib.urlopen(url)
 data = json.loads(response.read())
-print data
 features = data["features"]
-print features
 for x in features:
-  print x['properties']['station']['name']
+  # print x['properties']['station']['name']
+  if x['properties']:
+    if x['properties']['station']:
+      if 'Gennessee' in x['properties']['station']['name']:
+        print x['properties']['station']['name']
+        print x['properties']['station']['bikes_available']
+
