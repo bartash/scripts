@@ -9,6 +9,5 @@ for x in features:
   if x['properties']:
     if 'station' in x['properties']:
       if 'Gennessee' in x['properties']['station']['name']:
-        print x['properties']['station']['name']
-        print x['properties']['station']['bikes_available']
+        print ("{} at {}".format(x['properties']['station']['bikes_available'], x['properties']['station']['name']))
 
