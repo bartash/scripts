@@ -5,11 +5,11 @@ response = urllib.urlopen(url)
 data = json.loads(response.read())
 features = data["features"]
 for x in features:
-  # print x['properties']['station']['name']
-  if x['properties']:
+  if 'properties' in x:
     if 'station' in x['properties']:
-      station_name = x['properties']['station']['name']
-      bikes_available = x['properties']['station']['bikes_available']
+      station = x['properties']['station']
+      station_name = station['name']
+      bikes_available = station['bikes_available']
       if 'Gennessee' in station_name:
         print ("{:2d} at {}".format(bikes_available, station_name))
 
