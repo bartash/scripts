@@ -8,7 +8,8 @@ for x in features:
   # print x['properties']['station']['name']
   if x['properties']:
     if 'station' in x['properties']:
-      if 'Gennessee' in x['properties']['station']['name']:
-        print ("{:2d} at {}".format(x['properties']['station']['bikes_available'],
-                                    x['properties']['station']['name']))
+      station_name = x['properties']['station']['name']
+      bikes_available = x['properties']['station']['bikes_available']
+      if 'Gennessee' in station_name:
+        print ("{:2d} at {}".format(bikes_available, station_name))
 
