@@ -7,7 +7,7 @@ features = data["features"]
 for x in features:
   # print x['properties']['station']['name']
   if x['properties']:
-    if x['properties']['station']:
+    if 'station' in x['properties']:
       if 'Gennessee' in x['properties']['station']['name']:
         print x['properties']['station']['name']
         print x['properties']['station']['bikes_available']
