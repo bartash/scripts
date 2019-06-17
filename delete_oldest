@@ -1,0 +1,25 @@
+# delete oldest files in current directory, in a somewhat friendly manner
+
+set -e
+
+if [ "$#" -ne 1 ]
+then
+ echo "usage: $0 number_to_delete"
+ exit 1
+fi
+NUM=$1
+
+echo about to delete
+echo
+ls -t | tail -${NUM} 
+echo
+
+read -p "Press enter to continue"
+
+ls -t | tail -${NUM} | while read file 
+do
+	echo deleting $file
+	rm -rf "$file"
+done
+
+
