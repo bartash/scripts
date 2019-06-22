@@ -3,6 +3,7 @@ REPO_NAMES=( \
     asf/Impala.asherman-desktop.git \
     asf/Impala.andrew-desktop.git \
     cloudera/native-toolchain.git \
+    edws.asherman.git  \
     asf/hive.git  \
     asf/hive2.git  \
     cdh/hive.git \
