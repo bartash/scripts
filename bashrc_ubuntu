@@ -33,3 +33,4 @@ alias stingo='export GOPATH=$HOME/git/bartash/stingo; . ~/scripts/gosetup.sh; cd
 # for dwx GOPATH does not matter
 alias dwx1='export GOPATH=$HOME/git/go; export GO111MODULE=on ; export DWX_HOME=$GOPATH/src/github.com/hortonworks/edws ;. ~/scripts/gosetup.sh; cd $DWX_HOME'
 
+alias k=kubectl
