@@ -1,0 +1,8 @@
+
+# https://github.com/scheib/chromium-latest-linux.git
+cd ~/git/chromium-latest-linux;
+./update.sh
+case "$DISPLAY" in
+ *:0) ./run2.sh ;;
+ *) ./run.sh ;;
+esac
