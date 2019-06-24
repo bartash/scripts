@@ -1,3 +1,6 @@
 #
-while (true) ; do fgb >> ~/tmp/fgb.out; sleep 600; done
+while (true) ; do 
+  fgb >> ~/tmp/fgb.out
+  sleep 600
+done
 
