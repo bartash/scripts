@@ -22,3 +22,5 @@ gbn-m2-settings.xml
 metastore_db
 .vscode
 venv
+.idea/*
+workspace.xml
