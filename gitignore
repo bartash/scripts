@@ -24,3 +24,4 @@ metastore_db
 venv
 .idea/*
 workspace.xml
+dwx?_env.sh
