@@ -26,9 +26,7 @@ then
     exit 1
 fi
 
-NEW_SUFFIX=`expr $SUFFIX + 1`
-
-# echo NEW = $NEW
+NEW_SUFFIX=$((SUFFIX + 1))
 NEW_BRANCH=${PREFIX}_${NEW_SUFFIX}
 echo new branch = ${NEW_BRANCH}
 
