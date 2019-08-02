@@ -57,7 +57,7 @@ alias autopatch="ssh -t autopatch-local.vpc.cloudera.com \"tmux attach || tmux n
 PROMPT_DIRTRIM=3
 # put pwd in prompt 
 # https://www.gnu.org/software/bash/manual/html_node/Controlling-the-Prompt.html#Controlling-the-Prompt
-PS1='[\w]\$ ' 
+PS1='[\w][$MYPROMPT]\$ ' 
 
 
 # Maximum number of history lines in memory

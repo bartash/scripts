@@ -37,3 +37,5 @@ alias dwx4='export AADWX=dwx4; export GOPATH=$HOME/git/go4; . ~/scripts/my_dwx.s
 alias k=kubectl
 
 source <(kubectl completion bash | sed s/kubectl/k/g)
+
+PS1='[\w][$MYPROMPT]\$ ' 

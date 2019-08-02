@@ -9,6 +9,7 @@ if [ -z "$GOPATH" ]; then
     return 1
 fi
 
+export MYPROMPT=$AADWX
 export GO111MODULE=on
 export DWX_HOME=$GOPATH/src/github.com/hortonworks/edws
 . ~/scripts/gosetup.sh
