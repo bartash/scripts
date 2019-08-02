@@ -31,7 +31,8 @@ export SUBL=/usr/bin/subl
 
 alias stingo='export GOPATH=$HOME/git/bartash/stingo; . ~/scripts/gosetup.sh; cd $GOPATH'
 # for dwx GOPATH does not matter
-alias dwx1='export AADWX=dwx1; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
+alias dwx1='export AADWX=dwx1; export GOPATH=$HOME/git/go; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
+alias dwx4='export AADWX=dwx4; export GOPATH=$HOME/git/go4; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 
 alias k=kubectl
 

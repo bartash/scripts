@@ -4,8 +4,11 @@ if [ -z "$AADWX" ]; then
     echo "Need to set AADWX"
     return 1
 fi
+if [ -z "$GOPATH" ]; then
+    echo "Need to set GOPATH"
+    return 1
+fi
 
-export GOPATH=$HOME/git/go
 export GO111MODULE=on
 export DWX_HOME=$GOPATH/src/github.com/hortonworks/edws
 . ~/scripts/gosetup.sh
