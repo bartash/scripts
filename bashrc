@@ -12,6 +12,7 @@ alias vf=cd
 # I cannot type
 alias xrags=xargs
 alias gti=git
+alias golang=goland
 
 
 # visual diff (is on mac and linux)
