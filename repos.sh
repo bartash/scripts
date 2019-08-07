@@ -23,4 +23,5 @@ REPO_NAMES=( \
     ssh.git \
     starship/cmf.git \
     autopatch-local.config.git \
+    asherman-desktop-bash.git \
     )
