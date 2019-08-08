@@ -35,6 +35,7 @@ alias dwx1='export AADWX=dwx1; export GOPATH=$HOME/git/go; . ~/scripts/my_dwx.sh
 alias dwx4='export AADWX=dwx4; export GOPATH=$HOME/git/go4; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 
 alias k=kubectl
+alias impala-shell=impala-shell.sh
 
 source <(kubectl completion bash | sed s/kubectl/k/g)
 
