@@ -13,7 +13,13 @@ export MYPROMPT=$AADWX
 export GO111MODULE=on
 export DWX_HOME=$GOPATH/src/github.com/hortonworks/edws
 . ~/scripts/gosetup.sh
-export PATH=$PATH:/home/asherman/git/asf/Impala3/toolchain/cdh_components-1137441/hadoop-3.0.0-cdh6.x-SNAPSHOT/bin
+
+# dwx needs hadoop on dir path
+hadoop_dirs=$(find ~/git/asf/Impala/toolchain -name hadoop-3.0.0-cdh6.x-SNAPSHOT)
+hadoop_dir_list=($hadoop_dirs)
+# just take first one, they are not sorted
+hadoop_dir=${hadoop_dir_list[0]}
+export PATH=$PATH:$hadoop_dir/bin
 
 . ~/Dropbox/work/cloudera/${AADWX}_env.sh
 alias ihome="cd $DWX_HOME"
