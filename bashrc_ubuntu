@@ -32,6 +32,7 @@ export SUBL=/usr/bin/subl
 alias stingo='export GOPATH=$HOME/git/bartash/stingo; . ~/scripts/gosetup.sh; cd $GOPATH'
 # for dwx GOPATH does not matter
 alias dwx1='export AADWX=dwx1; export GOPATH=$HOME/git/go; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
+alias dwx-dev1='export AADWX=dwx-dev1; export GOPATH=$HOME/git/go; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 alias dwx4='export AADWX=dwx4; export GOPATH=$HOME/git/go4; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 
 alias k=kubectl
@@ -40,3 +41,8 @@ alias impala-shell=impala-shell.sh
 source <(kubectl completion bash | sed s/kubectl/k/g)
 
 PS1='[\w][$MYPROMPT]\$ ' 
+
+# run k9s on single warehouse
+k9l () {
+        k9s -n $(kubectl get pods -A | grep Running | grep coordinator | awk '{print $1}')
+}
