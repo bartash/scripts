@@ -1,3 +1,12 @@
-# run k9s on the most recent warehouse
-k9s -n $(kubectl get pods -A --sort-by=.metadata.creationTimestamp  | grep Running | grep coordinator | awk '{print $1}' | tail -1)
+#!/usr/bin/env bash
+#
+# Run k9s on the most recent warehouse
+#
+namespace=$(kubectl get pods -A --sort-by=.metadata.creationTimestamp  | \
+    grep Running | grep coordinator | awk '{print $1}' | tail -1)
+if [[ ! ${namespace} ]]; then 
+    echo "Did not find running coordinator in k8s."
+    exit 1
+fi
+k9s -n ${namespace}
 
