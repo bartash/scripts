@@ -1,0 +1,3 @@
+# run k9s on the most recent warehouse
+k9s -n $(kubectl get pods -A --sort-by=.metadata.creationTimestamp  | grep Running | grep coordinator | awk '{print $1}' | tail -1)
+

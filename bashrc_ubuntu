@@ -42,7 +42,3 @@ source <(kubectl completion bash | sed s/kubectl/k/g)
 
 PS1='[\w][$MYPROMPT]\$ ' 
 
-# run k9s on single warehouse
-k9l () {
-        k9s -n $(kubectl get pods -A | grep Running | grep coordinator | awk '{print $1}')
-}
