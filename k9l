@@ -2,8 +2,7 @@
 #
 # Run k9s on the most recent warehouse
 #
-K8S_NAMESPACE=$(kubectl get pods -A --sort-by=.metadata.creationTimestamp  | \
-    grep Running | grep coordinator | awk '{print $1}' | tail -1)
+K8S_NAMESPACE=$(get_latest_coordinator_namespace)
 if [[ ! ${K8S_NAMESPACE} ]]; then
     echo "Did not find running coordinator in k8s."
     exit 1
