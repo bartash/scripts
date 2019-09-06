@@ -4,11 +4,12 @@
 
 # edit tag based on build
 TAG=7.1.0.0-147-1410772
+
 # edit DOCKER depending on source
 DOCKER=docker-sandbox
 # DOCKER=docker-private
-DOCKERHUB_USER=bartash
 
+DOCKERHUB_USER=bartash
 for image_name in impalad_coordinator impalad_coord_exec impalad_executor statestored catalogd; do
   source=$DOCKER.infra.cloudera.com/cdh/$image_name:$TAG
   target=$DOCKERHUB_USER/$image_name:$TAG
