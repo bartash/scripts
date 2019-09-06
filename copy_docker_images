@@ -1,0 +1,16 @@
+#!/bin/bash
+# Push impala build to a private docker repo
+# https://docs.google.com/document/d/1wXestFKowjxLqw7mYgGNkzRDQoqQwhSL0nPJ1VNSDSQ/edit
+TAG=7.0.0.0-365-1324226
+DOCKER=docker-sandbox
+# DOCKER=docker-private
+DOCKERHUB_USER=timgarmstrong
+for f in impalad_coordinator impalad_coord_exec impalad_executor statestored catalogd; do
+  s=$DOCKER.infra.cloudera.com/cdh/$f:$TAG
+  target=$DOCKERHUB_USER/$f:$TAG
+  docker pull $s
+  docker image tag $s $target
+  docker push $target
+done
+
+
