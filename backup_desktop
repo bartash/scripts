@@ -7,3 +7,7 @@ git remote update  asherman-desktop
 
 cd ~/git/kitchen/jenkins-master
 git remote update  asherman-desktop
+
+
+cd ~/git/go/src/github.com/hortonworks/edws
+git remote update  asherman-desktop
