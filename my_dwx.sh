@@ -23,3 +23,6 @@ export PATH=$PATH:$hadoop_dir/bin
 
 . ~/Dropbox/work/cloudera/${AADWX}_env.sh
 alias ihome="cd $DWX_HOME"
+
+# USE_IMPALA_AUTOSCALER_IMAGE=false
+export USE_IMPALA_AUTOSCALER_IMAGE=true
