@@ -2,6 +2,13 @@
 #
 # Run k9s on the most recent warehouse
 #
+
+if [ "$#" -gt 0 ]
+then
+    echo "$0: too many arguments, are you sure you don't wnat k9s?"
+    exit 1
+fi
+
 K8S_NAMESPACE=$(get_latest_coordinator_namespace)
 if [[ ! ${K8S_NAMESPACE} ]]; then
     echo "Did not find running coordinator in k8s."
