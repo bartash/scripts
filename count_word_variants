@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # count words of different lengths starting with 'a' and ending with 'e'
+DICT=/usr/share/dict/american-english
 for i in 1 2 3 4 5 6 7 8 9 10 11 12
 do
-  egrep -i "^[a].{$i}e$"  /usr/share/dict/american-english | wc -l
+  egrep -i "^[a].{$i}e$" $DICT| wc -l
 done
