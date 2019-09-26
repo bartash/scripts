@@ -2,6 +2,7 @@
 alias a=alias
 alias cl=clion
 alias cx='chmod a+x'
+alias j=jobs
 alias h=history
 alias la='ls -a'
 alias ll='ls -l'
