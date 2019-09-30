@@ -1,4 +1,11 @@
+. /etc/lsb-release
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+if [[ $DISTRIB_RELEASE = 14.04 ]]
+then
+    export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
+fi
+
+
 export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
 export LC_ALL="en_US.UTF-8"
 
