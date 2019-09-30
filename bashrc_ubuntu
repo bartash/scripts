@@ -39,7 +39,10 @@ alias dwx-dev4='export AADWX=dwx-dev4; export GOPATH=$HOME/git/go4; . ~/scripts/
 alias k=kubectl
 alias impala-shell=impala-shell.sh
 
-source <(kubectl completion bash | sed s/kubectl/k/g)
+if  [ -x "$(command -v kubectl)" ]; then
+  source <(kubectl completion bash | sed s/kubectl/k/g)
+  exit 1
+fi
 
 PS1='[\w][$MYPROMPT]\$ ' 
 
