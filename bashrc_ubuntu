@@ -1,7 +1,6 @@
 . /etc/lsb-release
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-if [[ $DISTRIB_RELEASE = 14.04 ]]
-then
+if [[ $DISTRIB_RELEASE = 14.04 ]]; then
     export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
 fi
 
@@ -48,7 +47,6 @@ alias impala-shell=impala-shell.sh
 
 if  [ -x "$(command -v kubectl)" ]; then
   source <(kubectl completion bash | sed s/kubectl/k/g)
-  exit 1
 fi
 
 PS1='[\w][$MYPROMPT]\$ ' 
