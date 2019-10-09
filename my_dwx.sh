@@ -26,3 +26,5 @@ alias ihome="cd $DWX_HOME"
 
 # USE_IMPALA_AUTOSCALER_IMAGE=false
 export USE_IMPALA_AUTOSCALER_IMAGE=true
+
+export OWNER='asherman@cloudera.com'
