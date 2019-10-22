@@ -1,0 +1,1 @@
+ rsync -r -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
