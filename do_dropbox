@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # copy dropbox files
-rsync -r -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
+rsync -rv --delete -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
