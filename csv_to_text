@@ -1,0 +1,2 @@
+# convert csv to expanded text
+sed -e 's/,,/, ,/g' | column -s, -t
