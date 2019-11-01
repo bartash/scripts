@@ -1,2 +1,4 @@
+#!/usr/bin/env bash
 # convert csv to expanded text
+# https://chrisjean.com/view-csv-data-from-the-command-line/
 sed -e 's/,,/, ,/g' | column -s, -t
