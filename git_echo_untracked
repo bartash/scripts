@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# List untracked files
+# https://stackoverflow.com/questions/3538144/how-do-you-git-show-untracked-files-that-do-not-exist-in-gitignore
+git ls-files . --exclude-standard --others
