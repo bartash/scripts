@@ -47,6 +47,7 @@ alias impala-shell=impala-shell.sh
 
 if  [ -x "$(command -v kubectl)" ]; then
   source <(kubectl completion bash | sed s/kubectl/k/g)
+  source <(kubectl completion bash)
 fi
 
 PS1='[\w][$MYPROMPT]\$ ' 
