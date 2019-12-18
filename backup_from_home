@@ -3,17 +3,17 @@
 SOURCE_VOL=Elvis
 BACKUP_VOL=Clash
 cd /Volumes
-if [ ! -d ${BACKUP_VOL} ]; then
-    echo Could not find ${BACKUP_VOL} volume
-	exit 1
-else
-	echo found ${BACKUP_VOL}
-fi
 if [ ! -d ${SOURCE_VOL} ]; then
     echo Could not find ${SOURCE_VOL} volume
 	exit 1
 else
 	echo found ${SOURCE_VOL}
+fi
+if [ ! -d ${BACKUP_VOL} ]; then
+    echo Could not find ${BACKUP_VOL} volume
+	exit 1
+else
+	echo found ${BACKUP_VOL}
 fi
 # copy from home (Blondie) to Elvis
 rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
