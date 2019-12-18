@@ -11,7 +11,7 @@ NUM=$1
 
 echo about to delete
 echo
-ls -t | tail -${NUM} 
+ls -lt | tail -${NUM} 
 echo
 
 read -p "Press enter to continue"
