@@ -1,0 +1,2 @@
+# shotdown in 5 mins = 300 seconds
+shutdown /s /t 300
