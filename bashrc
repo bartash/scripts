@@ -14,6 +14,7 @@ alias vf=cd
 alias xrags=xargs
 alias gti=git
 alias golang=goland
+alias dc=cd
 
 
 # visual diff (is on mac and linux)
