@@ -19,6 +19,17 @@ then
 	exit 1;
 fi
 
+for var in "$@"
+do
+     if [ "$var" != "diff" ]
+     then 
+         arr+=$(readlink -f "$var")
+         arr+=${IFS}
+     else
+         arr+=$var
+     fi
+done
+
 echo running $CLION
 
 # on gce I also had 
@@ -47,4 +58,5 @@ python "$PY_DIR/bootstrap_virtualenv.py"
 
 
 # allow clion diff file1 file2
-$CLION/bin/clion.sh $*
+echo arr is ${arr}
+$CLION/bin/clion.sh ${arr[@]}
