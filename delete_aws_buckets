@@ -1,0 +1,8 @@
+#!/bin/sh
+# generate script to remove empty aws s3 buckets
+aws s3 ls | grep asherman \
+ | awk '{print $3}'       \
+ | sed 's?^?s3://?'       \
+ | sed 's/$/ --force/'    \
+ | sed 's/^/aws s3 rb /' 
+
