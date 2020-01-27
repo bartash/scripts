@@ -14,7 +14,11 @@ alias vf=cd
 alias xrags=xargs
 alias gti=git
 alias golang=goland
+# things I cannot type
+# dc is ye olde desk calc
 alias dc=cd
+# vp is some vcat thing
+alias vp=cp
 
 
 # visual diff (is on mac and linux)
