@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 #
 # Tunnel prometheus to localhost
-PROM=$(kubectl get pods --all-namespaces | grep prometheus | grep istio-system | awk '{print $2'})
-kubectl port-forward --address localhost,127.0.0.1 ${PROM} -n istio-system 9090:9090
+if [ "$#" -eq 1 ]
+then
+  echo "using kubeconfig $1"
+  KUBE="--kubeconfig $1"
+fi
+PROM=$(kubectl $KUBE get pods --all-namespaces | grep prometheus | grep istio-system | awk '{print $2'})
+kubectl $KUBE port-forward --address localhost,127.0.0.1 ${PROM} -n istio-system 9090:9090
 
 
