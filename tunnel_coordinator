@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+    
+mapfile -t my_array < <(kubectl  get pods --all-namespaces | grep  coordinator)
+# fixme only get Running
+
+if [ ${#my_array[@]} -eq 1 ]; 
+then 
+  echo was one coordinator
+elif [ ${#my_array[@]} -eq 0 ]; 
+  echo no running coordinators
+  exit 1
+else
+  echo too many coordinators in k8s
+  exit 1
+fi
+
+
+
