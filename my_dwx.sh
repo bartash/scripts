@@ -28,3 +28,5 @@ alias ihome="cd $DWX_HOME"
 export USE_IMPALA_AUTOSCALER_IMAGE=true
 
 export OWNER='asherman@cloudera.com'
+
+export PATH=$PATH:/usr/local/kubebuilder/bin
