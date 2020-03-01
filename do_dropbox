@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 # copy dropbox files
+if [ "$HOSTNAME" == "asherman-desktop" ]; then
+	echo you are on the wrong machine
+	exit 1
+fi
+
+
 rsync -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
 
 rsync -rv --delete --update -e ssh ~/BackDropbox asherman-desktop.sf.cloudera.com:
