@@ -2,10 +2,18 @@
 
 set -e
 
+if [ "$#" -eq 1 ]
+then
+  SUFFIX=$1
+else
+  # default
+  SUFFIX=save
+fi
+
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo current branch is $BRANCH
 
-NEW_BRANCH=${BRANCH}_save
+NEW_BRANCH=${BRANCH}_${SUFFIX}
 git checkout -b ${NEW_BRANCH}
 # echo new branch = ${NEW_BRANCH}
 git checkout -
