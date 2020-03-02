@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # copy dropbox files
-if [[ ${HOSTNAME} != "asherman-MBP"* ]];then
-	echo you are on the wrong machine
+MAC="asherman-MBP"
+if [[ ${HOSTNAME} != ${MAC}* ]];then
+	echo you are on the wrong machine, you should be on ${MAC}
 	exit 1
 fi
 
