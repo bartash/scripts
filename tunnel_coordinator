@@ -2,7 +2,14 @@
 
 # tunnel to impala coordinator webui
     
-mapfile -t pods < <(kubectl  get pods --all-namespaces | grep  coordinator | grep Running | grep 5/5)
+NS="--all-namespaces"
+if [ "$#" -eq 1 ]
+then
+  echo "using ns $1"
+  NS="-n $1"
+fi
+
+mapfile -t pods < <(kubectl  get pods ${NS} | grep  coordinator | grep Running | grep 5/5)
 
 
 if [ ${#pods[@]} -eq 1 ]; 
