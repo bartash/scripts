@@ -24,10 +24,19 @@ else
   exit 1
 fi
 
-namespace=$(echo ${pods[0]} | awk '{print $1}')
-# echo namespace=$namespace
-name=$(echo ${pods[0]} | awk '{print $2}')
-# echo name=$name
+if [ "$#" -eq 1 ]
+then
+  namespace=$1
+  # echo namespace=$namespace
+  name=$(echo ${pods[0]} | awk '{print $1}')
+  # echo name=$name
+else
+  namespace=$(echo ${pods[0]} | awk '{print $1}')
+  # echo namespace=$namespace
+  name=$(echo ${pods[0]} | awk '{print $2}')
+  # echo name=$name
+fi
+
 
 # target port
 target=25013
