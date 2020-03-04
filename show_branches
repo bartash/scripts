@@ -13,7 +13,6 @@ then
     fi
     if [ "$PARAM" -eq "$PARAM" ] 2>/dev/null
     then
-        # echo "$PARAM is an integer !!"
         # number of branches to show
         NUM_BRANCHES=$PARAM
     else	
