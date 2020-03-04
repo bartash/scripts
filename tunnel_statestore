@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# tunnel to impala coordinator webui
+# tunnel to impala statestore webui
     
 NS="--all-namespaces"
 if [ "$#" -eq 1 ]
@@ -9,18 +9,18 @@ then
   NS="-n $1"
 fi
 
-mapfile -t pods < <(kubectl  get pods ${NS} | grep  coordinator | grep Running | grep 5/5)
+mapfile -t pods < <(kubectl  get pods ${NS} | grep  statestore | grep Running | grep 3/3)
 
 
 if [ ${#pods[@]} -eq 1 ]; 
 then 
-  echo was one coordinator
+  echo was one statestore
 elif [ ${#pods[@]} -eq 0 ]; 
 then
-  echo no running coordinators
+  echo no running statestore
   exit 1
 else
-  echo too many coordinators in k8s
+  echo too many statestore in k8s
   exit 1
 fi
 
@@ -39,10 +39,10 @@ fi
 
 
 # target port
-target=25013
+target=25014
 
 echo "browse to http://localhost:${target}"
-kubectl port-forward --address localhost,127.0.0.1 $name -n $namespace ${target}:25000
+kubectl port-forward --address localhost,127.0.0.1 $name -n $namespace ${target}:25010
 
 
 
