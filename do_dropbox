@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 # copy dropbox files
 MAC="asherman-MBP"
-if [[ ${HOSTNAME} != ${MAC}* ]];then
-	echo you are on the wrong machine, you should be on ${MAC}
+ANDREW="andrew-desktop"
+if [[ ${HOSTNAME} != ${MAC}* && ${HOSTNAME} != ${ANDREW} ]];then
+	echo you are on the wrong machine, you should be on ${MAC} or ${ANDREW}
 	exit 1
 fi
 
 
 rsync -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
 
-rsync -rv --delete --update -e ssh ~/BackDropbox asherman-desktop.sf.cloudera.com:
+rsync -rv --delete --update -e ssh ~/BackDropbox asherman-desktop.sf.cloudera.com:BackDropBox.${HOSTNAME}
 
