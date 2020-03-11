@@ -8,7 +8,8 @@ if [[ ${HOSTNAME} != ${MAC}* && ${HOSTNAME} != ${ANDREW} ]];then
 fi
 
 
-rsync -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
+# --bwlimit=50 takes 50 out of 346.24kB/s at home
+rsync --bwlimit=50 --info=progress2 -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
 
 rsync -rv --delete --update -e ssh ~/BackDropbox asherman-desktop.sf.cloudera.com:BackDropBox.${HOSTNAME}
 
