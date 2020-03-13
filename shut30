@@ -1,0 +1,2 @@
+# shotdown in 15 mins = 900 seconds
+shutdown /s /t 1800
