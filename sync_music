@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Copy music from andrew-desktop to a flash drive
+#
+ANDREW="andrew-desktop"
+if [[ ${HOSTNAME} != ${ANDREW} ]];then
+	echo you are on the wrong machine, you should be on ${ANDREW}
+	exit 1
+fi
+SOURCE_VOL=~/Music
+BACKUP_VOL=/media/asherman/KINGSTON
+
+if [ ! -d ${BACKUP_VOL} ]; then
+	echo Could not find ${BACKUP_VOL} volume
+	exit 1
+else
+	echo found ${BACKUP_VOL}
+fi
+
+rsync -av --delete  ${SOURCE_VOL} ${BACKUP_VOL}
