@@ -17,4 +17,4 @@ else
 	echo found ${BACKUP_VOL}
 fi
 
-rsync -av --delete  ${SOURCE_VOL} ${BACKUP_VOL}
+rsync -av --delete --no-owner --no-group ${SOURCE_VOL} ${BACKUP_VOL}
