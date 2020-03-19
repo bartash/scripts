@@ -18,10 +18,12 @@ else
 	echo found ${BACKUP_VOL}
 fi
 
-cd $SOURCE_VOL
-find . -type f -print0 | while IFS= read -r -d $'\0' file; 
-  do echo "consider $file" 
-done
+# # cd $SOURCE_VOL
+# find . -type f -print0 | while IFS= read -r -d $'\0' file; 
+	# mv "$file" "${file}.bak"
+	# name=$(echo $file | sed 's/://g' | sed 's/?//g')
+	# cp "${file}.bak" "$name"
+# done
 
 
 
