@@ -3,6 +3,7 @@
 # Copy music from andrew-desktop to a flash drive
 #
 ANDREW="andrew-desktop"
+TMP1=/tmp/synca$$
 if [[ ${HOSTNAME} != ${ANDREW} ]];then
 	echo you are on the wrong machine, you should be on ${ANDREW}
 	exit 1
@@ -16,5 +17,12 @@ if [ ! -d ${BACKUP_VOL} ]; then
 else
 	echo found ${BACKUP_VOL}
 fi
+
+cd $SOURCE_VOL
+find . -type f -print0 | while IFS= read -r -d $'\0' file; 
+  do echo "consider $file" 
+done
+
+
 
 rsync -av --delete --no-owner --no-group ${SOURCE_VOL} ${BACKUP_VOL}
