@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+# get the NGinx, ISTIO, and Impala coordinator logs for a compute cluster
+#
+# if you see "No resources found." messages, check to see your KUBECONFIG env is pointing to the right location.
+VW=$1
+PROGNAME=`basename $0`
+if [ "$VW" == "" ]; then
+  echo "$PROGNAME: Must provide the compute cluster ID as an argument."
+  exit 1
+fi
+if [ "$KUBECONFIG" == "" ]; then
+  echo "$PROGNAME: Please set the KUBECONFIG env var."
+  exit 1
+fi
+for p in `kubectl get pods -n istio-system | awk '{ print $1 }'; `; do
+  case $p in
+    istio-sidecar-injector-*)
+      echo $p
+      kubectl logs $p -n istio-system > ${p}.log
+      ;;
+    istio-policy-*)
+      echo $p
+      kubectl logs $p -n istio-system mixer > ${p}-mixer.log
+      kubectl logs $p -n istio-system istio-proxy > ${p}-istio-proxy.log
+      ;;
+    istio-pilot-*)
+      echo $p
+      kubectl logs $p -n istio-system discovery > ${p}-discovery.log
+      kubectl logs $p -n istio-system istio-proxy > ${p}-istio-proxy.log
+      ;;
+    istio-galley-*)
+      echo $p
+      kubectl logs $p -n istio-system > ${p}.log
+      ;;
+    istio-citadel-*)
+      echo $p
+      kubectl logs $p -n istio-system > ${p}.log
+      ;;
+  esac
+done
+for p in `kubectl get pods -n cluster | awk '{ print $1 }'`; do
+  case $p in
+    nginx-service-*)
+      echo $p
+      kubectl logs $p -n cluster nginx-ingress-controller > ${p}-controller.log
+      kubectl logs $p -n cluster istio-proxy > ${p}-istio-proxy.log
+      ;;
+  esac
+done
+for p in `kubectl get pods -n $VW | awk '{ print $1 }'`; do
+  case $p in
+    coordinator-*)
+      echo $p
+      kubectl logs $p -n $VW impalad-coordinator > impalad-${p}.log
+      kubectl logs $p -n $VW istio-proxy > impalad-${p}-istio-proxy.log
+      ;;
+  esac
+done
+tar cvzf nginx_istio_logs.tgz *.log
