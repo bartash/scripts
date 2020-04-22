@@ -8,3 +8,6 @@ set guifont=Monospace\ 12
 if &diff
     colorscheme ron
 endif
+
+" https://unix.stackexchange.com/questions/111558/how-can-i-constantly-see-the-current-filename-in-vim
+set laststatus=2
