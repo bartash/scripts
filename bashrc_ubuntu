@@ -41,6 +41,8 @@ alias stingo='export GOPATH=$HOME/git/bartash/stingo; . ~/scripts/gosetup.sh; cd
 alias dwx-dev1='export AADWX=dwx-dev1; export GOPATH=$HOME/git/go; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 # alias dwx4='export AADWX=dwx4; export GOPATH=$HOME/git/go4; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 alias dwx-dev4='export AADWX=dwx-dev4; export GOPATH=$HOME/git/go4; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
+alias dwx-dev5='export AADWX=dwx-dev5; export GOPATH=$HOME/git/go5; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
+alias dwx-dev6='export AADWX=dwx-dev6; export GOPATH=$HOME/git/go6; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 
 alias k=kubectl
 alias impala-shell=impala-shell.sh

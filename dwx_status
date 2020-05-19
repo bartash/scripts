@@ -8,6 +8,8 @@ GIT_HOME=~/git
 SRC_REPOS=( \
     go/src/github.com/hortonworks/edws \
     go4/src/github.com/hortonworks/edws/ \
+    go5/src/github.com/hortonworks/edws/ \
+    go6/src/github.com/hortonworks/edws/ \
     )
 
 for repoName in "${SRC_REPOS[@]}"
