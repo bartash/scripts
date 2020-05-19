@@ -7,9 +7,23 @@ if [[ ${HOSTNAME} != ${MAC}* && ${HOSTNAME} != ${ANDREW} ]];then
 	exit 1
 fi
 
-
 # --bwlimit=50 takes 50 out of 346.24kB/s at home
-rsync --bwlimit=50 --info=progress2 -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
+OPTIONS="--bwlimit=50"
+
+while getopts f opts; do
+   case ${opts} in
+        f)
+            OPTIONS=""
+            ;;
+        *)
+            echo "usage: $0 [-f]"
+            echo "[-f] means no throttling"
+            exit 0
+            ;;
+   esac
+done
+
+rsync $OPTIONS --info=progress2 -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
 
 rsync -rv --delete --update -e ssh ~/BackDropbox asherman-desktop.sf.cloudera.com:BackDropBox.${HOSTNAME}
 
