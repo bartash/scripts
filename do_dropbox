@@ -2,7 +2,7 @@
 # copy dropbox files
 MAC="asherman-MBP"
 ANDREW="andrew-desktop"
-if [[ ${HOSTNAME} != ${MAC}* && ${HOSTNAME} != ${ANDREW} ]];then
+if [[ ${HOSTNAME} != ${MAC}* && ${HOSTNAME} != "${ANDREW}" ]];then
 	echo you are on the wrong machine, you should be on ${MAC} or ${ANDREW}
 	exit 1
 fi
