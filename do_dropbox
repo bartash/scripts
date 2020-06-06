@@ -7,6 +7,12 @@ if [[ ${HOSTNAME} != ${MAC}* && ${HOSTNAME} != "${ANDREW}" ]];then
 	exit 1
 fi
 
+OPTIONS2="--info=progress2"
+
+if [[ ${HOSTNAME} == ${MAC}*  ]];then
+    OPTIONS2=""
+fi
+
 # --bwlimit=50 takes 50 out of 346.24kB/s at home
 OPTIONS="--bwlimit=50"
 
@@ -23,7 +29,7 @@ while getopts f opts; do
    esac
 done
 
-rsync $OPTIONS --info=progress2 -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
+rsync $OPTIONS $OPTIONS2 -rv --delete --update -e ssh asherman-desktop.sf.cloudera.com:Dropbox ~
 
 rsync -rv --delete --update -e ssh ~/BackDropbox asherman-desktop.sf.cloudera.com:BackDropBox.${HOSTNAME}
 
