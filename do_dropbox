@@ -2,11 +2,12 @@
 # copy dropbox files
 MAC="asherman-MBP"
 ANDREW="andrew-desktop"
-if [[ ${HOSTNAME} != ${MAC}* && ${HOSTNAME} != "${ANDREW}" ]];then
-	echo you are on the wrong machine, you should be on ${MAC} or ${ANDREW}
+if [[ ${HOSTNAME} != ${MAC}* ]];then
+	echo you are on the wrong machine, you should be on ${MAC}
 	exit 1
 fi
 
+# Options to show progress - linux only at the moment
 OPTIONS2="--info=progress2"
 
 if [[ ${HOSTNAME} == ${MAC}*  ]];then
