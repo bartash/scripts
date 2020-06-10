@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# Bump the docker version number of the proxy
+# Bump the docker version number of the autoscaler
 if [ "$DWX_HOME" = "" ]
 then
    echo "Need to be in dwx env"
    exit 1
 fi
-DEPLOY=$DWX_HOME/charts/impala-proxy/templates/impala-proxy-deployment.yaml
+DEPLOY=$DWX_HOME/charts/impala-autoscaler/templates/impala-autoscaler-deployment.yaml
 MAKEFILE=$DWX_HOME/operator/Makefile
-NUM=$(grep 'IMPALA_PROXY_DEV_IMAGE ?= bartash/impala-proxy' $MAKEFILE  | awk -F: '{print $2}')
+NUM=$(grep 'IMPALA_AUTOSCALER_DEV_IMAGE ?= bartash/impala-autoscaler' $MAKEFILE  | awk -F: '{print $2}')
 
 if [ -z "$NUM" ]
 then
@@ -25,13 +25,13 @@ NEW_NUM=$((NUM + 1))
 echo "bump version from $NUM to $NEW_NUM"
 
 NEWMAKEFILE=/tmp/newdmake$$
-sed "s?bartash/impala-proxy:$NUM?bartash/impala-proxy:$NEW_NUM?" < $MAKEFILE > $NEWMAKEFILE
+sed "s?bartash/impala-autoscaler:$NUM?bartash/impala-autoscaler:$NEW_NUM?" < $MAKEFILE > $NEWMAKEFILE
 cp $NEWMAKEFILE $MAKEFILE
 
 NEWDEPLOY=/tmp/newdep$$
 sed "s?}}:$NUM?}}:$NEW_NUM?" < $DEPLOY > $NEWDEPLOY
 cp $NEWDEPLOY $DEPLOY
 
-git commit -a -m "DO NOT PUSH: bartash/impala-proxy:$NEW_NUM"
+git commit -a -m "DO NOT PUSH: bartash/impala-autoscaler:$NEW_NUM"
 
 git show -1
