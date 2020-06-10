@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Bump the docker version number of the proxy
+if [ "$DWX_HOME" = "" ]
+then
+   echo "Need to be in dwx env"
+   exit 1
+fi
+DEPLOY=$DWX_HOME/charts/impala-proxy/templates/impala-proxy-deployment.yaml
+MAKEFILE=$DWX_HOME/operator/Makefile
+NUM=$(grep 'IMPALA_PROXY_DEV_IMAGE ?= bartash/impala-proxy' $MAKEFILE  | awk -F: '{print $2}')
+
+if [ -z "$NUM" ]
+then
+    echo could not find version number
+    exit 1
+fi
+
+if [ "$NUM" -ne "$NUM" ] 2>/dev/null
+then
+    echo "$NUM is not an integer !!"
+    exit 1
+fi
+
+NEW_NUM=$((NUM + 1))
+echo "bump version from $NUM to $NEW_NUM"
+
+NEWMAKEFILE=/tmp/newdmake$$
+sed "s?bartash/impala-proxy:$NUM?bartash/impala-proxy:$NEW_NUM?" < $MAKEFILE > $NEWMAKEFILE
+cp $NEWMAKEFILE $MAKEFILE
+
+NEWDEPLOY=/tmp/newdep$$
+sed "s?}}:$NUM?}}:$NEW_NUM?" < $DEPLOY > $NEWDEPLOY
+cp $NEWDEPLOY $DEPLOY
+
+git commit -a -m "DO NOT PUSH: bartash/impala-proxy:$NEW_NUM"
+
+git show -1
