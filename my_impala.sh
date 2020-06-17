@@ -15,7 +15,7 @@ if [ -f "${IMPALA_BIN}/impala-config.sh" ]; then
     . ${IMPALA_BIN}/impala-config.sh
     export PATH="${IMPALA_BIN}:${PATH}"
     export PATH="${IMPALA_HOME}/toolchain/llvm-5.0.1-p1/bin:${PATH}"
-    export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}
+    # export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}
 fi
 
 # scripts to start and stop hadoop services
