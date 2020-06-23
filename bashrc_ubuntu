@@ -65,3 +65,5 @@ export AWS_OKTA_BACKEND=file
 # . ~/git/sre/sre/terraform/modules/cloud-users/ao_config/AO_CONFIG.sh
 # . ~/git/sre/sre/terraform/modules/cloud-users/ao_config/.bashrc_aws-okta
 
+alias aws-okta='aws-okta.exe --mfa-duo-device token'
+alias ao='aws-okta.exe --mfa-duo-device token'
