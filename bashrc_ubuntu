@@ -60,10 +60,14 @@ PS1='[\w][$MYPROMPT]\$ '
 # export GO111MODULE=on
 # go get github.com/segmentio/aws-okta@v0.21.0
 export PATH=$PATH:$HOME/go/bin
-export AWS_OKTA_BACKEND=file
+export AWS_OKTA_BACKEND=secret-service
 # https://cloudera.atlassian.net/wiki/spaces/ESRE/pages/30376051/SRE+Runbook+-+Cloud+Users+AWS-Okta+SSO
 # . ~/git/sre/sre/terraform/modules/cloud-users/ao_config/AO_CONFIG.sh
 # . ~/git/sre/sre/terraform/modules/cloud-users/ao_config/.bashrc_aws-okta
 
 alias aws-okta='aws-okta.exe --mfa-duo-device token'
 alias ao='aws-okta.exe --mfa-duo-device token'
+
+# for dwx personal docker builds
+export USER_TAG=asherman
+
