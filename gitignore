@@ -10,6 +10,7 @@ itests/qtest/tmp_*
 xref.all
 ?oo
 bar
+foo.json
 .m2
 .idea
 *.iml
