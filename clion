@@ -40,10 +40,10 @@ unset LD_LIBRARY_PATH
    
 . $IMPALA_HOME/bin/set-pythonpath.sh
 
-LD_LIBRARY_PATH+=":$(python "$IMPALA_HOME/infra/python/bootstrap_virtualenv.py" \
+LD_LIBRARY_PATH+="$(python "$IMPALA_HOME/infra/python/bootstrap_virtualenv.py" \
   --print-ld-library-path)"
+# LD_LIBRARY_PATH+="$IMPALA_HOME/infra/python/env/lib/python2.7/site-packages/kudu" 
 
-LD_LIBRARY_PATH+=":$IMPALA_HOME/toolchain/kudu-$IMPALA_KUDU_VERSION/release/lib" 
 
 export LD_LIBRARY_PATH
 echo LD_LIBRARY_PATH=$LD_LIBRARY_PATH
