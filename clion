@@ -35,11 +35,18 @@ then
 else
     echo "no report_build_error (expected on branches older than 2018)"
 fi
+
+unset LD_LIBRARY_PATH
    
 . $IMPALA_HOME/bin/set-pythonpath.sh
 
 LD_LIBRARY_PATH+=":$(python "$IMPALA_HOME/infra/python/bootstrap_virtualenv.py" \
   --print-ld-library-path)"
+
+LD_LIBRARY_PATH+=":$IMPALA_HOME/toolchain/kudu-$IMPALA_KUDU_VERSION/release/lib" 
+
+export LD_LIBRARY_PATH
+echo LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 
 PY_DIR="$IMPALA_HOME/infra/python"
 python "$PY_DIR/bootstrap_virtualenv.py"

@@ -71,3 +71,5 @@ alias ao='aws-okta.exe --mfa-duo-device token'
 # for dwx personal docker builds
 export USER_TAG=asherman
 
+
+export IMPALA_CONCURRENT_DOWNLOADS=1
