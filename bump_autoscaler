@@ -32,6 +32,6 @@ NEWDEPLOY=/tmp/newdep$$
 sed "s?}}:$NUM?}}:$NEW_NUM?" < $DEPLOY > $NEWDEPLOY
 cp $NEWDEPLOY $DEPLOY
 
-git commit -a -m "DO NOT PUSH: bartash/impala-autoscaler:$NEW_NUM"
+git commit -a -m "DO NOT PUSH: use bartash/impala-autoscaler:$NEW_NUM"
 
 git show -1
