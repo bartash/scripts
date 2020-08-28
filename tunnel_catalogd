@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# tunnel to impala catalogd webui
+    
+NS="--all-namespaces"
+if [ "$#" -eq 1 ]
+then
+  echo "using ns $1"
+  NS="-n $1"
+fi
+
+mapfile -t pods < <(kubectl  get pods ${NS} | grep  catalogd | grep Running | grep 3/3)
+
+
+if [ ${#pods[@]} -eq 1 ]; 
+then 
+  echo was one catalogd
+elif [ ${#pods[@]} -eq 0 ]; 
+then
+  echo no running catalogd
+  exit 1
+else
+  echo too many catalogd in k8s
+  exit 1
+fi
+
+if [ "$#" -eq 1 ]
+then
+  namespace=$1
+  # echo namespace=$namespace
+  name=$(echo ${pods[0]} | awk '{print $1}')
+  # echo name=$name
+else
+  namespace=$(echo ${pods[0]} | awk '{print $1}')
+  # echo namespace=$namespace
+  name=$(echo ${pods[0]} | awk '{print $2}')
+  # echo name=$name
+fi
+
+
+# target port
+target=25014
+
+echo "browse to http://localhost:${target}"
+kubectl port-forward --address localhost,127.0.0.1 $name -n $namespace ${target}:25020
+
+
+
