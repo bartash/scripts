@@ -32,3 +32,5 @@ export OWNER='asherman@cloudera.com'
 export PATH=$PATH:/usr/local/kubebuilder/bin
 
 export DWX_TEST_CATALOG=asherman-cat
+# export DWX_LOCAL_JDBC_FILE=/home/asherman/bin/hive-jdbc-3.1.0-SNAPSHOT-standalone.jar
+export DWX_LOCAL_JDBC_FILE=/home/asherman/bin/impala-driver-jdbc_odbc-2.6.x.zip
