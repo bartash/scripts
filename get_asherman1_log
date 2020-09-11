@@ -1,0 +1,4 @@
+# get log from asherman1
+
+pod=$(aws-okta exec cu_manowar_dev -- kubectl get pods   -n asherman1-dwx | awk '{print$1}' | grep server)
+aws-okta exec cu_manowar_dev --  kubectl logs ${pod}  -n asherman1-dwx
