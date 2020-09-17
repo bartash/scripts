@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# remove spaces from filenames in current directory
+# https://stackoverflow.com/questions/2709458/how-to-replace-spaces-in-file-names-using-a-bash-script
+find -name "* *" -type f | rename 's/ /_/g'
