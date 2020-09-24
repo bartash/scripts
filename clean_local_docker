@@ -2,4 +2,4 @@
 #
 # clean local images that have no tag
 # https://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html
-docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
