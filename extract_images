@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# extract all images from all pdfs in current diectory
+for i in $(ls *.pdf) 
+do
+	out=$(echo $i | sed 's/.pdf//') 
+	pdfimages -all -j $i $out
+done
+
