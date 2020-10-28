@@ -18,7 +18,7 @@ TMP1=/tmp/azure1$$
 TMP2=/tmp/azure2$$
 az storage fs file list -f $CONTAINER --path $DOWNLOAD_PATH > $TMP1
 # FIXME check for continuation markers and deal
-grep name $TMP1 | awk '{print $2}' | sed 's/",//' | sed 's/"//' | sed 's?.*/??' > $TMP2
+grep name $TMP1 | awk '{print $2}' | sed 's/\",//' | sed 's/\"//' | sed 's?.*/??' > $TMP2
 for name in $(cat $TMP2)
 do
 	az storage fs file download  -f logs --path "$DOWNLOAD_PATH/$name"
