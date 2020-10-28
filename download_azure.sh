@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 # download from azure WIP
+#
+# This assumes call to 'az' will work
+# Go to https://portal.azure.com
+# ->storage accounts
+# -> cslazure130  (or whatever)
+# -> Access keys
+# export AZURE_STORAGE_CONNECTION_STRING=xxxx
+
 if [ $# -ne 1 ] ; then
     	echo "Usage $0 path"
     	exit 0
