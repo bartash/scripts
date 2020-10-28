@@ -1,13 +1,18 @@
-# downlaod from azure
-container=logs
-PATH=$1
+#!/usr/bin/env bash
+# download from azure WIP
+if [ $# -ne 1 ] ; then
+    	echo "Usage $0 path"
+    	exit 0
+fi
+CONTAINER=logs
+DOWNLOAD_PATH=$1
 TMP1=/tmp/azure1$$
 TMP2=/tmp/azure2$$
-az storage fs file list -f $container --path $1 > $AZURE1
+az storage fs file list -f $CONTAINER --path $1 > $TMP1
 # FIXME check for containuation markers
 grep name $TMP1 | awk '{print $2}' | sed 's/",//' | sed 's/"//' | sed 's?.*/??' > $TMP2
-for i in $(cat $TMP2);
-do i
-	az storage fs file download  -f logs --path "$PATH/$i"
-	echo did $i
+for name in $(cat $TMP2)
+do
+	az storage fs file download  -f logs --path "$DOWNLOAD_PATH/$name"
+	echo did $name
 done
