@@ -12,13 +12,13 @@ sed 's?^ *??' |\
 grep -v '^</div>' |
 grep -v ^$ |\
 grep -v '<?xml version="1.0"?>' |\
-sed 's?,?\\,?g' |\
+#sed 's?,?","?g' |\
 sed 's?</div>??g' |\
 sed 's?</span>??g' |\
 sed 's?.*>??g' |\
 awk '{
 val=$0
-printf "%s%s",val,NR%32?",":"\n" ;
+printf "\"%s\"%s",val,NR%32?",":"\n" ;
 }'
 
 #sed 's?</div></div>?\n?g' |\
