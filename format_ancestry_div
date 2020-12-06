@@ -11,7 +11,9 @@ sed 's?<div class="grid-cell"><span role="presentation" class="">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="link bold">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="link">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="link" data-ui-id=".*" aria-describedby="">??g' |\
+sed 's?class="grid-cell"><span role="presentation" class="link bold" data-ui-id=".*" aria-describedby="">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="">??g'
+sed 's?</span>??g'
 
 
 # sed 's?</div><div class="grid-cell">?XX?g'
