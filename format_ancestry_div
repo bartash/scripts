@@ -4,6 +4,14 @@
 sed 's?</div></div>?\n?g' |\
 sed 's?<div class="grid-container">??g' |\
 sed 's?<div class="grid-row grid-column green-bg" role="presentation">??g' |\
-sed 's?<div class="grid-row grid-column white-bg" role="presentation">??g'
+sed 's?<div class="grid-row grid-column white-bg" role="presentation">??g' |\
+sed 's?,?\\,?g' |\
+sed 's?</span></div><div?,?g' |\
+sed 's?<div class="grid-cell"><span role="presentation" class="">??g' |\
+sed 's?class="grid-cell"><span role="presentation" class="link bold">??g' |\
+sed 's?class="grid-cell"><span role="presentation" class="link">??g' |\
+sed 's?class="grid-cell"><span role="presentation" class="link" data-ui-id=".*" aria-describedby="">??g' |\
+sed 's?class="grid-cell"><span role="presentation" class="">??g'
+
 
 # sed 's?</div><div class="grid-cell">?XX?g'
