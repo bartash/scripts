@@ -10,7 +10,12 @@ grep -v '<div class="grid-cell">$' |\
 sed 's?<div.*">??' |\
 sed 's?^ *??' |\
 grep -v '^</div>' |
-grep -v ^$
+grep -v ^$ |\
+grep -v '<?xml version="1.0"?>' |\
+sed 's?,?\\,?g' |\
+sed 's?</div>??g' |\
+sed 's?</span>??g' |\
+sed 's?.*>??g'
 
 #sed 's?</div></div>?\n?g' |\
 #sed 's?<div class="grid-container">??g' |\
