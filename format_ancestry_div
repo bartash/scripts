@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# format raw div table
+
+sed 's?</div></div>?\n?g' |\
+sed 's?<div class="grid-container">??g' |\
+sed 's?<div class="grid-row grid-column green-bg" role="presentation">??g' |\
+sed 's?<div class="grid-row grid-column white-bg" role="presentation">??g'
+
+# sed 's?</div><div class="grid-cell">?XX?g'
