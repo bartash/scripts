@@ -5,7 +5,8 @@
 # Assume 43 columns
 while read line
 do
-echo $line
+  # Escape any commas
+  echo $line | sed 's/,/\\,/g'
 done | awk '{
 val=$0
 printf "%s%s",val,NR%43?",":"\n" ;
