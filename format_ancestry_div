@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 # format raw div table
+#
+# to get data:
+# select some of the table, then right click->view selection source
+# when source opens in new tab, use control-A to select whole line and copy-paste
 
 sed 's?</div></div>?\n?g' |\
 sed 's?<div class="grid-container">??g' |\
@@ -13,6 +17,8 @@ sed 's?class="grid-cell"><span role="presentation" class="link bold">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="link">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="link" data-ui-id=".*" aria-describedby="">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="link bold" data-ui-id=".*" aria-describedby="">??g' |\
+sed 's?class="link" data-ui-id=".*" aria-describedby="">??g' |\
+sed 's?class="grid-cell"><span role="presentation" class="link calloutTrigger" data-ui-id=".*" aria-describedby="" aria-expanded="false">??g' |\
 sed 's?class="grid-cell"><span role="presentation" class="">??g' |\
 sed 's?</span>??g' |\
 sed 's?</div><div class="grid-cell">?,?g' |\
