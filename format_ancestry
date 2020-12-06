@@ -3,4 +3,6 @@
 # https://unix.stackexchange.com/questions/155709/use-sed-or-awk-to-move-rows-to-columns
 
 # Assume 43 columns
-awk '{printf "%s%s",$0,NR%43?",":"\n" ; }'
+awk '{
+printf "%s%s",$0,NR%43?",":"\n" ;
+}'
