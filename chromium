@@ -1,8 +1,14 @@
-
+#!/usr/bin/env bash
 # https://github.com/scheib/chromium-latest-linux.git
-cd ~/git/chromium-latest-linux;
-./update.sh
-./delete_old.sh
+
+cd ~/git/chromium-latest-linux
+# Allow 'chromium -q' for quick start of old version
+if [ "$#" -eq 0 ]
+then
+  ./update.sh
+  ./delete_old.sh
+fi
+
 case "$DISPLAY" in
  *:0) ./run2.sh ;;
  *) ./run.sh ;;
