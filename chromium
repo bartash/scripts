@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+# Use my fork of
 # https://github.com/scheib/chromium-latest-linux.git
+# at
+# git@github.com:bartash/chromium-latest-linux.git
 
 cd ~/git/chromium-latest-linux
 # Allow 'chromium -q' for quick start of old version
