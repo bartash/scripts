@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# Find what process has port open
+# https://unix.stackexchange.com/questions/106561/finding-the-pid-of-the-process-using-a-specific-port
+if [ "$#" -eq 1 ]
+then
+    PARAM=$1
+    if [ "$PARAM" -eq "$PARAM" ] 2>/dev/null
+    then
+        # number of branches to show
+        PORT=$PARAM
+    else
+        echo "parameter '$PARAM' is not an integer"
+        echo "usage: $0 [port]"
+        exit 1
+    fi
+else
+    echo "usage: $0 [port]"
+    exit 1
+fi
+
+sudo ss -lptn "sport = :${PORT}"
