@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# convert the .xlsx files to csv, and convert csv values to rows
+for i in $(ls *.xlsx)
+do
+	basename=$(echo $i | sed 's/.xlsx//')
+	ssconvert --export-type=Gnumeric_stf:stf_csv $i ${basename}.tmp
+done
+
