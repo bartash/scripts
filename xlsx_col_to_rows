@@ -3,10 +3,10 @@
 for input in $(ls *.xlsx)
 do
 	basename=$(echo $input | sed 's/.xlsx//')
-	# sssconvert can deduce exporter from suffix but force it to csv
+	# ssconvert can deduce exporter from suffix, but force it to csv
 	ssconvert --export-type=Gnumeric_stf:stf_csv $input ${basename}.tmp
-	# convert csv row into simple list.
-	# Ignore first line
+	# Convert csv row into simple list.
+	# Ignore first line - NOTE this is fragile as it depends on Capitalization of each option
 	tail -n  +2 ${basename}.tmp | sed 's/\(, \)\([A-Z]\)/\n\2/g' |\
 	 tr -d \" | sed 's/ $//' |\
 	 awk '{count[$0]++} END {for (j in count) printf "\"%s\" %d\n", j, count[j]}' > ${basename}.tmp2
