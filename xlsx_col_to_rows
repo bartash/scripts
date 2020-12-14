@@ -7,7 +7,7 @@ do
 	ssconvert --export-type=Gnumeric_stf:stf_csv $input ${basename}.tmp
 	# convert csv row into simple list.
 	# Ignore first line
-	tail -n  +2 ${basename}.tmp | sed 's/, /\n/g' |\
+	tail -n  +2 ${basename}.tmp | sed 's/\(, \)\([A-Z]\)/\n\2/g' |\
 	 tr -d \" | sed 's/ $//' |\
 	 awk '{count[$0]++} END {for (j in count) printf "\"%s\" %d\n", j, count[j]}' > ${basename}.tmp2
 	 # put back first line
