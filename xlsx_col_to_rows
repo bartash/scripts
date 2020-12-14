@@ -6,6 +6,8 @@ do
 	# sssconvert can deduce exporter from suffix but force it to csv
 	ssconvert --export-type=Gnumeric_stf:stf_csv $input ${basename}.tmp
 	# convert csv row into simple list
-	sed 's/, /\n/g' < ${basename}.tmp | tr -d \" | sed 's/ $//' > ${basename}.csv
+	sed 's/, /\n/g' < ${basename}.tmp |\
+	 tr -d \" | sed 's/ $//' |\
+	 awk '{count[$0]++} END {for (j in count) print j, count[j]}' > ${basename}.csv
 done
 
