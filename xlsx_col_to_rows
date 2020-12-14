@@ -9,6 +9,6 @@ do
 	sed 's/, /\n/g' < ${basename}.tmp |\
 	 tr -d \" | sed 's/ $//' |\
 	 awk '{count[$0]++} END {for (j in count) printf "\"%s\" %d\n", j, count[j]}' |
-	 sort -r -n -t\" -k 3 	 > ${basename}.csv
+	 sort -r -n -t\" -k 3 | sed 's/\" /\", /'	 > ${basename}.csv
 done
 
