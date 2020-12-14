@@ -5,11 +5,14 @@ do
 	basename=$(echo $input | sed 's/.xlsx//')
 	# sssconvert can deduce exporter from suffix but force it to csv
 	ssconvert --export-type=Gnumeric_stf:stf_csv $input ${basename}.tmp
-	# convert csv row into simple list
+	# convert csv row into simple list.
+	# Ignore first line
 	tail -n  +2 ${basename}.tmp | sed 's/, /\n/g' |\
 	 tr -d \" | sed 's/ $//' |\
 	 awk '{count[$0]++} END {for (j in count) printf "\"%s\" %d\n", j, count[j]}' > ${basename}.tmp2
+	 # put back first line
 	 head -1 ${basename}.tmp > ${basename}.csv
+	 # Add back quotes
 	 cat  ${basename}.tmp2 |  sort -r -n -t\" -k 3 | sed 's/\" /\", /' >> ${basename}.csv
 done
 
