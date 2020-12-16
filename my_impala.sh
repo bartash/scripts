@@ -54,4 +54,5 @@ esac
 # Impyla stuff
 export IMPALA_REPO=$IMPALA_HOME
 export IMPYLA_REPO=~/git/cloudera/impyla
+export IMPYLA_SKIP_HIVE_TESTS=True
 
