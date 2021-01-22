@@ -1,0 +1,10 @@
+# Run a separate chrome instance (on linux)
+#
+# https://askubuntu.com/questions/35392/how-to-launch-a-new-instance-of-google-chrome-from-the-command-line
+#
+# cd ~/.config
+# cp -r google-chrome/ google-chrome2
+# rm -rf  google-chrome2/Sess*
+# rm -rf google-chrome2/Sing*
+# 
+google-chrome --user-data-dir=~/config/google-chrome
