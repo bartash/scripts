@@ -7,4 +7,4 @@
 # rm -rf  google-chrome2/Sess*
 # rm -rf google-chrome2/Sing*
 # 
-google-chrome --user-data-dir=~/config/google-chrome
+google-chrome
