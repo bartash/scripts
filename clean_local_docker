@@ -2,4 +2,13 @@
 #
 # clean local images that have no tag
 # https://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html
+
+
+# remove old containers
+for container in $(docker ps -q -a )
+do
+	echo "rm container $container"
+	docker rm $container
+done
+echo "removing images ..."
 docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
