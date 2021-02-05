@@ -69,7 +69,8 @@ alias aws-okta='aws-okta.exe --mfa-duo-device token'
 alias ao='aws-okta.exe --mfa-duo-device token'
 
 # push to dir with latest k9s output
-alias to_lastest_k9s='pu $(ls -td /tmp/k9s-screens-asherman/*  | head -1)'
+alias to_latest_k9s='pu $(ls -td /tmp/k9s-screens-asherman/*  | head -1)'
+alias to_k9s_latest='pu $(ls -td /tmp/k9s-screens-asherman/*  | head -1)'
 
 # for dwx personal docker builds
 export USER_TAG=asherman
