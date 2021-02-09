@@ -22,6 +22,7 @@ hadoop_dir=${hadoop_dir_list[0]}
 export PATH=$PATH:$hadoop_dir/bin
 
 . ~/Dropbox/work/cloudera/${AADWX}_env.sh
+. ~/Dropbox/work/cloudera/azure-env.sh
 alias ihome="cd $DWX_HOME"
 
 # USE_IMPALA_AUTOSCALER_IMAGE=false
