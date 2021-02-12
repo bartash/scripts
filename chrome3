@@ -7,4 +7,4 @@
 # rm -rf  google-chrome3/Sess*
 # rm -rf google-chrome3/Sing*
 # 
-google-chrome --user-data-dir=~/config/google-chrome3
+google-chrome --user-data-dir=/home/asherman/config/google-chrome3

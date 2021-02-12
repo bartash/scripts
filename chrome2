@@ -6,5 +6,4 @@
 # cp -r google-chrome/ google-chrome2
 # rm -rf  google-chrome2/Sess*
 # rm -rf google-chrome2/Sing*
-# 
-google-chrome --user-data-dir=~/config/google-chrome2
+google-chrome --user-data-dir=/home/asherman/config/google-chrome2
