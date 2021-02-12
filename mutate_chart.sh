@@ -16,7 +16,7 @@ if [ ! -f $ORIG ] ; then
 fi
 
 
-NEWFILE=$(echo $ORIG | sed 's/.tgz/-helm3.tgz')
+NEWFILE=$(echo $ORIG | sed 's/.tgz/-helm3.tgz/')
 
 echo ORIG=$ORIG
 echo NEWFILE=$NEWFILE
@@ -24,5 +24,7 @@ echo NEWFILE=$NEWFILE
 DIR=impala-coordinator
 
 rm -rf $DIR
+echo "extract from $ORIG"
 tar xvf $ORIG
+echo "Write $DIR into $NEWFILE"
 tar cvzf  $NEWFILE  $DIR
