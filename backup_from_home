@@ -28,3 +28,7 @@ echo would be listed above
 
 # copy git stuff
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/backups ${BACKUP_VOL}/git_backups
+
+
+# backup local docs
+rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_VOL}/mac_docs
