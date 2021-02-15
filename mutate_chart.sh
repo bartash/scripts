@@ -21,5 +21,12 @@ rm -rf $DIR
 
 echo "Extract from $ORIG"
 tar xf $ORIG
+
+IHOME=/home/asherman/git/go4/src/github.com/hortonworks/edws
+pushd $IHOME
+make mutate
+popd
+$IHOME/mutater
+
 echo "Write $DIR into $NEWFILE"
 tar czf  $NEWFILE  $DIR
