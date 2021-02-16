@@ -26,7 +26,12 @@ IHOME=/home/asherman/git/go4/src/github.com/hortonworks/edws
 pushd $IHOME
 make mutate
 popd
+# mutater works on $DIR
 $IHOME/mutater
+helm3 lint impala-coordinator |& grep -v INFO |\
+  grep -v deprecated |\
+  grep -v 'chart metadata is missing these dependencies: dwx-common' |\
+  grep -v 'Error: 1 chart(s) linted, 1 chart(s) failed'
 
 echo "Write $DIR into $NEWFILE"
 tar czf  $NEWFILE  $DIR
