@@ -29,10 +29,18 @@ make mutate
 popd
 # mutater works on $DIR
 $IHOME/mutater
-helm3 lint impala-coordinator |& grep -v INFO |\
+LINT_OUT=$(helm3 lint impala-coordinator |& grep -v INFO |\
   grep -v deprecated |\
   grep -v 'chart metadata is missing these dependencies: dwx-common' |\
-  grep -v 'Error: 1 chart(s) linted, 1 chart(s) failed'
+  grep -v 'Error: 1 chart(s) linted, 1 chart(s) failed' |\
+  grep -v '==> Linting impala-coordinator' |\
+  grep -v ^$
+)
+if [ ! -z "$LINT_OUT" ]; then
+  echo "************ lint $LINT_OUT"
+else
+  echo lint clean
+fi
 
 echo "Write $DIR into $NEWFILE"
 tar czf  $NEWFILE  $DIR
