@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #
 # Edit a chart ot make it helm3 compatible
 #
