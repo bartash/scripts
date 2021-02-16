@@ -7,9 +7,9 @@ do
   file=impala-coordinator-${release}.tgz
   if [ ! -f $file ]; then
     echo "cannot find file $file"
-#    exit 1
+    exit 1
   else
     echo "found file $file"
   fi
-#  mutate_chart.sh ${release}
+  mutate_chart.sh ${file}
 done
