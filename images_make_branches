@@ -1,0 +1,4 @@
+for release in 1.1.2-h5-b3 1.1.2-b1192 1.1.2-b1217 1.1.2-h6-b1 1.1.2-b1280 1.1.2-b1318
+do
+	echo $release
+done

@@ -42,5 +42,7 @@ else
   echo lint clean
 fi
 
+KUBECONFIG=~/.kube/dummy-aws-env  helm3 upgrade impala-coordinator-1613587564  ./impala-coordinator --reuse-values -n impala-1613587550-nn8c
+
 echo "Write $DIR into $NEWFILE"
 tar czf  $NEWFILE  $DIR
