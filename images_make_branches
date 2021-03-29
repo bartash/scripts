@@ -1,4 +1,15 @@
-for release in 1.1.2-h5-b3 1.1.2-b1192 1.1.2-b1217 1.1.2-h6-b1 1.1.2-b1280 1.1.2-b1318
-do
-	echo $release
+#!/usr/bin/env bash
+
+releases=(1.1.2-h5-b3 1.1.2-b1192 1.1.2-b1217 1.1.2-h6-b1 1.1.2-b1280 1.1.2-b1318)
+declare -A hash=(
+  [1.1.2-h5-b3]=15d7c2115277c8db59dc3095e426c7b739b84e3a
+  [1.1.2-b1192]=35bb40a924e5b0da5514e44e6677259498810a11
+  [1.1.2-b1217]=a195b75776627c316392795ef7b8f732db3c9c79
+  [1.1.2-h6-b1]=b390410c60fc344843a307e2e4aee38f2d56320b
+  [1.1.2-b1280]=fb45a422ac4a6a65ef9b029d6ce43b748984ec68
+  [1.1.2-b1318]=656e6188b97e94d532f785622c356aaa864d3399
+)
+
+for release in "${releases[@]}"; do
+  echo "$release has hash ${hash[$release]}     "
 done
