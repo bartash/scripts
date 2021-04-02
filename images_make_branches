@@ -14,7 +14,6 @@ for release in "${releases[@]}"; do
   echo "$release has hash ${hash[$release]}"
 done
 
-
 for release in "${releases[@]}"; do
   git checkout ${hash[$release]}
   git checkout -b $release

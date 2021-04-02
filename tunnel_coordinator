@@ -9,7 +9,7 @@ then
   NS="-n $1"
 fi
 
-mapfile -t pods < <(kubectl  get pods ${NS} | grep  coordinator | grep Running | grep 5/5)
+mapfile -t pods < <(kubectl  get pods ${NS} | grep  coordinator | grep Running | grep 6/6)
 
 
 if [ ${#pods[@]} -eq 1 ]; 
