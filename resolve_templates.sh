@@ -32,3 +32,6 @@ do
     helm3 --set "samlCallbackUrl=${saml},impalaEnableProxy=${proxy}"  template ${ZIP_FILE} > ${OUTPUT}
   done
 done
+
+diff helm_output-proxy=false-saml=true.out helm_output-proxy=true-saml=true.out
+
