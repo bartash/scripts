@@ -10,6 +10,8 @@ then
 fi
 
 BUILD_DIR=/tmp/chart_build
+ZIP_FILE=/tmp/x.tar.tgz
+
 rm -rf ${BUILD_DIR}
 mkdir ${BUILD_DIR}
 cp -r charts/impala-coordinator ${BUILD_DIR}
@@ -19,14 +21,14 @@ TMP_FILE=/tmp/foo$$
 cp ${BUILD_DIR}/impala-coordinator/Chart.yaml ${TMP_FILE}
 grep -v dwx-common ${TMP_FILE} >${BUILD_DIR}/impala-coordinator/Chart.yaml
 # build .tgz file
-tar -C ${BUILD_DIR} -czf /tmp/x.tar.tgz impala-coordinator
+tar -C ${BUILD_DIR} -czf ${ZIP_FILE} impala-coordinator
 
 for saml in true false
 do
-  echo "saml=$saml"
+  for proxy in true false
+  do
+    OUTPUT="helm_output-proxy=${proxy}-saml=${saml}.out"
+    echo "OUTPY=${OUTPUT}"
+    helm3 --set "samlCallbackUrl=${saml},impalaEnableProxy=${proxy}"  template ${ZIP_FILE} > ${OUTPUT}
+  done
 done
-for proxy in true false
-do
-  echo "proxy=$proxy"
-done
-helm3 --set 'samlCallbackUrl=true,impalaEnableProxy=true'  template /tmp/x.tar.tgz > /tmp/ssss
