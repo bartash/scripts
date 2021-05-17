@@ -28,8 +28,10 @@ do
   for proxy in true false
   do
     OUTPUT="helm_output-proxy=${proxy}-saml=${saml}.out"
-    echo "OUTPY=${OUTPUT}"
+    echo "OUTPUT=${OUTPUT}"
     helm3 --set "samlCallbackUrl=${saml},impalaEnableProxy=${proxy}"  template ${ZIP_FILE} > ${OUTPUT}
+    echo diff ${OUTPUT} ~/tmp/orig/${OUTPUT}
+    diff ${OUTPUT} ~/tmp/orig/${OUTPUT}
   done
 done
 
