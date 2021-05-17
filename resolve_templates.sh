@@ -35,5 +35,5 @@ do
   done
 done
 
-diff helm_output-proxy=false-saml=true.out helm_output-proxy=true-saml=true.out
+# diff helm_output-proxy=false-saml=true.out helm_output-proxy=true-saml=true.out
 
