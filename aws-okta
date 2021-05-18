@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+aws-okta.exe --mfa-duo-device token "$@"
