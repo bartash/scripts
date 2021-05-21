@@ -44,6 +44,10 @@ alias dwx-dev4='export AADWX=dwx-dev4; export GOPATH=$HOME/git/go4; . ~/scripts/
 alias dwx-dev5='export AADWX=dwx-dev5; export GOPATH=$HOME/git/go5; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 alias dwx-dev6='export AADWX=dwx-dev6; export GOPATH=$HOME/git/go6; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 
+alias c1c-dev1='export AAC1C=c1c-dev1; export GOPATH=$HOME/git/c1c/c1c-oe/go; . ~/scripts/my_c1c.sh; cd $C1C_HOME'
+
+
+
 alias k=kubectl
 alias impala-shell=impala-shell.sh
 
@@ -75,5 +79,5 @@ alias to_k9s_latest='pu $(ls -td /tmp/k9s-screens-asherman/*  | head -1)'
 # for dwx personal docker builds
 export USER_TAG=asherman
 
-
+# mostly obsolete part of throttling tooclhain downloads
 export IMPALA_CONCURRENT_DOWNLOADS=1
