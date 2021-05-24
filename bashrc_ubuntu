@@ -44,7 +44,7 @@ alias dwx-dev4='export AADWX=dwx-dev4; export GOPATH=$HOME/git/go4; . ~/scripts/
 alias dwx-dev5='export AADWX=dwx-dev5; export GOPATH=$HOME/git/go5; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 alias dwx-dev6='export AADWX=dwx-dev6; export GOPATH=$HOME/git/go6; . ~/scripts/dwx_postgres.sh ; . ~/scripts/my_dwx.sh; cd "$DWX_HOME"'
 
-alias c1c-dev1='export AAC1C=c1c-dev1; export GOPATH=$HOME/git/c1c/c1c-oe/go; . ~/scripts/my_c1c.sh; cd $C1C_HOME'
+alias c1c-dev1='export AAC1C=c1c-dev1; export GOPATH=~/bin/c1cgo; . ~/scripts/my_c1c.sh; cd $C1C_HOME'
 
 
 

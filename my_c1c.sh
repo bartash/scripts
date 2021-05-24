@@ -13,7 +13,7 @@ export MYPROMPT=$AAC1C
 
 # export GO111MODULE=on
 
-export C1C_HOME=$GOPATH/..
+export C1C_HOME=$HOME/git/c1c/c1c-oe
 
 . ~/scripts/gosetup.sh
 
