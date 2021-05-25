@@ -27,3 +27,7 @@ export OWNER='asherman@cloudera.com'
 
 export PATH=$PATH:/usr/local/kubebuilder/bin
 
+# new use aoc magic
+. /home/asherman/.bashrc_aws-okta
+
+
