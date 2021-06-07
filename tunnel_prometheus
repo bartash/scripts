@@ -6,7 +6,7 @@ then
   echo "using kubeconfig $1"
   KUBE="--kubeconfig $1"
 fi
-PROM=$(kubectl $KUBE get pods --all-namespaces | grep prometheus | grep istio-system | awk '{print $2'})
+PROM=$(kubectl $KUBE get pods --all-namespaces | grep prometheus | grep istio-system | awk '{print $2}')
 kubectl $KUBE port-forward --address localhost,127.0.0.1 ${PROM} -n istio-system 9090:9090
 
 
