@@ -27,6 +27,9 @@ export OWNER='asherman@cloudera.com'
 
 export PATH=$PATH:/usr/local/kubebuilder/bin
 
+# The one true cluster
+export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg
+
 # new use aoc magic
 . /home/asherman/.bashrc_aws-okta
 
