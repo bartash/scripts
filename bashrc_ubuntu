@@ -66,11 +66,6 @@ PS1='[\w][$MYPROMPT]\$ '
 export PATH=$PATH:$HOME/go/bin
 
 
-export AWS_OKTA_BACKEND=secret-service
-if [[ "$HOSTNAME" == "asherman-cc.vpc.cloudera.com" ]]; then
-    export AWS_OKTA_BACKEND=file
-fi
-
 # https://cloudera.atlassian.net/wiki/spaces/ESRE/pages/30376051/SRE+Runbook+-+Cloud+Users+AWS-Okta+SSO
 # . ~/git/sre/sre/terraform/modules/cloud-users/ao_config/AO_CONFIG.sh
 # . ~/git/sre/sre/terraform/modules/cloud-users/ao_config/.bashrc_aws-okta

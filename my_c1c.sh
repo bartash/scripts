@@ -33,4 +33,12 @@ export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg
 # new use aoc magic
 . /home/asherman/.bashrc_aws-okta
 
+# On cloudcat machine I get
+# 'org.gnome.keyring.SystemPrompter' failed
+# and I have not yet been able to fix this on a headless machine,
+# Storing secret in file is bearable if passphrase is <CR>
+if [[ "$HOSTNAME" == "asherman-cc.vpc.cloudera.com" ]]; then
+    export AWS_OKTA_BACKEND=file
+fi
+
 
