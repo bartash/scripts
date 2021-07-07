@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# c1c  get impala frontend for tenant
+TENANT=xcu2-8y8x
+kubectl get namespace -L tenant | grep impala-frontend | grep $TENANT | awk '{print $1}'
