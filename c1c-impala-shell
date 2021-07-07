@@ -3,10 +3,12 @@
 # login to c1c shell pod
 
 # find the fe with the tenant
+kubectl get pods -A > /dev/null || { echo "expired credentials?" ; exit 1;}
 fe=$(c1c-get-frontend)
 
 # find the ip address of the coordinator
 ip=$(kubectl get pods -n $fe -o wide | grep coordinator | awk '{print $6}')
 echo "Access shell with:"
 echo "impala-shell --protocol='hs2-http' -i ${ip}:28000"
+echo "impala-shell --protocol='hs2-http' -i ${ip}:28000 -q 'select count(*) from foo where a + random() < sleep(60000)'"
 kubectl exec --stdin --tty impala-shell -n c1c-services -- /bin/bash

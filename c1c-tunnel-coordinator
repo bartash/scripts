@@ -3,6 +3,7 @@
 # tunnel to a c1c coordinator
 
 # find the fe with the tenant
+kubectl get pods -A > /dev/null || { echo "expired credentials?" ; exit 1;}
 namespace=$(c1c-get-frontend)
 
 name=$(kubectl get pods -n $namespace | grep coordinator | awk '{print $1}')
