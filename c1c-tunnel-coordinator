@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# tunnel to a c1c coordinator
+
+# find the fe with the tenant
+namespace=$(c1c-get-frontend)
+
+name=$(kubectl get pods -n $namespace | grep coordinator | awk '{print $1}')
+
+# target port
+target=25013
+
+echo "browse to http://localhost:${target}"
+kubectl port-forward --address localhost,127.0.0.1 $name -n $namespace ${target}:25000
