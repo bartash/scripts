@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#
+# login to c1c shell pod
+kubectl exec --stdin --tty impala-shell -n c1c-services -- /bin/bash
