@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #
 # get a shell with aws creds
-KUBECONFIG=~/.kube/liftie-rv5wb5cg ao exec cu_eng_c1c_dev -- bash
+KUBECONFIG=~/.kube/liftie-rv5wb5cg aws-okta.exe --mfa-duo-device token exec cu_eng_c1c_dev -- bash
