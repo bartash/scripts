@@ -51,6 +51,8 @@ alias c1c-dev1='export AAC1C=c1c-dev1; export GOPATH=~/bin/c1cgo; . ~/scripts/my
 alias k=kubectl
 alias impala-shell=impala-shell.sh
 
+alias vpn='globalprotect launch-ui'
+
 if  [ -x "$(command -v kubectl)" ]; then
   source <(kubectl completion bash | sed s/kubectl/k/g)
   source <(kubectl completion bash)
