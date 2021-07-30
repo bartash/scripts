@@ -33,6 +33,9 @@ export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg
 # for now allow a switch to other cluster
 alias c1c-env2='export KUBECONFIG=/home/asherman/.kube/liftie-4mrnzc7k'
 
+# switch to tenant2
+alias c1c-tenant2='export TENANT=ycu2-8y8x'
+
 
 # new use aoc magic
 . /home/asherman/.bashrc_aws-okta
