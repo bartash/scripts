@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+. ~/scripts/functions.sh
+mytenant="${TENANT:=xcu2-8y8x}"
+echoerr tenant=$mytenant
+
+kubectl get pods -l tenant=$mytenant -n c1c-pod-pool
