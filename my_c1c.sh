@@ -31,6 +31,7 @@ export PATH=$PATH:/usr/local/kubebuilder/bin
 export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg
 
 # for now allow a switch to other cluster
+alias c1c-env1='export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg'
 alias c1c-env2='export KUBECONFIG=/home/asherman/.kube/liftie-4mrnzc7k'
 
 # switch to tenant2

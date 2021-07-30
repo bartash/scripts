@@ -2,7 +2,6 @@
 #
 # c1c  get impala frontend for tenant
 . ~/scripts/functions.sh
-
 mytenant="${TENANT:=xcu2-8y8x}"
 echoerr tenant=$mytenant
 kubectl get namespace -L tenant | grep impala-frontend | grep $mytenant | awk '{print $1}'
