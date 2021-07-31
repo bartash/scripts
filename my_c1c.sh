@@ -35,8 +35,8 @@ alias c1c-env1='export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg'
 alias c1c-env2='export KUBECONFIG=/home/asherman/.kube/liftie-4mrnzc7k'
 
 # switch to tenant2
-alias c1c-tenant1='export TENANT=xcu2-8y8x'
-alias c1c-tenant2='export TENANT=ycu2-8y8x'
+alias c1c-tenant1='export C1C_TENANT=xcu2-8y8x'
+alias c1c-tenant2='export C1C_TENANT=ycu2-8y8x'
 
 
 # new use aoc magic
