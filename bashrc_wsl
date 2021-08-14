@@ -1,2 +1,7 @@
 # scripts for windows subsystem for linux
 alias subl='/mnt/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe'
+
+# Note: Bash on Windows does not currently apply umask properly.
+if [[ "$(umask)" = "0000" ]]; then
+   umask 0022
+fi
