@@ -33,6 +33,8 @@ export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg
 # for now allow a switch to other cluster
 alias c1c-env1='export KUBECONFIG=/home/asherman/.kube/liftie-rv5wb5cg'
 alias c1c-env2='export KUBECONFIG=/home/asherman/.kube/liftie-4mrnzc7k'
+alias c1c-mini='export KUBECONFIG=/home/asherman/.kube/minikube'
+alias c1c-kind='export KUBECONFIG=/home/asherman/.kube/kind'
 
 # switch to tenant2
 alias c1c-tenant1='export C1C_TENANT=xcu2-8y8x'
