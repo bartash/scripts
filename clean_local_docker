@@ -12,3 +12,8 @@ do
 done
 echo "removing images ..."
 docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+
+## from Zoltan Haindrich in slack
+## if you are running docker system prune; use:
+## docker system prune --volumes -a
+## but be carefull...see what it will remove! on my machine I had many old images hanging around eating up space for no good reason...until I found out that prune doesnt remove unused images....
