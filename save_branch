@@ -16,5 +16,14 @@ echo current branch is $BRANCH
 NEW_BRANCH=${BRANCH}_${SUFFIX}
 git checkout -b ${NEW_BRANCH}
 # echo new branch = ${NEW_BRANCH}
+
+if git remote | grep ^asherman$ > /dev/null ; 
+then 
+	echo "saving branch to asherman remote"
+	git push -u asherman
+else 
+	echo "no remote asherman to save to"
+fi
+
 git checkout -
 
