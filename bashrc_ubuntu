@@ -46,6 +46,9 @@ alias dwx-dev6='export AADWX=dwx-dev6; export GOPATH=$HOME/git/go6; . ~/scripts/
 
 alias c1c-dev1='export AAC1C=c1c-dev1; export GOPATH=~/bin/c1cgo; . ~/scripts/my_c1c.sh; cd $C1C_HOME'
 
+alias pvc-dev1='export AAPVC=pvc-dev1; export KUBECONFIG=~/.kube/cdw-dev-kubeconfig; . ~/scripts/my_pvc.sh'
+alias pvc-dev2='export AAPVC=pvc-dev2; export KUBECONFIG=~/.kube/dev-02; . ~/scripts/my_pvc.sh'
+
 
 
 alias k=kubectl
