@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#
+# check if pvc vars set
+
+# syntax needs bash 4.2
+
+# Settings to connect with CDP Private control plane and base
+# cluster. These need to be retrieved from a running CDP private cloud instance - see Setting up a CDP control plane.
+if [[ ! -v SDX_CDP_CONSOLE_HOST_URL ]]; then
+    echo "SDX_CDP_CONSOLE_HOST_URL not set"
+fi
+if [[ ! -v PRIVATE_CLOUD_ENV_CRN ]]; then
+    echo "PRIVATE_CLOUD_ENV_CRN not set"
+fi
+
+# DWX installation namespace, used to get the postgres 
+# db root cert from
+if [[ ! -v CSI_NAMESPACE ]]; then
+    echo "CSI_NAMESPACE not set"
+fi
+
+# Used for finding the $OPENSHIFT_NAMESPACE_PREFIX-monitoring-platform
+# namespace which is created during environment registration in
+# the CDP control plane
+if [[ ! -v OPENSHIFT_NAMESPACE_PREFIX ]]; then
+    echo "OPENSHIFT_NAMESPACE_PREFIX not set"
+fi
+
+# User Management Service related settings
+# See this section on how to get the CRN or copy from here if
+# you are using a shared instance
+if [[ ! -v DEBUG_ACTOR_CRN ]]; then
+    echo "DEBUG_ACTOR_CRN not set"
+fi
