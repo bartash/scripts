@@ -4,6 +4,10 @@
 # https://docs.google.com/document/d/16ySv2fdWdXIABpj5VIgbjD0preIO9CY-pgk0qUr7p0c/edit#
 #
 # Set CSI_NAMESPACE in advance to DWX installation NS
+if [[ ! -v CSI_NAMESPACE ]]; then
+    echo "CSI_NAMESPACE not set"
+    exit 1
+fi
 # Get UMS service name
 export UMS_POD_NAME=$(kubectl get pods -l app=thunderhead-usermanagement-private  -o jsonpath="{.items[0].metadata.name}" -n $CSI_NAMESPACE)
 
