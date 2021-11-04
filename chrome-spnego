@@ -1,0 +1,7 @@
+# Run chrome with spnego
+#
+# https://askubuntu.com/questions/35392/how-to-launch-a-new-instance-of-google-chrome-from-the-command-line
+#
+# Note this is an okta driven browser
+# 
+google-chrome --user-data-dir=/home/asherman/config/google-chrome4 --auth-server-whitelist="*.hwx.site" --auth-negotiate-delegate-whitelist="*.hwx.site"
