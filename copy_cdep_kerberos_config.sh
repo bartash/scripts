@@ -15,14 +15,19 @@ CONFIG=~/tmp/cdep_kerberos_$$
 mkdir ${CONFIG}
 cd ${CONFIG}
 
-echo "copying keytab files to ${CONFIG}"
+echo "Copying keytab files to ${CONFIG}"
 scp -r -i ~/.ssh/systest_rsa  systest@${HOST}:/cdep .
-echo "copying krb5.conf files to ${CONFIG}"
+echo "Copying krb5.conf files to ${CONFIG}"
 scp -r -i ~/.ssh/systest_rsa  systest@${HOST}:/etc/krb5.conf .
 echo "Overwriting /etc/krb5.conf"
 sudo cp krb5.conf /etc/krb5.conf
-echo "running kinit for systest"
+echo "Copying certificate"
+scp -r  -i ~/.ssh/systest_rsa  systest@${HOST}:/var/lib/cloudera-scm-agent/agent-cert/cm-auto-global_cacerts.pem .
+echo "Running kinit for systest"
 kinit -kt cdep/keytabs/systest.keytab systest
+
+echo "Impala-shell string"
+echo "impala-shell -i ${HOST} -d default -k --ssl --ca_cert=${CONFIG}/cm-auto-global_cacerts.pem"
 
 
 
