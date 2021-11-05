@@ -10,5 +10,5 @@ fi
 
 cd $TARGET
 mv sunnysidehistory.org sunnysidehistory.org_$$
-wget --mirror -p --html-extension --convert-links https://sunnysidehistory.org/
+wget --no-check-certificate --mirror -p --html-extension --convert-links https://sunnysidehistory.org/
 
