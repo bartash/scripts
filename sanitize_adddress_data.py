@@ -7,10 +7,11 @@ from __future__ import print_function
 
 import csv
 
+import logging
 import sys
 
 def main():
-    print("Hello, World!")
+    logging.getLogger().setLevel(logging.INFO)
 
     if len(sys.argv) < 2:
         print('You need to specify a file')
@@ -28,24 +29,25 @@ def main():
             column_names = []
             for row in csv_reader:
                 if line_count == 0:
-                    print(f'Column names are {", ".join(row)}')
+                    logging.info(f'Column names are {", ".join(row)}')
                     column_names = row
                     num_columns  = len(column_names)
                     line_count += 1
                 else:
                     num_row_columns = len(row)
                     if num_row_columns < num_columns:
-                        print(f"Row {line_count} has {num_row_columns} cols instead of expected {num_columns} cols")
+                        logging.warning(f"Row {line_count} has {num_row_columns} cols instead of expected {num_columns} cols")
                         # assume this is junk??
-                        print(f"Discarding row {row}")
+                        logging.warning(f"Discarding row {row}")
                         continue
+                    debug_str = ""
                     for col_num in range(0, num_columns):
                         col_name = column_names[col_num]
                         row_data = row[col_num].strip()
-                        print(f"{col_name}='{row_data}' ", end='')
-                    print()
+                        debug_str += f"{col_name}='{row_data}' "
+                    logging.info(f"{debug_str}")
                     line_count += 1
-            print(f'Processed {line_count} lines.')
+            logging.info(f'Processed {line_count} lines deom {csv_file_name}.')
 
 if __name__ == "__main__":
     main()
