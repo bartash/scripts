@@ -21,7 +21,7 @@ def main():
 
     for i in range(1, argc):
         csv_file_name = sys.argv[i]
-        print("file is {0}".format(csv_file_name))
+        logging.debug("file is {0}".format(csv_file_name))
         with open(csv_file_name) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
@@ -37,7 +37,7 @@ def main():
                     num_row_columns = len(row)
                     if num_row_columns < num_columns:
                         logging.warning(f"Row {line_count} has {num_row_columns} cols instead of expected {num_columns} cols")
-                        # assume this is junk??
+                        # assume this is junk?? For example in original test data this was "</div>"
                         logging.warning(f"Discarding row {row}")
                         continue
                     debug_str = ""
