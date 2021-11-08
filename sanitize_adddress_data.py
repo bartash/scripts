@@ -21,7 +21,7 @@ def main():
 
     for i in range(1, argc):
         csv_file_name = sys.argv[i]
-        logging.debug("file is {0}".format(csv_file_name))
+        logging.debug(f"file is {csv_file_name}")
         with open(csv_file_name) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
