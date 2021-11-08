@@ -47,7 +47,7 @@ def main():
                         debug_str += f"{col_name}='{row_data}' "
                     logging.info(f"{debug_str}")
                     line_count += 1
-            logging.info(f'Processed {line_count} lines deom {csv_file_name}.')
+            logging.info(f'Processed {line_count} lines from {csv_file_name}.')
 
 if __name__ == "__main__":
     main()
