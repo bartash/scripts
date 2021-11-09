@@ -14,6 +14,5 @@ export UMS_POD_NAME=$(kubectl get pods -l app=thunderhead-usermanagement-private
 # Start port forwarding
 while :
 do
-  echo kubectl -n $CSI_NAMESPACE port-forward pod/$UMS_POD_NAME 8078:8982
-  sleep 1
+  kubectl -n $CSI_NAMESPACE port-forward pod/$UMS_POD_NAME 8078:8982
 done
