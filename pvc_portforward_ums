@@ -12,4 +12,8 @@ fi
 export UMS_POD_NAME=$(kubectl get pods -l app=thunderhead-usermanagement-private  -o jsonpath="{.items[0].metadata.name}" -n $CSI_NAMESPACE)
 
 # Start port forwarding
-while :; do kubectl -n $CSI_NAMESPACE port-forward pod/$UMS_POD_NAME 8078:8982; done
+while :
+do
+  echo kubectl -n $CSI_NAMESPACE port-forward pod/$UMS_POD_NAME 8078:8982
+  sleep 1
+done
