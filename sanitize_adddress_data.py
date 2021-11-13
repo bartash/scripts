@@ -29,8 +29,8 @@ def count_columns(holders):
             all_cols[columns] += 1
         else:
             all_cols[columns] = 1
-
-    logging.info(f"all_cols={all_cols}")
+    for key in all_cols:
+        logging.info(f"cols[{key}]={all_cols[key]}")
 
 
 
