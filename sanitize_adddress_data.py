@@ -18,6 +18,22 @@ class CsvData(object):
         self.columns = None
 
 
+OUTPUT_COLS = ["LAST1"
+               "FIRST1",
+               "LAST2",
+               "FIRST2",
+               "NAME",
+               "NUMBER",
+               "STREET",
+               "ADDRESS",
+               "CITY",
+               "STATE",
+               "ZIP",
+               "EMAIL1",
+               "EMAIL2",
+               "PHONE"
+               ]
+
 def count_columns(holders):
     all_cols = {}
     col_tuples = {}
@@ -40,6 +56,43 @@ def count_columns(holders):
         logging.info(f"{col_name}")
     for key in col_tuples:
         logging.info(f"cols[{key}]={col_tuples[key]} year={years[key]}")
+
+    output_holders = []
+    # Merge common rows, I happen to know there is only one column tuple where this is done
+    # so I can use a single CsvData to merge it into.
+    new_holder = None
+    for holder in holders:
+        columns = tuple(holder.columns)
+        if col_tuples[columns] == 1:
+            output_holders.append(holder)
+            # FIXME add year data to all rows
+        else:
+            # this is a holder which has common column tuples
+            if new_holder is None:
+                # we were first so allocate the holder
+                new_holder = CsvData(name="merged")
+                new_holder.columns = holder.columns
+                new_holder.rows = holder.rows
+                # FIXME add year data to all rows
+            else:
+                # merge data into new_holder
+
+                # Shall we just do this by brute force??
+
+                for row in holder.rows:
+                    # is it there?
+                    if row in new_holder.rows:
+                        logging.info("duplicate row {row} found already present")
+                        # find it
+                        for probe in new_holder.rows:
+                            if row == probe:
+                                # Would like to mark this with its source years
+                                # but then we won't match on it io next loop!
+                                logging.info("found the duplicate row")
+
+
+
+
 
 
 
