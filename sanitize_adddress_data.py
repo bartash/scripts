@@ -14,6 +14,8 @@ class CsvData(object):
 
     def __init__(self, name):
         self.name = name
+        self.rows = []
+        self.columns = None
 
 
 
@@ -27,11 +29,11 @@ def main():
     argc = len(sys.argv)
 
     holders = read_csv_files(argc)
-
     logging.info(f"Read %d files", len(holders))
 
 
 def read_csv_files(argc):
+    """return a list of CsvData objects read from the file arguments"""
     holders = []
     for i in range(1, argc):
         csv_file_name = sys.argv[i]
@@ -49,6 +51,7 @@ def read_csv_files(argc):
                     column_names = row
                     num_columns = len(column_names)
                     line_count += 1
+                    holder.columns = column_names
                 else:
                     num_row_columns = len(row)
                     if num_row_columns < num_columns:
@@ -64,6 +67,7 @@ def read_csv_files(argc):
                         debug_str += f"{col_name}='{row_data}' "
                     logging.info(f"{debug_str}")
                     line_count += 1
+                    holder.rows.append(row)
             logging.info(f'Processed {line_count} lines from {csv_file_name}.')
     return holders
 
