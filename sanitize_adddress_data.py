@@ -20,6 +20,7 @@ class CsvData(object):
 
 def count_columns(holders):
     all_cols = {}
+    years = {}
     for holder in holders:
         ylen = len(holder.name)
         year = holder.name[ylen - 8:ylen - 4]
@@ -27,10 +28,12 @@ def count_columns(holders):
         columns = tuple(holder.columns)
         if columns in all_cols:
             all_cols[columns] += 1
+            years[columns] = years[columns] + " {}".format(year)
         else:
             all_cols[columns] = 1
+            years[columns] = "{}".format(year)
     for key in all_cols:
-        logging.info(f"cols[{key}]={all_cols[key]}")
+        logging.info(f"cols[{key}]={all_cols[key]} year={years[key]}")
 
 
 
