@@ -10,6 +10,13 @@ import csv
 import logging
 import sys
 
+class CsvData(object):
+
+    def __init__(self, name):
+        self.name = name
+
+
+
 def main():
     logging.getLogger().setLevel(logging.INFO)
 
@@ -19,10 +26,13 @@ def main():
 
     argc = len(sys.argv)
 
+    holders = []
     for i in range(1, argc):
         csv_file_name = sys.argv[i]
         logging.debug(f"file is {csv_file_name}")
         with open(csv_file_name) as csv_file:
+            holder = CsvData(name=csv_file_name)
+            holders.append(holder)
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
             num_columns = 0
@@ -48,6 +58,8 @@ def main():
                     logging.info(f"{debug_str}")
                     line_count += 1
             logging.info(f'Processed {line_count} lines from {csv_file_name}.')
+
+    logging.info(f"Read %d files", len(holders))
 
 if __name__ == "__main__":
     main()
