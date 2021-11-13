@@ -26,6 +26,12 @@ def main():
 
     argc = len(sys.argv)
 
+    holders = read_csv_files(argc)
+
+    logging.info(f"Read %d files", len(holders))
+
+
+def read_csv_files(argc):
     holders = []
     for i in range(1, argc):
         csv_file_name = sys.argv[i]
@@ -41,12 +47,13 @@ def main():
                 if line_count == 0:
                     logging.info(f'Column names are {", ".join(row)}')
                     column_names = row
-                    num_columns  = len(column_names)
+                    num_columns = len(column_names)
                     line_count += 1
                 else:
                     num_row_columns = len(row)
                     if num_row_columns < num_columns:
-                        logging.warning(f"Row {line_count} has {num_row_columns} cols instead of expected {num_columns} cols")
+                        logging.warning(
+                            f"Row {line_count} has {num_row_columns} cols instead of expected {num_columns} cols")
                         # assume this is junk?? For example in original test data this was "</div>"
                         logging.warning(f"Discarding row {row}")
                         continue
@@ -58,8 +65,8 @@ def main():
                     logging.info(f"{debug_str}")
                     line_count += 1
             logging.info(f'Processed {line_count} lines from {csv_file_name}.')
+    return holders
 
-    logging.info(f"Read %d files", len(holders))
 
 if __name__ == "__main__":
     main()
