@@ -18,6 +18,21 @@ class CsvData(object):
         self.columns = None
 
 
+def count_columns(holders):
+    all_cols = {}
+    for holder in holders:
+        ylen = len(holder.name)
+        year = holder.name[ylen - 8:ylen - 4]
+        logging.info(f"count_columns look at {holder.name} year='{year}'")
+        columns = tuple(holder.columns)
+        if columns in all_cols:
+            all_cols[columns] += 1
+        else:
+            all_cols[columns] = 1
+
+    logging.info(f"all_cols={all_cols}")
+
+
 
 def main():
     logging.getLogger().setLevel(logging.INFO)
@@ -30,6 +45,8 @@ def main():
 
     holders = read_csv_files(argc)
     logging.info(f"Read %d files", len(holders))
+
+    count_columns(holders)
 
 
 def read_csv_files(argc):
