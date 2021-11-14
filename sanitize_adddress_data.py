@@ -22,22 +22,23 @@ class CsvOutputData(object):
         self.column_group = {}
 
 
-OUTPUT_COLS = ["LAST1",
-               "FIRST1",
-               "LAST2",
-               "FIRST2",
-               "NAME",
-               "NUMBER",
-               "STREET",
-               "ADDRESS",
-               "CITY",
-               "STATE",
-               "ZIP",
-               "EMAIL1",
-               "EMAIL2",
-               "PHONE",
-               "YEARS",
-               ]
+OUTPUT_COLS = [
+    "YEARS",
+    "LAST1",
+    "FIRST1",
+    "LAST2",
+    "FIRST2",
+    "NAME",
+    "NUMBER",
+    "STREET",
+    "ADDRESS",
+    "CITY",
+    "STATE",
+    "ZIP",
+    "EMAIL1",
+    "EMAIL2",
+    "PHONE",
+]
 
 def build_output(holders):
     """Build a data structure containing all the data"""
@@ -104,12 +105,26 @@ def print_output(output, file_name):
                         col_text = ""
                     row_dict[column] = col_text
                     col_count  += 1
+                # do some post-processing
                 fixup_address(row_dict)
+                fixup_name(row_dict)
+                # write the row
                 writer.writerow(row_dict)
 
 
 def fixup_address(row_dict):
     # Fixup address data
+    if not 'ADDRESS' in row_dict:
+        if 'NUMBER' in row_dict and 'STREET' in row_dict:
+            row_dict['ADDRESS'] = row_dict['NUMBER'] + " " + row_dict['STREET']
+    if 'ADDRESS' in row_dict and row_dict['ADDRESS']:
+        if not 'NUMBER' in row_dict and not 'STREET' in row_dict:
+            addr_split = row_dict['ADDRESS'].split(None, 1)
+            row_dict['NUMBER'] = addr_split[0]
+            row_dict['STREET'] = addr_split[1]
+
+def fixup_name(row_dict):
+    # Fixup name data
     if not 'ADDRESS' in row_dict:
         if 'NUMBER' in row_dict and 'STREET' in row_dict:
             row_dict['ADDRESS'] = row_dict['NUMBER'] + " " + row_dict['STREET']
