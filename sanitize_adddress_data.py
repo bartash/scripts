@@ -35,7 +35,8 @@ OUTPUT_COLS = ["LAST1",
                "ZIP",
                "EMAIL1",
                "EMAIL2",
-               "PHONE"
+               "PHONE",
+               "YEARS",
                ]
 
 def build_output(holders):
@@ -95,6 +96,8 @@ def print_output(output, file_name):
             for row in rows:
                 col_count = 0
                 row_dict = {}
+                years = rows[row]
+                row_dict['YEARS'] = years
                 for column in columns:
                     col_text = row[col_count]
                     if col_text == "No Change":
@@ -121,7 +124,7 @@ def main():
     logging.info(f"output size={len(output.column_group)}")
 
     # FIXME make output file a parameter.
-    print_output(output, "/home/asherman/git/contactsData/merged2.csv")
+    print_output(output, "/home/asherman/git/contactsData/merged3.csv")
 
 
 def read_csv_files(argc):
