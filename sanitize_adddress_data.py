@@ -10,12 +10,17 @@ import csv
 import logging
 import sys
 
-class CsvData(object):
+class CsvInputData(object):
 
     def __init__(self, name):
         self.name = name
         self.rows = []
         self.columns = None
+
+class CsvOutputData(object):
+    def __init__(self):
+        # key is columns tuple, value is dict with rows -> years_string
+        self.rows = {}
 
 
 OUTPUT_COLS = ["LAST1"
@@ -33,6 +38,28 @@ OUTPUT_COLS = ["LAST1"
                "EMAIL2",
                "PHONE"
                ]
+
+def build_output(holders):
+    output = CsvOutputData()
+    # Merge common rows, I happen to know there is only one column tuple where this is done
+    # so I can use a single CsvData to merge it into.
+    new_holder = None
+    for holder in holders:
+        ylen = len(holder.name)
+        year = holder.name[ylen - 8:ylen - 4]
+        columns = tuple(holder.columns)
+        if columns not in output.rows:
+            output.rows[columns] = {}
+        row_dict = output.rows[columns]
+        for row in holder.rows:
+            row_tuple = tuple(row)
+            if row_tuple not in row_dict:
+                row_dict[row_tuple] = year
+            else:
+                row_dict[row_tuple] = row_dict[row_tuple]  + f" {year}"
+    return output
+
+
 
 def count_columns(holders):
     all_cols = {}
@@ -57,39 +84,6 @@ def count_columns(holders):
     for key in col_tuples:
         logging.info(f"cols[{key}]={col_tuples[key]} year={years[key]}")
 
-    output_holders = []
-    # Merge common rows, I happen to know there is only one column tuple where this is done
-    # so I can use a single CsvData to merge it into.
-    new_holder = None
-    for holder in holders:
-        columns = tuple(holder.columns)
-        if col_tuples[columns] == 1:
-            output_holders.append(holder)
-            # FIXME add year data to all rows
-        else:
-            # this is a holder which has common column tuples
-            if new_holder is None:
-                # we were first so allocate the holder
-                new_holder = CsvData(name="merged")
-                new_holder.columns = holder.columns
-                new_holder.rows = holder.rows
-                # FIXME add year data to all rows
-            else:
-                # merge data into new_holder
-
-                # Shall we just do this by brute force??
-
-                for row in holder.rows:
-                    # is it there?
-                    if row in new_holder.rows:
-                        logging.info("duplicate row {row} found already present")
-                        # find it
-                        for probe in new_holder.rows:
-                            if row == probe:
-                                # Would like to mark this with its source years
-                                # but then we won't match on it io next loop!
-                                logging.info("found the duplicate row")
-
 
 
 
@@ -110,6 +104,9 @@ def main():
 
     count_columns(holders)
 
+    output = build_output(holders)
+    logging.info(f"output size={len(output.rows)}")
+
 
 def read_csv_files(argc):
     """return a list of CsvData objects read from the file arguments"""
@@ -118,7 +115,7 @@ def read_csv_files(argc):
         csv_file_name = sys.argv[i]
         logging.debug(f"file is {csv_file_name}")
         with open(csv_file_name) as csv_file:
-            holder = CsvData(name=csv_file_name)
+            holder = CsvInputData(name=csv_file_name)
             holders.append(holder)
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
