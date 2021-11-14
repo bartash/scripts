@@ -108,6 +108,7 @@ def print_output(output, file_name):
                 # do some post-processing
                 fixup_address(row_dict)
                 fixup_name(row_dict)
+                fixup_name2(row_dict)
                 # write the row
                 writer.writerow(row_dict)
 
@@ -134,6 +135,19 @@ def fixup_name(row_dict):
                 row_dict['NAME'] = row_dict['FIRST1'] + " " + row_dict['LAST1']
 
 
+def fixup_name2(row_dict):
+    # If NAME is just two words then use them for FIRST1 and LAST1
+    if 'NAME' in row_dict:
+        if ('LAST1' not in row_dict or not row_dict['LAST1']) and ('FIRST1' not in row_dict or not row_dict['FIRST1']):
+            name = row_dict['NAME']
+            if name:
+                name_split = name.split(None)
+                if len(name_split) == 2:
+                    row_dict['FIRST1'] = name_split[0]
+                    row_dict['LAST1'] = name_split[1]
+
+
+
 def main():
     logging.getLogger().setLevel(logging.INFO)
 
@@ -152,7 +166,7 @@ def main():
     logging.info(f"output size={len(output.column_group)}")
 
     # FIXME make output file a parameter.
-    target = "/home/asherman/git/contactsData/merged8.csv"
+    target = "/home/asherman/git/contactsData/merged9.csv"
     print_output(output, target)
     logging.info(f"Generated {target}")
 
