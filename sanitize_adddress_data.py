@@ -152,7 +152,9 @@ def main():
     logging.info(f"output size={len(output.column_group)}")
 
     # FIXME make output file a parameter.
-    print_output(output, "/home/asherman/git/contactsData/merged8.csv")
+    target = "/home/asherman/git/contactsData/merged8.csv"
+    print_output(output, target)
+    logging.info(f"Generated {target}")
 
 
 def read_csv_files(argc):
