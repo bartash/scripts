@@ -124,13 +124,13 @@ def main():
     logging.info(f"output size={len(output.column_group)}")
 
     # FIXME make output file a parameter.
-    print_output(output, "/home/asherman/git/contactsData/merged3.csv")
+    print_output(output, "/home/asherman/git/contactsData/merged4.csv")
 
 
 def read_csv_files(argc):
     """return a list of CsvData objects read from the file arguments"""
     holders = []
-    for i in range(1, argc):
+    for i in reversed(range(1, argc)):
         csv_file_name = sys.argv[i]
         logging.debug(f"file is {csv_file_name}")
         with open(csv_file_name) as csv_file:
