@@ -11,7 +11,6 @@ import logging
 import sys
 
 class CsvInputData(object):
-
     def __init__(self, name):
         self.name = name
         self.rows = []
@@ -20,7 +19,7 @@ class CsvInputData(object):
 class CsvOutputData(object):
     def __init__(self):
         # key is columns tuple, value is dict with rows -> years_string
-        self.rows = {}
+        self.column_group = {}
 
 
 OUTPUT_COLS = ["LAST1"
@@ -48,10 +47,10 @@ def build_output(holders):
         ylen = len(holder.name)
         year = holder.name[ylen - 8:ylen - 4]
         columns = tuple(holder.columns)
-        if columns not in output.rows:
-            output.rows[columns] = {}
-        row_dict = output.rows[columns]
-        for row in holder.rows:
+        if columns not in output.column_group:
+            output.column_group[columns] = {}
+        row_dict = output.column_group[columns]
+        for row in holder.column_group:
             row_tuple = tuple(row)
             if row_tuple not in row_dict:
                 row_dict[row_tuple] = year
@@ -87,9 +86,13 @@ def count_columns(holders):
 
 def print_output(output, file_name):
     with open(file_name, 'w', newline='') as csvfile:
-        fieldnames = ['first_name', 'last_name']
+        fieldnames = OUTPUT_COLS
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
+
+        output.column_group
+
+        # FIXME delete examples at end
         writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
         writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
         writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
@@ -109,7 +112,7 @@ def main():
     count_columns(holders)
 
     output = build_output(holders)
-    logging.info(f"output size={len(output.rows)}")
+    logging.info(f"output size={len(output.column_group)}")
 
     print_output(output, "/home/asherman/git/contactsData/merged1.csv")
 
