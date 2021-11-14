@@ -125,14 +125,13 @@ def fixup_address(row_dict):
 
 def fixup_name(row_dict):
     # Fixup name data
-    if not 'ADDRESS' in row_dict:
-        if 'NUMBER' in row_dict and 'STREET' in row_dict:
-            row_dict['ADDRESS'] = row_dict['NUMBER'] + " " + row_dict['STREET']
-    if 'ADDRESS' in row_dict and row_dict['ADDRESS']:
-        if not 'NUMBER' in row_dict and not 'STREET' in row_dict:
-            addr_split = row_dict['ADDRESS'].split(None, 1)
-            row_dict['NUMBER'] = addr_split[0]
-            row_dict['STREET'] = addr_split[1]
+    if not 'NAME' in row_dict:
+        if 'LAST1' in row_dict and 'FIRST1' in row_dict:
+           if 'LAST2' in row_dict and 'FIRST2' in row_dict and row_dict['LAST2'] and row_dict['FIRST2']:
+                row_dict['NAME'] = row_dict['FIRST1'] + " " + row_dict['LAST1'] + \
+                                   " and " + row_dict['FIRST2'] + " " + row_dict['LAST2']
+           else:
+                row_dict['NAME'] = row_dict['FIRST1'] + " " + row_dict['LAST1']
 
 
 def main():
@@ -153,7 +152,7 @@ def main():
     logging.info(f"output size={len(output.column_group)}")
 
     # FIXME make output file a parameter.
-    print_output(output, "/home/asherman/git/contactsData/merged6.csv")
+    print_output(output, "/home/asherman/git/contactsData/merged7.csv")
 
 
 def read_csv_files(argc):
