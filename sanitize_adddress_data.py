@@ -108,7 +108,8 @@ def print_output(output, file_name):
                 # do some post-processing
                 fixup_address(row_dict)
                 fixup_name(row_dict)
-                fixup_name2(row_dict)
+                fixup_first_last(row_dict)
+                remove_dots(row_dict)
                 # write the row
                 writer.writerow(row_dict)
 
@@ -135,8 +136,22 @@ def fixup_name(row_dict):
                 row_dict['NAME'] = row_dict['FIRST1'] + " " + row_dict['LAST1']
 
 
-def fixup_name2(row_dict):
-    # If NAME is just two words then use them for FIRST1 and LAST1
+def remove_dots(row_dict):
+    """Remove periods from STREET or ADDRESS"""
+    replacements = ['STREET','ADDRESS']
+    for key in replacements:
+        if key in row_dict:
+            value = row_dict[key]
+            if value:
+                new_value = value.replace(".","")
+                if new_value != value:
+                    logging.debug(f"Replace {value} with {new_value}")
+                    row_dict[key] = new_value
+
+
+
+def fixup_first_last(row_dict):
+    """If NAME is just two words then use them for FIRST1 and LAST1"""
     if 'NAME' in row_dict:
         if ('LAST1' not in row_dict or not row_dict['LAST1']) and ('FIRST1' not in row_dict or not row_dict['FIRST1']):
             name = row_dict['NAME']
@@ -166,7 +181,7 @@ def main():
     logging.info(f"output size={len(output.column_group)}")
 
     # FIXME make output file a parameter.
-    target = "/home/asherman/git/contactsData/merged9.csv"
+    target = "/home/asherman/git/contactsData/merged10.csv"
     print_output(output, target)
     logging.info(f"Generated {target}")
 
