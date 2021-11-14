@@ -22,7 +22,7 @@ class CsvOutputData(object):
         self.column_group = {}
 
 
-OUTPUT_COLS = ["LAST1"
+OUTPUT_COLS = ["LAST1",
                "FIRST1",
                "LAST2",
                "FIRST2",
@@ -50,7 +50,7 @@ def build_output(holders):
         if columns not in output.column_group:
             output.column_group[columns] = {}
         row_dict = output.column_group[columns]
-        for row in holder.column_group:
+        for row in holder.rows:
             row_tuple = tuple(row)
             if row_tuple not in row_dict:
                 row_dict[row_tuple] = year
@@ -87,15 +87,19 @@ def count_columns(holders):
 def print_output(output, file_name):
     with open(file_name, 'w', newline='') as csvfile:
         fieldnames = OUTPUT_COLS
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, restval='')
         writer.writeheader()
 
-        output.column_group
+        for columns in output.column_group:
+            rows = output.column_group[columns]
+            for row in rows:
+                col_count = 0
+                row_dict = {}
+                for column in columns:
 
-        # FIXME delete examples at end
-        writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
-        writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
-        writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
+                    row_dict[column] = row[col_count]
+                    col_count  += 1
+                writer.writerow(row_dict)
 
 def main():
     logging.getLogger().setLevel(logging.INFO)
