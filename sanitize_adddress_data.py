@@ -85,6 +85,14 @@ def count_columns(holders):
         logging.info(f"cols[{key}]={col_tuples[key]} occurs in years {years[key]}")
 
 
+def print_output(output, file_name):
+    with open(file_name, 'w', newline='') as csvfile:
+        fieldnames = ['first_name', 'last_name']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
+        writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
+        writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 
 def main():
     logging.getLogger().setLevel(logging.INFO)
@@ -102,6 +110,8 @@ def main():
 
     output = build_output(holders)
     logging.info(f"output size={len(output.rows)}")
+
+    print_output(output, "/home/asherman/git/contactsData/merged1.csv")
 
 
 def read_csv_files(argc):
