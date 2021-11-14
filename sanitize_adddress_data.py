@@ -39,10 +39,8 @@ OUTPUT_COLS = ["LAST1",
                ]
 
 def build_output(holders):
+    """Build a data structure containing all the data"""
     output = CsvOutputData()
-    # Merge common rows, I happen to know there is only one column tuple where this is done
-    # so I can use a single CsvData to merge it into.
-    new_holder = None
     for holder in holders:
         ylen = len(holder.name)
         year = holder.name[ylen - 8:ylen - 4]
@@ -61,6 +59,7 @@ def build_output(holders):
 
 
 def count_columns(holders):
+    """Look at all the columns. This method does not have any actual function"""
     all_cols = {}
     col_tuples = {}
     years = {}
@@ -85,6 +84,7 @@ def count_columns(holders):
 
 
 def print_output(output, file_name):
+    """Output the data as csv"""
     with open(file_name, 'w', newline='') as csvfile:
         fieldnames = OUTPUT_COLS
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames, restval='')
@@ -96,8 +96,10 @@ def print_output(output, file_name):
                 col_count = 0
                 row_dict = {}
                 for column in columns:
-
-                    row_dict[column] = row[col_count]
+                    col_text = row[col_count]
+                    if col_text == "No Change":
+                        col_text = ""
+                    row_dict[column] = col_text
                     col_count  += 1
                 writer.writerow(row_dict)
 
@@ -118,7 +120,8 @@ def main():
     output = build_output(holders)
     logging.info(f"output size={len(output.column_group)}")
 
-    print_output(output, "/home/asherman/git/contactsData/merged1.csv")
+    # FIXME make output file a parameter.
+    print_output(output, "/home/asherman/git/contactsData/merged2.csv")
 
 
 def read_csv_files(argc):
