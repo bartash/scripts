@@ -70,7 +70,7 @@ def count_columns(holders):
             all_cols[col_name] = 1
         ylen = len(holder.name)
         year = holder.name[ylen - 8:ylen - 4]
-        logging.info(f"count_columns look at {holder.name} year='{year}'")
+        logging.debug(f"count_columns look at {holder.name} year='{year}'")
         columns = tuple(holder.columns)
         if columns in col_tuples:
             col_tuples[columns] += 1
@@ -82,11 +82,7 @@ def count_columns(holders):
     for col_name in all_cols:
         logging.info(f"{col_name}")
     for key in col_tuples:
-        logging.info(f"cols[{key}]={col_tuples[key]} year={years[key]}")
-
-
-
-
+        logging.info(f"cols[{key}]={col_tuples[key]} occurs in years {years[key]}")
 
 
 
@@ -141,7 +137,7 @@ def read_csv_files(argc):
                         col_name = column_names[col_num]
                         row_data = row[col_num].strip()
                         debug_str += f"{col_name}='{row_data}' "
-                    logging.info(f"{debug_str}")
+                    logging.debug(f"{debug_str}")
                     line_count += 1
                     holder.rows.append(row)
             logging.info(f'Processed {line_count} lines from {csv_file_name}.')
