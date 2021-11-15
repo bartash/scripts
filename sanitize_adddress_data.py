@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 """
-A skeleton python script which reads from an input file,
-writes to an output file and parses command line arguments
+Merge multiple csv files while applying some fixups
 """
 from __future__ import print_function
 
@@ -21,7 +20,7 @@ class CsvOutputData(object):
         # key is columns tuple, value is dict with rows -> years_string
         self.column_group = {}
 
-
+# Output columns in order they should appear in output
 OUTPUT_COLS = [
     "YEARS",
     "LAST1",
@@ -41,7 +40,7 @@ OUTPUT_COLS = [
 ]
 
 def build_output(holders):
-    """Build a data structure containing all the data"""
+    """Build a data structure containing all the data ready for output"""
     output = CsvOutputData()
     for holder in holders:
         ylen = len(holder.name)
@@ -61,7 +60,7 @@ def build_output(holders):
 
 
 def count_columns(holders):
-    """Look at all the columns. This method does not have any actual function"""
+    """Look at all the columns. This method does not have any actual effect on the data"""
     all_cols = {}
     col_tuples = {}
     years = {}
@@ -189,6 +188,7 @@ def main():
 def read_csv_files(argc):
     """return a list of CsvData objects read from the file arguments"""
     holders = []
+    # Don't copy this, it's better to use proper arg parsing code.
     for i in reversed(range(1, argc)):
         csv_file_name = sys.argv[i]
         logging.debug(f"file is {csv_file_name}")
