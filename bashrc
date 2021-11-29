@@ -12,6 +12,7 @@ alias pu=pushd
 alias vf=cd
 # I cannot type
 alias xrags=xargs
+alias giot=git
 alias gti=git
 alias golang=goland
 
