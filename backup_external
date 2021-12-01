@@ -39,6 +39,11 @@ rsync -av --exclude '*.lnk' \
     --exclude  'Plex Media Server' \
     --delete  --no-owner --no-group   c/Users $BACK/backup
 
+# echo movies...
+# MOVIES=handbrake_out/Movies
+# rsync -n -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd/$MOVIES $BACK/dvd/$MOVIES
+# rsync -n -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd/$MOVIES $BACK
+
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd $BACK
 
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/downloads $BACK
