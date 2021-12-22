@@ -46,6 +46,9 @@ rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd/$MOVIES 
 echo TV
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group  "$SOURCE/dvd/handbrake_out/TV Shows" $BACK/dvd/handbrake_out
 
+echo Radio
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group  "$SOURCE/dvd/handbrake_out/Radio" $BACK/dvd/handbrake_out
+
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd $BACK
 
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/downloads $BACK
