@@ -6,21 +6,34 @@
 #
 COMMON=/tmp/comm$$
 CROSS=/tmp/cross$$
-ET='[etaionshru]'
+ET='[etaionshrdlucmf]'
 egrep "^${ET}${ET}${ET}${ET}${ET}$" /usr/share/dict/american-english > $COMMON
 for i in $(cat $COMMON)
 do
 	for j in $(cat $COMMON)
 	do
-		echo $i$j >> $CROSS
+	    candidate=$i$j
+	    count=$(echo $candidate | sed 's/\(.\)/\1\n/g'  | sort -u | wc -l)
+      if [[ "$count" != "11" ]]
+      then
+#        echo reject $candidate
+        continue
+#      else
+#        echo ok $candidate
+      fi
+
+	  for k in $(cat $COMMON)
+	  do
+		  echo $i$j$k >> $CROSS
+		done
 	done
 done
 
 for word in $(cat $CROSS)
 do
   count=$(echo $word | sed 's/\(.\)/\1\n/g'  | sort -u | wc -l)
-  if [[ "$count" == "11" ]]
+  if [[ "$count" == "16" ]]
   then
-    echo ${word:0:5}  ${word:5:10}
+    echo ${word:0:5}  ${word:5:10} ${word:10:15}
   fi
 done
