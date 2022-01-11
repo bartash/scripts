@@ -3,6 +3,7 @@
 # Brute force hack to find opening word pairs for wordle that cover etaionshrd
 # e.g. "adore" "hints"
 # or for "etaionshru" => "train" "house"
+# With 3 words there are more examples, e.g. ached flour mints
 #
 COMMON=/tmp/comm$$
 CROSS=/tmp/cross$$
