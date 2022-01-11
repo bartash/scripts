@@ -24,11 +24,21 @@ do
 
 	  for k in $(cat $COMMON)
 	  do
+	    candidate=$i$j$k
+	    count=$(echo $candidate | sed 's/\(.\)/\1\n/g'  | sort -u | wc -l)
+            if [[ "$count" != "16" ]]
+            then
+      #        echo reject $candidate
+              continue
+      #      else
+      #        echo ok $candidate
+            fi
 		  echo $i$j$k >> $CROSS
 		done
 	done
 done
 
+# this is now redundant
 for word in $(cat $CROSS)
 do
   count=$(echo $word | sed 's/\(.\)/\1\n/g'  | sort -u | wc -l)
