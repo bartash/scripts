@@ -2,10 +2,11 @@
 #
 # Brute force hack to find opening word pairs for wordle that cover etaionshrd
 # e.g. "adore" "hints"
+# or for "etaionshru" => "train" "house"
 #
 COMMON=/tmp/comm$$
 CROSS=/tmp/cross$$
-ET='[etaionshrd]'
+ET='[etaionshru]'
 egrep "^${ET}${ET}${ET}${ET}${ET}$" /usr/share/dict/american-english > $COMMON
 for i in $(cat $COMMON)
 do
