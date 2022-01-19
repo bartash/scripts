@@ -32,3 +32,7 @@ rsync -av --delete --ignore-errors ${SOURCE_VOL}/backups ${BACKUP_VOL}/git_backu
 
 # backup local docs
 rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_VOL}/mac_docs
+
+# backup downloads
+echo "downloads..."
+rsync -av --delete --ignore-errors ${SOURCE_VOL}/downloads ${BACKUP_VOL}/andrew_downloads
