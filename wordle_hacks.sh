@@ -8,8 +8,7 @@
 # Maybe the appraoch in https://garethrees.org/2022/01/08/wordle/ is better
 #
 COMMON=/tmp/comm$$
-CROSS=/tmp/cross$$
-ET='[etaionshrdlucmf]'
+ET='[etaionshrdlucmy]'
 egrep "^${ET}${ET}${ET}${ET}${ET}$" /usr/share/dict/american-english > $COMMON
 for i in $(cat $COMMON)
 do
@@ -32,9 +31,8 @@ do
               # reject this candidate
               continue
             fi
-		  echo $i$j$k >> $CROSS
+		  echo $i$j$k
 		done
 	done
 done
 
-cat $CROSS
