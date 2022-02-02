@@ -38,5 +38,9 @@ echo "downloads..."
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/downloads ${BACKUP_VOL}/andrew_downloads
 
 # backup dvd
-echo "dvd ..."
-rsync -av --delete --ignore-errors  ${BACKUP_VOL}/dvd ${SOURCE_VOL}/dvd
+echo "fulldisc ..."
+rsync -av --delete --ignore-errors  ${BACKUP_VOL}/dvd/FullDisc ${SOURCE_VOL}/dvd
+echo "movies ..."
+rsync -av --delete --ignore-errors  ${BACKUP_VOL}/dvd/handbrake_out/Movies ${SOURCE_VOL}/dvd
+# echo "dvd ..."
+# rsync -av --delete --ignore-errors  ${BACKUP_VOL}/dvd ${SOURCE_VOL}/dvd
