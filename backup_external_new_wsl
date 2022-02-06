@@ -21,7 +21,7 @@ else
 fi
 # copy from home (Blondie) to Elvis
  
-echo rsync -av --exclude '*.lnk' --delete  --no-owner --no-group   $SOURCE_DRIVE/data $BACKUP_DRIVE/backup
+rsync -av --exclude '*.lnk' --delete  --no-owner --no-group   $SOURCE_DRIVE/data $BACKUP_DRIVE/backup
 
 # copy itunes back
 ## rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
