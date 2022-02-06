@@ -1,0 +1,59 @@
+(set -o igncr) 2>/dev/null && set -o igncr; # comment is needed
+
+cd /cygdrive
+echo backup_external ...
+
+SOURCE=g
+BACK=f
+
+
+if [ ! -d ${BACK} ]; then
+	echo Could not find ${BACK} volume
+	exit 1
+else
+	echo found ${BACK}
+fi
+if [ ! -d ${SOURCE} ]; then
+	echo Could not find ${SOURCE} volume
+	exit 1
+else
+	echo found ${SOURCE}
+fi
+
+rsync -av --exclude '*.lnk' --delete  --no-owner --no-group   $SOURCE/data $BACK/backup
+
+rsync -av --exclude '*.lnk' --delete  --no-owner --no-group  $BACK/andrew_itunes $SOURCE
+
+rsync -av --exclude '*.lnk' \
+    --exclude  '*Cache*' \
+    --exclude  'IndexedDB' \
+    --exclude  'File System' \
+    --exclude  'Pepper Data' \
+    --exclude  'Azureus' \
+    --exclude  'cache2' \
+    --exclude  'Extensions' \
+    --exclude  'CertificateRevocation' \
+    --exclude  'Temp' \
+    --exclude  'ConstraintIndex' \
+    --exclude  'CertificateTransparency' \
+    --exclude  'Plex Media Server' \
+    --delete  --no-owner --no-group   c/Users $BACK/backup
+
+echo movies...
+MOVIES=handbrake_out/Movies
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd/$MOVIES $BACK/dvd/handbrake_out
+
+echo TV
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group  "$SOURCE/dvd/handbrake_out/TV Shows" $BACK/dvd/handbrake_out
+
+echo Radio
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group  "$SOURCE/dvd/handbrake_out/Radio" $BACK/dvd/handbrake_out
+
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/dvd $BACK
+
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group  $SOURCE/downloads $BACK
+
+
+
+
+
