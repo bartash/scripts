@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+#
+SOURCE_VOL=data
+SOURCE_DRIVE=g
+BACKUP_VOL=fela
+BACKUP_DRIVE=f
+cd /mnt
+g_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
+f_str=$(cat $SOURCE_DRIVE/VOLUME.txt)
+if [  "$f_str" != ${SOURCE_VOL} ]; then
+    	echo "/mnt/$SOURCE_DRIVE is not ${SOURCE_VOL} volume"
+	exit 1
+else
+	echo found ${SOURCE_VOL}
+fi
+if [  "$g_str" != ${BACKUP_VOL} ]; then
+    	echo "/mnt/$BACKUP_DRIVE is not ${BACKUP_VOL} volume"
+	exit 1
+else
+	echo found ${BACKUP_VOL}
+fi
+# copy from home (Blondie) to Elvis
+ 
+echo rsync -av --exclude '*.lnk' --delete  --no-owner --no-group   $SOURCE_DRIVE/data $BACKUP_DRIVE/backup
+
+# copy itunes back
+## rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
+# copy docs to andrew_docs
+## rsync -av --delete --ignore-errors ${SOURCE_VOL}/docs ${BACKUP_VOL}/andrew_docs
+
+## echo any music in the wrong place?
+## gfind '/Users/asherman/Music/iTunes/iTunes Media/Music'
+## echo would be listed above
+
+# copy git stuff
+## rsync -av --delete --ignore-errors ${SOURCE_VOL}/backups ${BACKUP_VOL}/git_backups
+
+
+# backup local docs
+## rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_VOL}/mac_docs
