@@ -1,6 +1,8 @@
 #
 # Search for log4j files in all containers of all pods
 #
+# Note that 'kubectl get pods -o wide -A' does a lot of this....
+#
 export KUBECONFIG=~/.kube/dwx-rzs556
 export NS=compute-1639142720-gvtw  
 # export NS=impala-1639153773-6bfg
