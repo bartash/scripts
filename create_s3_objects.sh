@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-NUM_FILES_TO_CREATE=4
-DIR=smalldir
+NUM_FILES_TO_CREATE=2100
+DIR=bigdir
 BUCKET=asherman-cluster
 
 for i in $(seq 1 $NUM_FILES_TO_CREATE)
