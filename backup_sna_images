@@ -13,6 +13,7 @@ fi
 
 cd $TARGET
 mv ${DOMAIN} ${DOMAIN}_$$
+mv ${IMAGE_DOMAIN} ${IMAGE_DOMAIN}_$$
 
 # https://superuser.com/questions/129085/make-wget-download-page-resources-on-a-different-domain
 # wget --mirror -p --html-extension --convert-links $SITE
