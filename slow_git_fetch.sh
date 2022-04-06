@@ -9,8 +9,8 @@ fi
 depth=1
 while true
 do
+  echo "git fetch --depth $depth $REMOTE"
   git fetch --depth $depth $REMOTE
   depth=$((depth + 100))
-  echo "depth is $depth"
   sleep 10
 done
