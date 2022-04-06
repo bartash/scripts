@@ -6,7 +6,7 @@ if [[ $# -ne 0 ]] ; then
     REMOTE=$1
 fi
 # edit depth when you start FIXME add parameter
-depth=6000
+depth=1
 while true
 do
   depth=$((depth + 100))
