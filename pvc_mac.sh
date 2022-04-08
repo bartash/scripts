@@ -22,7 +22,7 @@ export DWX_IMAGE_NAMESPACE=dwx-1.1.8-b44
 export SDX_IMAGE_VERSION=1.4.0-b856
 export USE_CHARTMAP=false
 export CHART_MAP_LOCAL_MODE=true
-export LOCAL_FOLDER_FOR_MAPS=./resources/dwx2cdhmaps_private_cloud/
+# export LOCAL_FOLDER_FOR_MAPS=./resources/dwx2cdhmaps_private_cloud/
 export USE_AVAILABLE_VERSION_CONTROL=false
 
 
