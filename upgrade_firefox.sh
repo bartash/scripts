@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# Upgrade firefox from a downloaded file
 if [[ $# -ne 1 ]] ; then
     echo "usage: $0 xxx.bz2"
     exit 1
