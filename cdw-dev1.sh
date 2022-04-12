@@ -1,7 +1,7 @@
 # Start a new script for restart
 
 # values from https://docs.google.com/document/d/16ySv2fdWdXIABpj5VIgbjD0preIO9CY-pgk0qUr7p0c/edit#
-export OPENSHIFT_KUBECONFIG="FIXME must set"
+export OPENSHIFT_KUBECONFIG=/home/asherman/.kube/shared-os-dev-01
 export CP_PLATFORM_TYPE=private
 export CP_PLATFORM_NAME=openshift
 
@@ -35,7 +35,11 @@ export USE_AVAILABLE_VERSION_CONTROL=false
 
 # Settings to connect with CDP Private control plane and base
 # cluster. These need to be retrieved from a running CDP private cloud instance - see Setting up a CDP control plane.
-export SDX_CDP_CONSOLE_HOST_URL=
+export SDX_CDP_CONSOLE_HOST_URL=https://luksan-psql-1.luksan-psql.root.hwx.site:7183/cmf/home
+
+
+
+
 export PRIVATE_CLOUD_ENV_CRN=
 
 # DWX installation namespace, used to get the postgres 
