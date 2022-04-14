@@ -56,7 +56,7 @@ export OPENSHIFT_DB_PASSWORD=QnBMbmZnRHNjMldEOEYy
 # Used for finding the $OPENSHIFT_NAMESPACE_PREFIX-monitoring-platform
 # namespace which is created during environment registration in
 # the CDP control plane
-export OPENSHIFT_NAMESPACE_PREFIX=
+export OPENSHIFT_NAMESPACE_PREFIX=asherman-env-1-5784c541-monitoring-platform
 
 # User Management Service related settings
 # See this section on how to get the CRN or copy from here if
