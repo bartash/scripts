@@ -48,7 +48,7 @@ export OPENSHIFT_DB_NAME=sampledb
 export OPENSHIFT_DB_USER=userRUG
 export OPENSHIFT_DB_PORT=5432
 export OPENSHIFT_DB_SSL_MODE=disable
-export # Password is coming from the secret cdp-release-cdp-embedded-db-secret in $CSI_NAMESPACE
+# Password is coming from the secret cdp-release-cdp-embedded-db-secret in $CSI_NAMESPACE
 export OPENSHIFT_DB_PASSWORD=QnBMbmZnRHNjMldEOEYy
 
 
