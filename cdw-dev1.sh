@@ -8,10 +8,6 @@ export CP_PLATFORM_NAME=openshift
 # The database names provided during env activation and DBC creation will be automatically created. Works only with postgres.
 export CREATE_WAREHOUSE_DATABASES=true
 
-# Shared Docker info
-export DOCKER_PASSWORD=2ukos!UC
-export DOCKER_USERNAME=docker-cdp-rw
-export DOCKER_SERVER=https://docker-private.infra.cloudera.com
 
 # Settings to enable dev & low-cost mode, which reduces resources
 # allocated to virtual warehouses significantly. Please enable
@@ -27,7 +23,6 @@ export DWX_IMAGE_NAMESPACE=dwx-1.1.8-b44
 export SDX_IMAGE_VERSION=1.4.0-b856
 export USE_CHARTMAP=false
 export CHART_MAP_LOCAL_MODE=true
-export LOCAL_FOLDER_FOR_MAPS=./resources/dwx2cdhmaps_private_cloud/
 export USE_AVAILABLE_VERSION_CONTROL=false
 
 
