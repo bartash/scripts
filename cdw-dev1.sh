@@ -61,7 +61,7 @@ export OPENSHIFT_NAMESPACE_PREFIX=asherman-env-1-5784c541-monitoring-platform
 # User Management Service related settings
 # See this section on how to get the CRN or copy from here if
 # you are using a shared instance
-export DEBUG_ACTOR_CRN=
+export DEBUG_ACTOR_CRN="crn:altus:iam:us-west-1:94b7f364-3b7c-4cb7-9594-6ed64a43c3f0:user:5fd678b4-8978-4594-9578-e6dd317caa42"
 export UMS_ENABLED=true
 export UMS_SERVER=localhost
 export UMS_PORT=8078
