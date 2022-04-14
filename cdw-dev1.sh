@@ -35,15 +35,15 @@ export SDX_CDP_CONSOLE_HOST_URL=https://luksan-psql-1.luksan-psql.root.hwx.site:
 
 
 
-export PRIVATE_CLOUD_ENV_CRN=
+export PRIVATE_CLOUD_ENV_CRN="crn:altus:environments:us-west-1:94b7f364-3b7c-4cb7-9594-6ed64a43c3f0:environment:asherman-env-1/5784c541-b67f-4989-9bbc-624d4fc91fbe"
 
 # DWX installation namespace, used to get the postgres 
 # db root cert from
-export CSI_NAMESPACE=
+export CSI_NAMESPACE=asherman
 
 # Workload database configurations
 export OPENSHIFT_DB_DRIVER=postgresql
-export OPENSHIFT_DB_HOST=cdp-embedded-db.$CSI_NAMESPACE.svc.cluster.local
+export OPENSHIFT_DB_HOST=cdp-embedded-db.sasherman.svc.cluster.local
 export OPENSHIFT_DB_NAME=sampledb
 export OPENSHIFT_DB_USER=userRUG
 export OPENSHIFT_DB_PORT=5432
