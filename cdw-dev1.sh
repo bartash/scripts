@@ -35,15 +35,15 @@ export SDX_CDP_CONSOLE_HOST_URL=https://luksan-psql-1.luksan-psql.root.hwx.site:
 
 
 
-export PRIVATE_CLOUD_ENV_CRN="crn:altus:environments:us-west-1:94b7f364-3b7c-4cb7-9594-6ed64a43c3f0:environment:asherman-env-1/5784c541-b67f-4989-9bbc-624d4fc91fbe"
+export PRIVATE_CLOUD_ENV_CRN="crn:altus:environments:us-west-1:a4d978d5-83bb-4deb-91a4-45b63dd999b7:environment:asherman2-env-1/29106b0d-9680-4932-a95e-bb7f7eef742e"
 
 # DWX installation namespace, used to get the postgres 
 # db root cert from
-export CSI_NAMESPACE=asherman
+export CSI_NAMESPACE=asherman2
 
 # Workload database configurations
 export OPENSHIFT_DB_DRIVER=postgresql
-export OPENSHIFT_DB_HOST=cdp-embedded-db.sasherman.svc.cluster.local
+export OPENSHIFT_DB_HOST=cdp-embedded-db.asherman2.svc.cluster.local
 export OPENSHIFT_DB_NAME=sampledb
 export OPENSHIFT_DB_USER=userRUG
 export OPENSHIFT_DB_PORT=5432
@@ -61,7 +61,7 @@ export OPENSHIFT_NAMESPACE_PREFIX=asherman-env-1-5784c541-monitoring-platform
 # User Management Service related settings
 # See this section on how to get the CRN or copy from here if
 # you are using a shared instance
-export DEBUG_ACTOR_CRN="crn:altus:iam:us-west-1:94b7f364-3b7c-4cb7-9594-6ed64a43c3f0:user:5fd678b4-8978-4594-9578-e6dd317caa42"
+export DEBUG_ACTOR_CRN="crn:altus:iam:us-west-1:a4d978d5-83bb-4deb-91a4-45b63dd999b7:user:e3758cdf-a0c5-4b3a-9af0-39503edb6e55"
 export UMS_ENABLED=true
 export UMS_SERVER=localhost
 export UMS_PORT=8078
