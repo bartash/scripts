@@ -1,0 +1,16 @@
+drop role pvc;
+
+create database pvc;
+
+create role pvc  WITH
+LOGIN
+SUPERUSER
+INHERIT
+CREATEDB
+CREATEROLE
+REPLICATION;
+
+ALTER USER pvc WITH PASSWORD 'pvc';
+
+grant all privileges on database pvc to pvc;
+
