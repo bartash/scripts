@@ -1,3 +1,4 @@
+drop database pvc;
 drop role pvc;
 
 create database pvc;
