@@ -17,9 +17,12 @@ export ENABLE_LOW_COST_MODE=true
 
 # Settings related to getting dwxVersion to work, see DWX-4513 for details
 export IMAGE_PULL_POLICY=Always
+
+
+
 export IMAGE_VERSION_PREFIX=2021.0
-export DWX_IMAGE_VERSION_PREFIX=1.3.0-b86
-export DWX_IMAGE_NAMESPACE=1.3.0-b86
+export DWX_IMAGE_VERSION_PREFIX=1.1.8-b44
+export DWX_IMAGE_NAMESPACE=dwx-1.1.8-b44
 export SDX_IMAGE_VERSION=1.4.0-b856
 export USE_CHARTMAP=false
 export CHART_MAP_LOCAL_MODE=true
