@@ -37,15 +37,15 @@ export SDX_CDP_CONSOLE_HOST_URL=https://luksan-psql-1.luksan-psql.root.hwx.site:
 
 
 
-export PRIVATE_CLOUD_ENV_CRN="crn:altus:environments:us-west-1:a4d978d5-83bb-4deb-91a4-45b63dd999b7:environment:asherman2-env-1/29106b0d-9680-4932-a95e-bb7f7eef742e"
+export PRIVATE_CLOUD_ENV_CRN="crn:altus:environments:us-west-1:4f00cc61-cb71-4059-94f5-2f1e2db3e6cc:environment:asherman3-env-1/3df03a7d-6d69-4746-87e1-fb0caf41f35c"
 
 # DWX installation namespace, used to get the postgres 
 # db root cert from
-export CSI_NAMESPACE=asherman2
+export CSI_NAMESPACE=asherman3
 
 # Workload database configurations
 export OPENSHIFT_DB_DRIVER=postgresql
-export OPENSHIFT_DB_HOST=cdp-embedded-db.asherman2.svc.cluster.local
+export OPENSHIFT_DB_HOST=cdp-embedded-db.asherman3.svc.cluster.local
 export OPENSHIFT_DB_NAME=pvc
 export OPENSHIFT_DB_USER=pvc
 export OPENSHIFT_DB_PORT=5432
@@ -58,7 +58,7 @@ export OPENSHIFT_DB_PASSWORD=pvc
 # Used for finding the $OPENSHIFT_NAMESPACE_PREFIX-monitoring-platform
 # namespace which is created during environment registration in
 # the CDP control plane
-export OPENSHIFT_NAMESPACE_PREFIX=asherman2-env-1-29106b0d
+export OPENSHIFT_NAMESPACE_PREFIX=asherman3-env-1-3df03a7d
 
 # User Management Service related settings
 # See this section on how to get the CRN or copy from here if
