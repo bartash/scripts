@@ -46,12 +46,12 @@ export CSI_NAMESPACE=asherman3
 # Workload database configurations
 export OPENSHIFT_DB_DRIVER=postgresql
 export OPENSHIFT_DB_HOST=cdp-embedded-db.asherman3.svc.cluster.local
-export OPENSHIFT_DB_NAME=pvc
-export OPENSHIFT_DB_USER=pvc
+export OPENSHIFT_DB_NAME=sampledb
+export OPENSHIFT_DB_USER=userRUG
 export OPENSHIFT_DB_PORT=5432
 export OPENSHIFT_DB_SSL_MODE=disable
 # Password is coming from the secret cdp-release-cdp-embedded-db-secret in $CSI_NAMESPACE
-export OPENSHIFT_DB_PASSWORD=pvc
+export OPENSHIFT_DB_PASSWORD=QnBMbmZnRHNjMldEOEYy
 
 
 
