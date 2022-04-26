@@ -32,7 +32,7 @@ export USE_AVAILABLE_VERSION_CONTROL=false
 
 # Settings to connect with CDP Private control plane and base
 # cluster. These need to be retrieved from a running CDP private cloud instance - see Setting up a CDP control plane.
-export SDX_CDP_CONSOLE_HOST_URL=https://luksan-psql-1.luksan-psql.root.hwx.site:7183/cmf/home
+export SDX_CDP_CONSOLE_HOST_URL=https://console-asherman3.apps.shared-os-dev-01.kcloud.cloudera.com/
 
 
 
