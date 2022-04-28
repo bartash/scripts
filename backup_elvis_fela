@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#
+SOURCE_VOL=Elvis
+BACKUP_VOL=Clash
+cd /Volumes
+if [ ! -d ${SOURCE_VOL} ]; then
+    echo Could not find ${SOURCE_VOL} volume
+	exit 1
+else
+	echo found ${SOURCE_VOL}
+fi
+if [ ! -d ${BACKUP_VOL} ]; then
+    echo Could not find ${BACKUP_VOL} volume
+	exit 1
+else
+	echo found ${BACKUP_VOL}
+fi
+# copy from home (Blondie) to Elvis
+rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
+# copy itunes back
+rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
+# copy docs to andrew_docs
+rsync -av --delete --ignore-errors ${SOURCE_VOL}/docs ${BACKUP_VOL}/andrew_docs
+
+echo any music in the wrong place?
+gfind '/Users/asherman/Music/iTunes/iTunes Media/Music'
+echo would be listed above
+
+# copy git stuff
+rsync -av --delete --ignore-errors ${SOURCE_VOL}/backups ${BACKUP_VOL}/git_backups
+
+
+# backup local docs
+rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_VOL}/mac_docs
+
+# backup downloads
+echo "downloads..."
+rsync -av --delete --ignore-errors ${SOURCE_VOL}/downloads ${BACKUP_VOL}/andrew_downloads
+
+# backup dvd
+echo "fulldisc ..."
+rsync -av --delete --ignore-errors  ${BACKUP_VOL}/dvd/FullDisc ${SOURCE_VOL}/dvd
+echo "movies ..."
+rsync -av --delete --ignore-errors  ${BACKUP_VOL}/dvd/handbrake_out/Movies ${SOURCE_VOL}/dvd
+# echo "dvd ..."
+# rsync -av --delete --ignore-errors  ${BACKUP_VOL}/dvd ${SOURCE_VOL}/dvd
