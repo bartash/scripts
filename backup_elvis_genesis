@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+SOURCE_VOL=Elvis
+BACKUP_VOL=Genesis
+cd /Volumes
+if [ ! -d ${SOURCE_VOL} ]; then
+    echo Could not find ${SOURCE_VOL} volume
+	exit 1
+else
+	echo found ${SOURCE_VOL}
+fi
+if [ ! -d ${BACKUP_VOL} ]; then
+    echo Could not find ${BACKUP_VOL} volume
+	exit 1
+else
+	echo found ${BACKUP_VOL}
+fi
+# copy Elvis completely
+echo "backup dvd"
+rsync -av --delete --ignore-errors   ${SOURCE_VOL}/dvd ${BACKUP_VOL}/from_elvis/Elvis
+echo "backup docs"
+rsync -av --delete --ignore-errors   ${SOURCE_VOL}/docs ${BACKUP_VOL}/from_elvis/Elvis
+echo "backup from_home"
+rsync -av --delete --ignore-errors   ${SOURCE_VOL}/from_home ${BACKUP_VOL}/from_elvis/Elvis
+echo "backup itunes"
+rsync -av --delete --ignore-errors   ${SOURCE_VOL}/itunes ${BACKUP_VOL}/from_elvis/Elvis
+echo "backup everything"
+rsync -av --delete --ignore-errors   ${SOURCE_VOL} ${BACKUP_VOL}/from_elvis 
