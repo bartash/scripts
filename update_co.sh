@@ -21,12 +21,12 @@ executor*)
   IMAGE_NAME=impalad_executor
   ;;
 catalog*)
-  echo "update executor"
+  echo "update catalog"
   POD_NAME=catalog
   IMAGE_NAME=catalogd
   ;;
 statestore*)
-  echo "update executor"
+  echo "update statestore"
   POD_NAME=statestore
   IMAGE_NAME=statestored
   ;;
