@@ -31,7 +31,7 @@ statestore*)
   IMAGE_NAME=statestored
   ;;
 *)
-  echo "unrecognized option"
+  echo "unrecognized option $1"
   exit 1
   ;;
 esac
@@ -49,7 +49,7 @@ fi
 POD=$(kubectl get pods -n $NS | grep $POD_NAME | awk '{print $1}')
 echo "POD=$POD"
 if [ "$POD" == "" ]; then
-  echo "$PROGNAME: could not find pod, maybe ns $NS is wrong."
+  echo "$PROGNAME: could not find pod $POD_NAME, maybe ns $NS is wrong."
   exit 1
 fi
 TMP1=/tmp/from$$
@@ -60,7 +60,11 @@ sed "s/${IMAGE_NAME}:${FROM_VERSION}/${IMAGE_NAME}:${TO_VERSION}/" < $TMP1 > $TM
 diff $TMP1 $TMP2
 
 if [[ $? -eq 0 ]]; then
-	echo "No diff $TMP1 $TMP2"
+	echo "No difference found in $TMP1 $TMP2 maybe update from $FROM_VERSION to $TO_VERSION is already done"
+	echo "look for images... in from file"
+	grep "image:.*$IMAGE_NAME" $TMP1
+	echo "look for images... in to file"
+	grep "image:.*$IMAGE_NAME" $TMP2
 	exit 1
 fi
 
