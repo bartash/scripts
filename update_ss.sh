@@ -22,6 +22,11 @@ kubectl get pod $POD -n $NS -o yaml > $TMP1
 sed 's/statestored:2022.0.7.1-2/statestored:2022.0.8.0-82/' < $TMP1 > $TMP2
 diff $TMP1 $TMP2
 
+if [[ $? -eq 0 ]]; then
+	echo "No diff $TMP1 $TMP2"
+	exit 1
+fi
+
 kubectl replace -f $TMP2
 
 
