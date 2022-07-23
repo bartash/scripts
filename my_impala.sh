@@ -29,7 +29,7 @@ alias ihome="cd $IMPALA_HOME"
 
 
 case ${HOSTNAME} in
-asherman-desktop*)
+DISABLED_asherman-desktop*)
   echo "enabling distcc"
   # https://cloudera.atlassian.net/wiki/spaces/ENG/pages/100832437/Tips+for+Faster+Impala+Builds
   export BUILD_FARM="vc0332.halxg.cloudera.com/96,lzo vc0336.halxg.cloudera.com/96,lzo"
