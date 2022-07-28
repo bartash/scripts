@@ -64,6 +64,10 @@ alias get_aws='source <(ssh -o "StrictHostKeyChecking=no" s3@cloudcat.infra.clou
 # use 'tmux detach' to detach 
 alias autopatch="ssh -t autopatch-local.vpc.cloudera.com \"tmux attach || tmux new\""
 
+alias trickle100='trickle -sd 100'
+alias trickle50='trickle -sd 50'
+
+
 # needs bash v4
 # https://superuser.com/questions/857250/how-to-update-bash-on-mac-os-x-yosemite
 PROMPT_DIRTRIM=3
