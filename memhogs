@@ -3,4 +3,7 @@
 #
 # put in ~/.htoprc
 # hide_userland_threads=1	
+#
+# ubuntu20: can set in ~/.config/htop/htoprc
+# (but that is also updated by ui)
 htop -s PERCENT_MEM
