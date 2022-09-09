@@ -39,6 +39,9 @@ fi
 unset LD_LIBRARY_PATH
    
 . $IMPALA_HOME/bin/set-pythonpath.sh
+echo PYTHONPATH=$PYTHONPATH
+echo "you may need to set that in clion as a local env var"
+
 
 LLL="$(python "$IMPALA_HOME/infra/python/bootstrap_virtualenv.py"  --print-ld-library-path)"
 LD_LIBRARY_PATH+="$(echo $LLL | sed 's?debug/lib64?debug/lib?')" 
