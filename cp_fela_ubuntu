@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+MACHINE=Fela
+SOURCE=/media/asherman/$MACHINE/from_elvis/Elvis/itunes/Music
+
+rsync -av --delete --ignore-errors  ${SOURCE} /Andrew
