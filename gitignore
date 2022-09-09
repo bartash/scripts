@@ -9,6 +9,7 @@ itests/tmp_*
 itests/qtest/tmp_*
 xref.all
 ?oo
+?oo.sql
 bar
 foo.json
 .m2
@@ -37,3 +38,9 @@ yarn.lock
 .cmake_build_type
 cmake-build-debug
 docker
+
+.cmake
+ext-data-source
+mvn-deps
+shaded-deps
+
