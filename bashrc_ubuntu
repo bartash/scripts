@@ -25,7 +25,12 @@ a cdh_impala2=impala_cdh2
 export GERRIT_USER=bartash
 
 # dita
-export PATH=$PATH:$HOME/bin/dita-ot-3.1.1/bin
+if [ "$HOSTNAME" == "asherman-desktop" ]; then
+	export PATH=$PATH:$HOME/bin/dita-ot-3.1.1/bin
+else
+	export PATH=$PATH:$HOME/bin/dita-ot-3.7.3/bin
+fi
+
 
 # the default vnc client, already installed
 alias vnc=remmina
