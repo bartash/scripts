@@ -54,6 +54,8 @@ alias c1c-dev1='export AAC1C=c1c-dev1; export GOPATH=~/bin/c1cgo; . ~/scripts/my
 alias pvc-dev1='export AAPVC=pvc-dev1; . ~/scripts/cdw-dev.sh ; . ~/scripts/my_pvc.sh'
 alias pvc-dev2='export AAPVC=pvc-dev2; . ~/scripts/dev-02.sh ;  . ~/scripts/my_pvc.sh'
 
+alias buildall='./buildall.sh -debug_noopt -skiptests -noclean'
+
 
 
 alias k=kubectl
