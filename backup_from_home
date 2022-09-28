@@ -17,20 +17,22 @@ else
 fi
 # copy from home (Blondie) to Elvis
 rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
-# copy itunes back
+
+echo "copy itunes back"
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
-# copy docs to andrew_docs
+
+echo "copy docs to andrew_docs"
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/docs ${BACKUP_VOL}/andrew_docs
 
-echo any music in the wrong place?
+echo "any music in the wrong place?"
 gfind '/Users/asherman/Music/iTunes/iTunes Media/Music'
 echo would be listed above
 
-# copy git stuff
+echo "copy git stuff"
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/backups ${BACKUP_VOL}/git_backups
 
 
-# backup local docs
+echo "backup local docs"
 rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_VOL}/mac_docs
 
 # backup downloads
