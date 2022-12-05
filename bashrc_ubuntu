@@ -15,7 +15,7 @@ fi
 if [ "$DISTRO" == "CentOS" ]; then
 	echo "assuming Centos"
 else
-	echo "assuming ubuntu"
+	echo "assuming Ubuntu"
 	. /etc/lsb-release
 fi
 
@@ -23,7 +23,10 @@ fi
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 if [[ $DISTRIB_RELEASE = 14.04 ]]; then
     export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
+elif [[ "$DISTRO" == "CentOS" ]]; then
+    export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 fi
+
 
 
 export BOOST_LIBRARYDIR=/usr/lib/x86_64-linux-gnu
