@@ -80,7 +80,8 @@ alias pvc-dev2='export AAPVC=pvc-dev2; . ~/scripts/dev-02.sh ;  . ~/scripts/my_p
 
 alias buildall='./buildall.sh -debug_noopt -skiptests -noclean'
 
-
+# in case sl installed
+alias sl=ls
 
 alias k=kubectl
 alias impala-shell=impala-shell.sh
