@@ -119,3 +119,12 @@ export USER_TAG=asherman
 
 # mostly obsolete part of throttling tooclhain downloads
 export IMPALA_CONCURRENT_DOWNLOADS=1
+
+
+#
+#
+# https://github.infra.cloudera.com/SRE/cloud-users/tree/master/scripts/cloudera-cloud-users
+if [ "$HOSTNAME" == "asherman-22745" ]; then
+	source /usr/lib/cloudera-cloud-users.sh
+	export PATH=$PATH:/home/asherman/.local/bin
+fi
