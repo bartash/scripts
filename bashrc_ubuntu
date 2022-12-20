@@ -127,4 +127,5 @@ export IMPALA_CONCURRENT_DOWNLOADS=1
 if [ "$HOSTNAME" == "asherman-22745" ]; then
 	source /usr/lib/cloudera-cloud-users.sh
 	export PATH=$PATH:/home/asherman/.local/bin
+	export BROWSER=google-chrome
 fi
