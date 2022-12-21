@@ -18,8 +18,9 @@ fi
 # copy from home (Blondie) to Elvis
 rsync -av --delete --ignore-errors  ${BACKUP_VOL}/backup ${SOURCE_VOL}/from_home
 
-echo "copy itunes back"
-rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
+echo "copy itunes forward - new"
+# rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
+rsync -n -av --delete --ignore-errors ${BACKUP_VOL}/andrew_itunes/itunes/Music ${SOURCE_VOL}/itunes
 
 echo "copy docs to andrew_docs"
 rsync -av --delete --ignore-errors ${SOURCE_VOL}/docs ${BACKUP_VOL}/andrew_docs
