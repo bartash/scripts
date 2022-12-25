@@ -8,3 +8,8 @@ rsync -av --exclude '*.lnk' --delete --no-owner --no-group --backup --suffix=.ba
 
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
 
+
+# Users/Amy/AppData/Roaming/Thunderbird/Profiles/jfpbkkhj.default/Mail/pop.so
+echo email
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group c/Users/Amy/AppData/Roaming/Thunderbird/Profiles o/backup/profiles
+
