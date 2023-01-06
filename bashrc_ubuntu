@@ -1,3 +1,5 @@
+# Run linux (not just ubuntu) code
+#
 # Determine OS platform
 UNAME=$(uname | tr "[:upper:]" "[:lower:]")
 # If Linux, try to determine specific distribution
@@ -13,9 +15,9 @@ if [ "$UNAME" == "linux" ]; then
 fi
 
 if [ "$DISTRO" == "CentOS" ]; then
-	echo "assuming Centos"
+	echo "bashrc assuming Centos"
 else
-	echo "assuming Ubuntu"
+	# echo "assuming Ubuntu"
 	. /etc/lsb-release
 fi
 
