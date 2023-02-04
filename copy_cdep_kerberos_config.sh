@@ -2,6 +2,7 @@
 #
 # copy the kerberos config from a cdep cluster
 # See https://docs.google.com/document/d/1VjZ-U2HBGX4AFozWAHDk3qUh0NPhue4xersUSGK3pns for gory details
+# Makes spnego work.
 #
 
 if [ "$#" -ne 1 ]
