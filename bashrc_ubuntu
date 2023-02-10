@@ -81,6 +81,10 @@ alias pvc-dev1='export AAPVC=pvc-dev1; . ~/scripts/cdw-dev.sh ; . ~/scripts/my_p
 alias pvc-dev2='export AAPVC=pvc-dev2; . ~/scripts/dev-02.sh ;  . ~/scripts/my_pvc.sh'
 
 alias buildall='./buildall.sh -debug_noopt -skiptests -noclean'
+ 
+# start impala in local catalog mode
+alias start-impala-local-catalog='start-impala-cluster.py --cluster_size=1 --impalad_args="--use_local_catalog=true" --catalogd_args="--catalog_topic_mode=minimal"'
+
 
 # in case sl installed
 alias sl=ls
