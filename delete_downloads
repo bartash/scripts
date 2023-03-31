@@ -1,17 +1,28 @@
 # delete downloads
 
 set -e
-cd /cygdrive/g/downloads/newvuze
+DIR=/cygdrive/g/downloads/newvuze
 
-if [ "$#" -ne 1 ]
+if [ "$#" -lt 1 ]
 then
- echo "usage: $0 number_to_delete"
+ echo "usage: $0 number_to_delete [dir]"
  exit 1
 fi
 NUM=$1
 
+if [ "$#" -eq 2 ]
+then
+    DIR=$2
+fi
+echo "DIR=$DIR"
 
-ls -t | tail -${NUM} | while read file 
+if [ ! -d "$DIR" ]
+then
+    echo "no directory $DIR"
+    exit 1
+fi
+
+ls -t | tail -${NUM} | while read file
 do
 	echo file is $file
 	rm -rf "$file"
