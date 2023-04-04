@@ -67,6 +67,7 @@ alias autopatch="ssh -t autopatch-local.vpc.cloudera.com \"tmux attach || tmux n
 alias trickle100='trickle -sd 100'
 alias trickle50='trickle -sd 50'
 
+alias k=kubectl
 
 # needs bash v4
 # https://superuser.com/questions/857250/how-to-update-bash-on-mac-os-x-yosemite

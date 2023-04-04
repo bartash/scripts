@@ -89,7 +89,6 @@ alias start-impala-local-catalog='start-impala-cluster.py --cluster_size=1 --imp
 # in case sl installed
 alias sl=ls
 
-alias k=kubectl
 alias impala-shell=impala-shell.sh
 
 alias vpn='globalprotect launch-ui'
