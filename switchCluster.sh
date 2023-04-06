@@ -101,5 +101,6 @@ function switchCluster ()
     curl "http://kubeconfig-01.kcloud.cloudera.com:8080/${FINAL_CLUSTERS[SELECTED_CLUSTER_INDEX]}/kubeconfig" > "${FINAL_CLUSTER_FILE}" 2> /dev/null
 
     export KUBECONFIG="${FINAL_CLUSTER_FILE}"
+    echo "KUBECONFIG=${FINAL_CLUSTER_FILE}"
     echo -e "${ORANGE}${BOLD}Using cluster ${FINAL_CLUSTERS[SELECTED_CLUSTER_INDEX]}${NC}\n"
 }
