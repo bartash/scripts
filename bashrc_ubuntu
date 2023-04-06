@@ -134,3 +134,7 @@ if [ "$HOSTNAME" == "asherman-22745" ]; then
 	export PATH=$PATH:/home/asherman/.local/bin
 	export BROWSER=google-chrome
 fi
+
+# Invoke script with 'switchCluster'
+. ~/scripts/switchCluster.sh
+
