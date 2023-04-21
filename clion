@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 if [ -z "$DISPLAY" ]; then
   # for cloudcat machines
   export DISPLAY=:3
