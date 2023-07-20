@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# Brute force hack to find opening word impala for wordle that cover etaionshrd
+# Brute force hack to find opening word for wordle that covers etaionshrd
 # e.g. "adore" "hints"
 # or for "etaionshru" => "train" "house"
 # With 3 words there are more examples, e.g. ached flour mints
 #
-# Maybe the appraoch in https://garethrees.org/2022/01/08/wordle/ is better
+# Maybe the approach in https://garethrees.org/2022/01/08/wordle/ is better
 #
 COMMON=/tmp/comm$$
 ET='[etaionshrdlucmy]'
