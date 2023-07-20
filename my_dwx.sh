@@ -37,3 +37,12 @@ export DWX_TEST_CATALOG=asherman-cat
 export DWX_LOCAL_JDBC_FILE=/home/asherman/bin/impala-driver-jdbc_odbc-2.6.x.zip
 
 export ENABLE_NON_DEFAULT_DBC_CREATION=true
+
+export DWX_TARGET_BRANCH=master
+export DWX_VERSION=$(curl -s "https://release.infra.cloudera.com/hwre-api/stackinfo?stack=DWX&build_type=dev" \
+    | jq -c ".[] | select( .branch == \""${DWX_TARGET_BRANCH}"\")" \
+    | jq ".last_sucessful_build" \
+    | tail -n 1 \
+    | tr -d '"'\
+)
+
