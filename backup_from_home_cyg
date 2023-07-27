@@ -17,13 +17,13 @@ cd /cygdrive
 g_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
 f_str=$(cat $SOURCE_DRIVE/VOLUME.txt)
 if [  "$f_str" != ${SOURCE_VOL} ]; then
-    	echo "/mnt/$SOURCE_DRIVE is not ${SOURCE_VOL} volume, is $f_str"
+    	echo "/cygdrive/$SOURCE_DRIVE is not ${SOURCE_VOL} volume, is $f_str"
 	exit 1
 else
 	echo found ${SOURCE_VOL}
 fi
 if [  "$g_str" != ${BACKUP_VOL} ]; then
-    	echo "/mnt/$BACKUP_DRIVE is not ${BACKUP_VOL} volume, is $g_str"
+    	echo "/cygdrive/$BACKUP_DRIVE is not ${BACKUP_VOL} volume, is $g_str"
 	exit 1
 else
 	echo found ${BACKUP_VOL}
