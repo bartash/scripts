@@ -31,18 +31,3 @@ fi
 # copy from home (CLash) to Elvis
 rsync --dry-run -av --delete --ignore-errors  ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home
 exit
-# copy itunes back
-## rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
-# copy docs to andrew_docs
-## rsync -av --delete --ignore-errors ${SOURCE_VOL}/docs ${BACKUP_VOL}/andrew_docs
-
-## echo any music in the wrong place?
-## gfind '/Users/asherman/Music/iTunes/iTunes Media/Music'
-## echo would be listed above
-
-# copy git stuff
-## rsync -av --delete --ignore-errors ${SOURCE_VOL}/backups ${BACKUP_VOL}/git_backups
-
-
-# backup local docs
-## rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_VOL}/mac_docs
