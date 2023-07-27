@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 #
-SOURCE_VOL=fela
+SOURCE_VOL=elvis
 SOURCE_DRIVE=f
 BACKUP_VOL=clash
 BACKUP_DRIVE=g
-cd /mnt
+cd /cygdrive
 g_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
 f_str=$(cat $SOURCE_DRIVE/VOLUME.txt)
 if [  "$f_str" != ${SOURCE_VOL} ]; then
-    	echo "/mnt/$SOURCE_DRIVE is not ${SOURCE_VOL} volume"
+    	echo "/mnt/$SOURCE_DRIVE is not ${SOURCE_VOL} volume, is $f_str"
 	exit 1
 else
 	echo found ${SOURCE_VOL}
 fi
 if [  "$g_str" != ${BACKUP_VOL} ]; then
-    	echo "/mnt/$BACKUP_DRIVE is not ${BACKUP_VOL} volume"
+    	echo "/mnt/$BACKUP_DRIVE is not ${BACKUP_VOL} volume, is $g_str"
 	exit 1
 else
 	echo found ${BACKUP_VOL}
 fi
-# copy from home (Blondie) to Elvis
-rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home
+# copy from home (CLash) to Elvis
+## rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home
 exit
 # copy itunes back
 ## rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
