@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 #
+#
+# https://superuser.com/questions/660191/how-to-check-if-cygwin-mintty-bash-is-run-as-administrator
+if $(id -G | grep -qE '\<(114|544)\>')
+then
+	echo "running as admin"
+else
+	echo "not admin"
+	exit 1
+fi
 SOURCE_VOL=elvis
 SOURCE_DRIVE=f
 BACKUP_VOL=clash
@@ -20,7 +29,7 @@ else
 	echo found ${BACKUP_VOL}
 fi
 # copy from home (CLash) to Elvis
-## rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home
+rsync --dry-run -av --delete --ignore-errors  ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home
 exit
 # copy itunes back
 ## rsync -av --delete --ignore-errors ${SOURCE_VOL}/itunes ${BACKUP_VOL}/andrew_itunes
