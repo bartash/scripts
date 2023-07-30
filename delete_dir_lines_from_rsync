@@ -1,0 +1,4 @@
+# filter to avoid seeing every directory 
+# https://superuser.com/questions/1087630/how-to-get-rsync-to-not-print-directories
+awk '!($1~/\// && /\/$/)'
+
