@@ -31,14 +31,14 @@ fi
 
 RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
 
+
 # copy Elvis completely
 echo "backup dvd"
-rsync -av --delete --ignore-errors   ${SOURCE_VOL}/dvd ${BACKUP_VOL}/from_elvis/Elvis
-echo "backup docs"
-rsync -av --delete --ignore-errors   ${SOURCE_VOL}/docs ${BACKUP_VOL}/from_elvis/Elvis
+${RSYNC_CMD} ${SOURCE_DRIVE}/dvd ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync echo "backup docs"
+${RSYNC_CMD} ${SOURCE_DRIVE}/docs ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
 echo "backup the from_home dir"
-rsync -av --delete --ignore-errors   ${SOURCE_VOL}/from_home ${BACKUP_VOL}/from_elvis/Elvis
+${RSYNC_CMD} ${SOURCE_DRIVE}/from_home ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
 echo "backup itunes"
-rsync -av --delete --ignore-errors   ${SOURCE_VOL}/itunes ${BACKUP_VOL}/from_elvis/Elvis
+${RSYNC_CMD} ${SOURCE_DRIVE}/itunes ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
 echo "backup everything"
-rsync -av --delete --ignore-errors   ${SOURCE_VOL} ${BACKUP_VOL}/from_elvis 
+${RSYNC_CMD} ${SOURCE_DRIVE} ${BACKUP_DRIVE}/from_elvis | delete_dir_lines_from_rsync
