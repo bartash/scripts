@@ -35,6 +35,35 @@ RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
 # https://superuser.com/questions/1087630/how-to-get-rsync-to-not-print-directories
 ${RSYNC_CMD} ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home | awk '!($1~/\// && /\/$/)'
 
+
+echo "copy itunes forward - new"
+# rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/itunes ${BACKUP_DRIVE}/andrew_itunes
+${RSYNC_CMD} ${BACKUP_DRIVE}/andrew_itunes/itunes/Music ${SOURCE_DRIVE}/itunes | awk '!($1~/\// && /\/$/)'
+
 exit
 
+echo "copy docs to andrew_docs"
+rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/docs ${BACKUP_DRIVE}/andrew_docs 
 
+echo "any music in the wrong place?"
+gfind '/Users/asherman/Music/iTunes/iTunes Media/Music'
+echo would be listed above
+
+echo "copy git stuff"
+rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/backups ${BACKUP_DRIVE}/git_backups
+
+
+echo "backup local docs"
+rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_DRIVE}/mac_docs
+
+# backup downloads
+echo "downloads..."
+rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/downloads ${BACKUP_DRIVE}/andrew_downloads
+
+# backup dvd
+echo "fulldisc ..."
+rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/dvd/FullDisc ${SOURCE_DRIVE}/dvd
+echo "movies ..."
+rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/dvd/handbrake_out/Movies ${SOURCE_DRIVE}/dvd
+# echo "dvd ..."
+# rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/dvd ${SOURCE_DRIVE}/dvd
