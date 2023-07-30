@@ -41,27 +41,21 @@ ${RSYNC_CMD} ${BACKUP_DRIVE}/andrew_itunes/itunes/Music ${SOURCE_DRIVE}/itunes |
 exit
 
 echo "copy docs to andrew_docs"
-rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/docs ${BACKUP_DRIVE}/andrew_docs 
+${RSYNC_CMD} ${SOURCE_DRIVE}/docs ${BACKUP_DRIVE}/andrew_docs | delete_dir_lines_from_rsync
 
-echo "any music in the wrong place?"
-gfind '/Users/asherman/Music/iTunes/iTunes Media/Music'
-echo would be listed above
 
 echo "copy git stuff"
-rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/backups ${BACKUP_DRIVE}/git_backups
+${RSYNC_CMD} ${SOURCE_DRIVE}/backups ${BACKUP_DRIVE}/git_backups | delete_dir_lines_from_rsync
 
-
-echo "backup local docs"
-rsync -av --delete --ignore-errors  ~/Documents ${BACKUP_DRIVE}/mac_docs
 
 # backup downloads
 echo "downloads..."
-rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/downloads ${BACKUP_DRIVE}/andrew_downloads
+${RSYNC_CMD} ${SOURCE_DRIVE}/downloads ${BACKUP_DRIVE}/andrew_downloads | delete_dir_lines_from_rsync
 
 # backup dvd
 echo "fulldisc ..."
-rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/dvd/FullDisc ${SOURCE_DRIVE}/dvd
+${RSYNC_CMD}   ${BACKUP_DRIVE}/dvd/FullDisc ${SOURCE_DRIVE}/dvd | delete_dir_lines_from_rsync
 echo "movies ..."
-rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/dvd/handbrake_out/Movies ${SOURCE_DRIVE}/dvd
+${RSYNC_CMD} ${BACKUP_DRIVE}/dvd/handbrake_out/Movies ${SOURCE_DRIVE}/dvd | delete_dir_lines_from_rsync
 # echo "dvd ..."
 # rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/dvd ${SOURCE_DRIVE}/dvd
