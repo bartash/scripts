@@ -1,20 +1,36 @@
 #!/usr/bin/env bash
 #
-SOURCE_VOL=Elvis
-BACKUP_VOL=Genesis
-cd /Volumes
-if [ ! -d ${SOURCE_VOL} ]; then
-    echo Could not find ${SOURCE_VOL} volume
+if $(id -G | grep -qE '\<(114|544)\>')
+then
+	echo "running as admin"
+else
+	echo "not admin"
+	exit 1
+fi
+SOURCE_VOL=elvis
+SOURCE_DRIVE=f
+BACKUP_VOL=genesis
+BACKUP_DRIVE=z
+
+
+cd /cygdrive
+b_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
+s_str=$(cat $SOURCE_DRIVE/VOLUME.txt)
+if [  "$s_str" != ${SOURCE_VOL} ]; then
+    	echo "/cygdrive/$SOURCE_DRIVE is not ${SOURCE_VOL} volume, is $s_str"
 	exit 1
 else
 	echo found ${SOURCE_VOL}
 fi
-if [ ! -d ${BACKUP_VOL} ]; then
-    echo Could not find ${BACKUP_VOL} volume
+if [  "$b_str" != ${BACKUP_VOL} ]; then
+    	echo "/cygdrive/$BACKUP_DRIVE is not ${BACKUP_VOL} volume, is $b_str"
 	exit 1
 else
 	echo found ${BACKUP_VOL}
 fi
+
+RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
+
 # copy Elvis completely
 echo "backup dvd"
 rsync -av --delete --ignore-errors   ${SOURCE_VOL}/dvd ${BACKUP_VOL}/from_elvis/Elvis
