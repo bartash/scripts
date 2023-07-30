@@ -30,15 +30,13 @@ else
 fi
 # copy from home (CLash) to Elvis
 #
-# filter to avoid seeing every directory 
 RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
-# https://superuser.com/questions/1087630/how-to-get-rsync-to-not-print-directories
-${RSYNC_CMD} ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home | awk '!($1~/\// && /\/$/)'
+${RSYNC_CMD} ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home | delete_dir_lines_from_rsync
 
 
 echo "copy itunes forward - new"
 # rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/itunes ${BACKUP_DRIVE}/andrew_itunes
-${RSYNC_CMD} ${BACKUP_DRIVE}/andrew_itunes/itunes/Music ${SOURCE_DRIVE}/itunes | awk '!($1~/\// && /\/$/)'
+${RSYNC_CMD} ${BACKUP_DRIVE}/andrew_itunes/itunes/Music ${SOURCE_DRIVE}/itunes | delete_dir_lines_from_rsync
 
 exit
 
