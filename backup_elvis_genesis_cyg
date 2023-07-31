@@ -40,5 +40,3 @@ echo "backup the from_home dir"
 ${RSYNC_CMD} ${SOURCE_DRIVE}/from_home ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
 echo "backup itunes"
 ${RSYNC_CMD} ${SOURCE_DRIVE}/itunes ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
-echo "backup everything"
-${RSYNC_CMD} ${SOURCE_DRIVE} ${BACKUP_DRIVE}/from_elvis | delete_dir_lines_from_rsync
