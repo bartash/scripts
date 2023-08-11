@@ -44,3 +44,5 @@ ext-data-source
 mvn-deps
 shaded-deps
 
+
+jamm-prefix
