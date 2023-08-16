@@ -1,0 +1,20 @@
+#!/bin/bash
+# original by Kurt Deschler
+EMAIL=ashexirman@cloudera.com
+if /sbin/ifconfig gpd0 | grep UP >/dev/null
+then
+  NEWIP=$(/sbin/ifconfig gpd0 | grep 'inet ' | cut -f2 | awk '{print $2}')
+  ADDRTYPE="VPN"
+else
+  NEWIP=$(dig +short myip.opendns.com @resolver1.opendns.com)
+  ADDRTYPE="Public"
+fi
+#echo "NEWIP=$NEWIP"
+if [[ $NEWIP != "" ]]
+then
+  if [[ ! -f $HOME/mypublicip || "$(<$HOME/mypublicip)" != "$NEWIP" ]]
+  then
+    echo "$NEWIP" | mail -s "New $ADDRTYPE IP" $EMAIL
+    echo "$NEWIP" >$HOME/mypublicip
+  fi
+fi
