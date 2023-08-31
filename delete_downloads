@@ -22,9 +22,11 @@ then
     exit 1
 fi
 
+cd $DIR
+
 ls -t | tail -${NUM} | while read file
 do
-	echo file is $file
+	echo "file/dir to delete is $file"
 	rm -rf "$file"
 done
 
