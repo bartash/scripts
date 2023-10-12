@@ -23,6 +23,7 @@ alias dc=cd
 alias vp=cp
 alias gt=git
 alias grep-i='grep -i'
+alias gitlog='git log'
 
 
 # visual diff (is on mac and linux)
