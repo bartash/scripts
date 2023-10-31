@@ -14,6 +14,7 @@ alias vf=cd
 alias xrags=xargs
 alias giot=git
 alias gti=git
+alias gerp=grep
 alias golang=goland
 
 # things I cannot type or spell
