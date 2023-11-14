@@ -6,6 +6,7 @@ alias j=jobs
 alias h=history
 alias la='ls -a'
 alias ll='ls -l'
+alias ll-t=ll
 alias l='ls -F'
 alias po=popd
 alias pu=pushd
