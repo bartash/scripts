@@ -15,6 +15,8 @@ alias vf=cd
 alias xrags=xargs
 alias giot=git
 alias gti=git
+alias giyt=git
+alias gt=git
 alias gerp=grep
 alias golang=goland
 
@@ -23,7 +25,6 @@ alias golang=goland
 alias dc=cd
 # vp is some vcat thing
 alias vp=cp
-alias gt=git
 alias grep-i='grep -i'
 alias gitlog='git log'
 
