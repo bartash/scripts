@@ -2,7 +2,7 @@
 # unzip a zip file into a directory named for the zip file
 if [ "$#" -ne 1 ]
 then
- echo "usage $0 <file.zip>"
+ echo "usage $0 <file>"
  exit 1
 fi
 NAME=$1
@@ -11,14 +11,19 @@ then
   echo "file $NAME does not exist"
   exit 1
 fi
-if [[ $NAME != *.zip ]]
-then
-  echo "file $NAME does not end in .zip"
-  exit 1
-fi
 
-dir=$(echo $NAME | sed 's/\.zip//')
-echo "dir=$dir"
-mkdir $dir
-cd $dir || exit 1
-unzip  ../$NAME
+if [[ $NAME == *.zip ]]
+then
+  dir=$(echo $NAME | sed 's/\.zip//')
+  mkdir $dir
+  cd $dir || exit 1
+  unzip  ../$NAME
+elif [[ $NAME == *.tar.gz ]]
+then
+  dir=$(echo $NAME | sed 's/\.tar.gz//')
+  mkdir $dir
+  cd $dir || exit 1
+  tar xvzf ../$NAME
+else
+   echo "file $NAME does not have a supported extension"
+fi
