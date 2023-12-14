@@ -43,3 +43,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # not setting this here because paranoia
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
+
+# shut up about zsh
+# https://apple.stackexchange.com/questions/371997/suppressing-the-default-interactive-shell-is-now-zsh-message-in-macos-catalina
+export BASH_SILENCE_DEPRECATION_WARNING=1
