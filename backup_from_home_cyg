@@ -10,9 +10,9 @@ else
 	exit 1
 fi
 SOURCE_VOL=elvis
-SOURCE_DRIVE=f
+SOURCE_DRIVE=g
 BACKUP_VOL=clash
-BACKUP_DRIVE=g
+BACKUP_DRIVE=f
 cd /cygdrive
 g_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
 f_str=$(cat $SOURCE_DRIVE/VOLUME.txt)

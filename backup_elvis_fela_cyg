@@ -8,9 +8,9 @@ else
 	exit 1
 fi
 SOURCE_VOL=elvis
-SOURCE_DRIVE=f
+SOURCE_DRIVE=g
 BACKUP_VOL=fela
-BACKUP_DRIVE=g
+BACKUP_DRIVE=f
 
 
 cd /cygdrive
