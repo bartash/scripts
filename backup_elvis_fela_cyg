@@ -36,8 +36,6 @@ RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
 echo "backup dvd"
 ${RSYNC_CMD} ${SOURCE_DRIVE}/dvd ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync echo "backup docs"
 ${RSYNC_CMD} ${SOURCE_DRIVE}/docs ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
-echo "backup the from_home/data dir"
-${RSYNC_CMD} --dry-run ${SOURCE_DRIVE}/from_home/backup/data ${BACKUP_DRIVE}/from_elvis/Elvis/from_home/backup | delete_dir_lines_from_rsync
 echo "backup the from_home dir"
 ${RSYNC_CMD} ${SOURCE_DRIVE}/from_home ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
 echo "backup itunes"
