@@ -14,6 +14,7 @@ alias vf=cd
 # I cannot type
 alias xrags=xargs
 alias giot=git
+alias got=git
 alias gti=git
 alias giyt=git
 alias gt=git
