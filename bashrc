@@ -74,6 +74,10 @@ alias trickle50='trickle -sd 50'
 
 alias k=kubectl
 
+# https://stackoverflow.com/questions/17245614/repeat-last-command-with-sudo
+alias please='sudo $(history -p !!)'
+
+
 # needs bash v4
 # https://superuser.com/questions/857250/how-to-update-bash-on-mac-os-x-yosemite
 PROMPT_DIRTRIM=3
