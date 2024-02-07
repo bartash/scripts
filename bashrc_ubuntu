@@ -145,5 +145,4 @@ fi
 # Invoke script with 'switchCluster'
 . ~/scripts/switchCluster.sh
 
-alias systest='ssh -o "StrictHostKeyChecking no" -i ~/.ssh/systest_rsa -l systest'  
 

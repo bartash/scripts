@@ -77,6 +77,7 @@ alias k=kubectl
 # https://stackoverflow.com/questions/17245614/repeat-last-command-with-sudo
 alias please='sudo $(history -p !!)'
 
+alias systest='ssh -o "StrictHostKeyChecking no" -i ~/.ssh/systest_rsa -l systest'  
 
 # needs bash v4
 # https://superuser.com/questions/857250/how-to-update-bash-on-mac-os-x-yosemite
