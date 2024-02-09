@@ -5,6 +5,7 @@
 export HIVE_SKIP_SPARK_ASSEMBLY=true
 export PATH="/usr/local/opt/protobuf@2.5/bin:$PATH"
 export PATH="~/Library/Python/3.7/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 export AAHADOOP_VERSION=2.8.0
 alias hstart="/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/${AAHADOOP_VERSION}/sbin/start-yarn.sh"

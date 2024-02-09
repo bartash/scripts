@@ -120,6 +120,11 @@ export VISUAL=vi
 # then we append the rest of $PROMPT_COMMAND so as not to remove what was already there
 # voilà!
 
+# https://cwiki.apache.org/confluence/display/IMPALA/Using+Gerrit+to+submit+and+review+patches
+# says
+# set your "GERRIT_USER" environment variable to your Gerrit username
+export GERRIT_USER=bartash
+
 
 # https://superuser.com/questions/292652/change-iterm2-window-and-tab-titles-in-zsh
 # $1 = type; 0 - both, 1 - tab, 2 - title

@@ -47,11 +47,6 @@ a cdh_impala2=impala_cdh2
 a impala_cdh3='export IMPALA_HOME=$HOME/git/cdh/Impala3; export MYPROMPT=cdh_impala3 ; . ~/scripts/my_impala.sh; cd $IMPALA_HOME'
 a cdh_impala3=impala_cdh3
 
-# https://cwiki.apache.org/confluence/display/IMPALA/Using+Gerrit+to+submit+and+review+patches
-# says
-# set your "GERRIT_USER" environment variable to your Gerrit username
-export GERRIT_USER=bartash
-
 # dita
 if [ "$HOSTNAME" == "asherman-desktop" ]; then
 	export PATH=$PATH:$HOME/bin/dita-ot-3.1.1/bin
