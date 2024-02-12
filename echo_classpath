@@ -3,4 +3,4 @@
 # classpath to paste into clion
 # CLASSPATH=`echo_classpath` ./be/build/debug/util/metrics-test
 CP1=`ls ${IMPALA_HOME}/fe/target/dependency/*.jar | tr "\n" ":"`
-echo "${IMPALA_HOME}/fe/target/classes:$CP1"
+echo "${IMPALA_HOME}/fe/target/classes:${IMPALA_HOME}/java/yarn-extras/target/classes:$CP1"
