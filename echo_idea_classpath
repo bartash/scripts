@@ -2,8 +2,7 @@
 #
 # classpath to paste into clion project file
 # CLASSPATH=`echo_classpath` ./be/build/debug/util/metrics-test
-CP1=`ls ${IMPALA_HOME}/fe/target/dependency/*.jar | tr "\n" ":"`
-CP2=$(echo "${IMPALA_HOME}/fe/target/classes:$CP1" | sed "s?${IMPALA_HOME}?\$PROJECT_DIR\$?g" )
+CP2=$(echo_classpath | sed "s?${IMPALA_HOME}?\$PROJECT_DIR\$?g" )
 echo '<env name="CLASSPATH" value="'$CP2'" />'
 
 
