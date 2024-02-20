@@ -6,6 +6,15 @@ git config --global user.name "Andrew Sherman"
 # put branch names in git log
 git config --global log.decorate auto
 
+# https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+# may need git 2.28.x
+git config --global init.defaultBranch main
+git config --global push.autoSetupRemote true
+
+git config --global diff.algorithm histogram
+git config --global branch.sort -committerdate
+git config --global merge.conflictstyle zdiff3
+
 
 echo also type email...
 echo "git config --global user.email asherman@cloudera.com"
