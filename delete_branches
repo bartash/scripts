@@ -7,7 +7,10 @@ then
 fi
 AAREGEX=$1
 echo "# branches to be deleted - edit" > $AATMP
-git branch | grep "$AAREGEX" | grep -v save | grep -v '^*' | awk '{print $1}' >> $AATMP
+git branch | grep "$AAREGEX" | grep -v save | grep -v '^*' | awk '{print $1}' |\
+	grep -v '^master$'  \
+	grep -v '^main$'  \
+	>> $AATMP
 vi $AATMP
 grep -v ^# $AATMP | xargs git branch -D
 
