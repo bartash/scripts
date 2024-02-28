@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+MACHINE=Elvis
+MOUNT=/media/asherman/$MACHINE
+
+if [ ! -d  "$MOUNT" ]; then
+  echo "could not find $MOUNT"
+  exit 1
+fi
+
+SOURCE=$MOUNT/itunes/Music
+MOVIES=$MOUNT/dvd/Movies
+
+echo "copying music"
+rsync -av --delete --ignore-errors  ${SOURCE} /Andrew
+
+echo "copying movies"
+rsync -av --delete --ignore-errors  ${MOVIES} /Andrew
