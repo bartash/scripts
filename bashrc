@@ -19,6 +19,7 @@ alias gti=git
 alias giyt=git
 alias gt=git
 alias gerp=grep
+alias greop=grep
 alias golang=goland
 
 # things I cannot type or spell
