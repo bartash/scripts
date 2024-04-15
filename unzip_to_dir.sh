@@ -17,13 +17,13 @@ then
   dir=$(echo $NAME | sed 's/\.zip//')
   mkdir $dir
   cd $dir || exit 1
-  unzip  ../$NAME
+  unzip  ../$NAME  && rm ../$NAME
 elif [[ $NAME == *.tar.gz ]]
 then
   dir=$(echo $NAME | sed 's/\.tar.gz//')
   mkdir $dir
   cd $dir || exit 1
-  tar xvzf ../$NAME
+  tar xvzf ../$NAME && rm ../$NAME
 else
    echo "file $NAME does not have a supported extension"
 fi
