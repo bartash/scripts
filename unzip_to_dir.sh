@@ -18,6 +18,7 @@ then
   mkdir $dir
   cd $dir || exit 1
   unzip  ../$NAME  && rm ../$NAME
+  # note unzip can return 1 if there were warnings, e.g. warning:  stripped absolute path spec 
 elif [[ $NAME == *.tar.gz ]]
 then
   dir=$(echo $NAME | sed 's/\.tar.gz//')
