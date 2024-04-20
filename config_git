@@ -14,6 +14,8 @@ git config --global push.autoSetupRemote true
 git config --global diff.algorithm histogram
 git config --global branch.sort -committerdate
 git config --global merge.conflictstyle zdiff3
+#  if it fails...
+#  git config --unset  --global merge.conflictstyle zdiff3
 
 
 echo also type email...
