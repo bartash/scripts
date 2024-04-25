@@ -20,6 +20,8 @@ gbn-m2-settings.xml
 metastore_db
 .vscode
 venv
+venv2
+venv3
 .venv
 # idea
 .idea/*
