@@ -13,7 +13,8 @@ git config --global push.autoSetupRemote true
 
 git config --global diff.algorithm histogram
 git config --global branch.sort -committerdate
-git config --global merge.conflictstyle zdiff3
+# Disable zdiff3 as it doesn't seem to work where I am
+# git config --global merge.conflictstyle zdiff3
 #  if it fails...
 #  git config --unset  --global merge.conflictstyle zdiff3
 

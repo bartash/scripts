@@ -15,11 +15,11 @@ export DWX_HOME=$GOPATH/src/github.com/hortonworks/edws
 . ~/scripts/gosetup.sh
 
 # dwx needs hadoop on dir path
-hadoop_dirs=$(find ~/git/asf/Impala/toolchain -name hadoop-3.0.0-cdh6.x-SNAPSHOT)
-hadoop_dir_list=($hadoop_dirs)
+## hadoop_dirs=$(find ~/git/asf/Impala/toolchain -name hadoop-3.0.0-cdh6.x-SNAPSHOT)
+## hadoop_dir_list=($hadoop_dirs)
 # just take first one, they are not sorted
-hadoop_dir=${hadoop_dir_list[0]}
-export PATH=$PATH:$hadoop_dir/bin
+## hadoop_dir=${hadoop_dir_list[0]}
+## export PATH=$PATH:$hadoop_dir/bin
 
 . ~/Dropbox/work/cloudera/${AADWX}_env.sh
 # . ~/Dropbox/work/cloudera/azure-env.sh
