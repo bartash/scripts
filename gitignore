@@ -22,6 +22,7 @@ metastore_db
 venv
 venv2
 venv3
+venv38
 .venv
 # idea
 .idea/*
@@ -50,4 +51,6 @@ toolchain
 
 node_modules
 
+gomock_reflect*
+hs_err_pid*
 
