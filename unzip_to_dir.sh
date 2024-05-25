@@ -28,3 +28,6 @@ then
 else
    echo "file $NAME does not have a supported extension"
 fi
+
+echo
+echo "target dir was $dir"
