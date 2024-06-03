@@ -42,6 +42,7 @@ fi
 target=35000
 
 echo "browse to http://localhost:${target}/metric"
+echo kubectl port-forward --address localhost,127.0.0.1 $name -n $namespace ${target}:${target}
 kubectl port-forward --address localhost,127.0.0.1 $name -n $namespace ${target}:${target}
 
 
