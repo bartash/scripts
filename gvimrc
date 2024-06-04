@@ -2,7 +2,7 @@
 " source /home/asherman/scripts/gvimrc
 "
 " make the font big
-set guifont=Monospace\ 12
+set guifont=Monospace\ 14
 
 " make gvimdiff look less like 1993
 if &diff
