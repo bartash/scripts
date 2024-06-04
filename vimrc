@@ -5,5 +5,4 @@ else
 endif
 syntax enable
 colorscheme solarized
-maxmempattern 5000
 
