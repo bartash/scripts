@@ -17,7 +17,7 @@ do
 	repos=${GIT_HOME}/$repoName
 	echo
 	echo In $repos
-	cd $repos
+	cd $repos || continue
 	git status --untracked-files=no
  	echo '------------------------'
 done
