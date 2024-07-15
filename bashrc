@@ -142,3 +142,9 @@ set_title () { setTerminalText 2 $@; }
 # put set_title in machine .bashrc
 
 umask 0022
+
+
+# put rust where I can see it
+export CARGO_HOME=~/cargo
+export RUSTUP_HOME=~/rustup
+. "$CARGO_HOME/env"
