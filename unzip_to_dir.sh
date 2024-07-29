@@ -27,14 +27,14 @@ then
   tar xvzf ../$NAME
 else
    echo "file $NAME does not have a supported extension"
+   exit 1
 fi
 if [[ $? -eq 0 ]]; then
-	echo "exit code was 0, remove $NAME"
-	rm ../$NAME
+    echo "exit code was 0, remove $NAME"
+    rm ../$NAME
 else
-	echo "exit code was $? leaving $NAME"
+    echo "exit code was $? leaving $NAME"
 fi
-
 
 echo
 echo "target dir was $dir"
