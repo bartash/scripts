@@ -37,4 +37,4 @@ else
 fi
 
 echo
-echo "target dir was $dir"
+echo "target dir: cd $dir"
