@@ -146,4 +146,4 @@ umask 0022
 # put rust where I can see it
 export CARGO_HOME=~/cargo
 export RUSTUP_HOME=~/rustup
-[[ -d /tmp/"${0}" ]] && . "$CARGO_HOME/env"
+# [[ -d /tmp/"${0}" ]] && . "$CARGO_HOME/env"
