@@ -83,6 +83,8 @@ alias buildall='./buildall.sh -skiptests -noclean'
 alias start-impala-local-catalog='start-impala-cluster.py --cluster_size=1 --impalad_args="--use_local_catalog=true" --catalogd_args="--catalog_topic_mode=minimal"'
 # Start impala with a dedicated coordinator.
 alias start-impala-dedicated-coordinator='start-impala-cluster.py --cluster_size=3 --num_coordinators=1 --use_exclusive_coordinators'
+alias start-impala-dedicated-coordinator-statestore-ha='start-impala-cluster.py --cluster_size=3 --num_coordinators=1 --use_exclusive_coordinators --enable_statestored_ha'
+
 
 
 # in case sl installed
