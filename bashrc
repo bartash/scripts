@@ -147,3 +147,17 @@ umask 0022
 export CARGO_HOME=~/cargo
 export RUSTUP_HOME=~/rustup
 # [[ -d /tmp/"${0}" ]] && . "$CARGO_HOME/env"
+
+
+
+# Base16 Shell
+# https://github.com/chriskempson/base16-shell
+BASE16_SHELL="$HOME/git/base16-shell/"
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        source "$BASE16_SHELL/profile_helper.sh"
+
+if [ -s "$BASE16_SHELL/profile_helper.sh" ];
+then
+        base16_solarized-light
+fi
+
