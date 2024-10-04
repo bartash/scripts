@@ -160,4 +160,7 @@ if [ -s "$BASE16_SHELL/profile_helper.sh" ];
 then
         base16_solarized-light
 fi
+alias flare=base16_solarflare
+alias dark=base16_solarized-dark
+alias light=base16_solarized-light
 
