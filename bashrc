@@ -163,4 +163,4 @@ fi
 alias flare=base16_solarflare
 alias dark=base16_solarized-dark
 alias light=base16_solarized-light
-
+alias purple=base16_rebecca
