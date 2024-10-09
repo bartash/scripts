@@ -167,5 +167,6 @@ alias purple=base16_rebecca
 alias black=base16_nord
 alias brown=base16_mocha
 alias green=base16_greenscreen
-alias white=base16_one-light
+# alias white=base16_one-light
+alias white=base16_google-light
 
