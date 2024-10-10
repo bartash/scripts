@@ -12,11 +12,12 @@ then
 	TOTAL_USERS=$1
 fi
 
-QUERY='set REQUEST_POOL=queueE; select * from hoo where a <  sleep (30000);'
+QUERY='set REQUEST_POOL=queueE; select * from hoo where a <  sleep (60000);'
 
 for user_number in $(seq 1 ${TOTAL_USERS})
 do
   IMPALA_USER="user-${user_number}"
   echo "user is ${IMPALA_USER}"
   impala-shell.sh -u ${IMPALA_USER}  -i localhost:21050 -q "${QUERY}" &
+  sleep 0.1
 done
