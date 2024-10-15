@@ -162,11 +162,12 @@ then
 fi
 alias flare=base16_solarflare
 alias dark=base16_solarized-dark
-alias light=base16_solarized-light
+alias light=base16_gruvbox-light-hard
 alias purple=base16_rebecca
 alias black=base16_nord
 alias brown=base16_mocha
 alias green=base16_greenscreen
 # alias white=base16_one-light
 alias white=base16_google-light
+alias buff=base16_gruvbox-light-soft
 
