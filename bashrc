@@ -169,5 +169,9 @@ alias brown=base16_mocha
 alias green=base16_greenscreen
 # alias white=base16_one-light
 alias white=base16_google-light
-alias buff=base16_gruvbox-light-soft
-
+alias yellow=base16_gruvbox-light-soft
+alias pale=base16_gruvbox-light-hard
+alias paleblue=base16_brushtrees
+alias blue=base16_atelier-sulphurpool
+alias green=base16_flat
+alias darkblue=base16_phd
