@@ -4,4 +4,4 @@
 #
 # Note this is an okta driven browser
 # 
-google-chrome --user-data-dir=/home/asherman/config/google-chrome4 --auth-server-whitelist="*.hwx.site" --auth-negotiate-delegate-whitelist="*.hwx.site"
+google-chrome --use-sha1-server-handshakes --disable-proxy-certificate-handler --ignore-certificate-errors --user-data-dir=/home/asherman/config/google-chrome4 --auth-server-whitelist="*.comops.site" --auth-negotiate-delegate-whitelist="*.comops.site"
