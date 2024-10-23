@@ -164,6 +164,7 @@ alias flare=base16_solarflare
 alias dark=base16_solarized-dark
 alias light=base16_gruvbox-light-hard
 alias purple=base16_rebecca
+alias deeppurple=base16_paraiso
 alias black=base16_nord
 alias brown=base16_mocha
 alias green=base16_greenscreen
