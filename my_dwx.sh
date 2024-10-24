@@ -46,3 +46,9 @@ export DWX_VERSION=$(curl -s "https://release.infra.cloudera.com/hwre-api/stacki
     | tr -d '"'\
 )
 
+
+# Cadence stuff, assumes postgres has been moved
+export WAREHOUSE_DB_PORT=5433
+export EDWS_DB_PORT=5433
+export CADENCE_TASK_LIST_NAME=asherman-task
+
