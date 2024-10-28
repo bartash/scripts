@@ -175,5 +175,5 @@ alias pale=base16_gruvbox-light-hard
 alias paleblue=base16_brushtrees
 alias blue=base16_atelier-sulphurpool
 alias darkgreen=base16_flat
-alias lightgeen=base16_atelier-lakeside-light
+alias palegreen=base16_atelier-lakeside-light
 alias darkblue=base16_phd
