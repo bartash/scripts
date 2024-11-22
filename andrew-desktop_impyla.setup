@@ -2,4 +2,6 @@ export IMPYLA_TEST_PORT=21050
 export IMPYLA_TEST_AUTH_MECH=NOSASL
 export IMPYLA_TEST_HOST=localhost
 export IMPYLA_TEST_HIVE_PORT=11050
+export http_port=28000
+export host=localhost
 
