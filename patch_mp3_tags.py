@@ -4,6 +4,7 @@
 import sys
 
 from mutagen.id3 import ID3
+from mutagen.easyid3 import EasyID3
 
 
 def main():
@@ -15,15 +16,16 @@ def main():
 		sys.exit(-1)
 	file = sys.argv[1]
 
+	# here is where to manipulate the new name - strip prefix, undo camel case
 	new = file
 
 
-	audio = ID3(file)
+	audio = EasyID3(file)
 	# print all tags
+	print("dumping all tags")
 	print(audio.pprint())
 	old = audio["title"]
 	audio["title"] = file
-
 	print(f"old title was {old} new is {new}")
 
 	audio.save()
