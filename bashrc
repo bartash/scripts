@@ -165,7 +165,9 @@ alias dark=base16_solarized-dark
 alias light=base16_gruvbox-light-hard
 alias purple=base16_rebecca
 alias deeppurple=base16_paraiso
-alias black=base16_nord
+alias grey=base16_nord
+alias gray=base16_nord
+alias black=base16_marrakesh
 alias brown=base16_mocha
 alias green=base16_greenscreen
 # alias white=base16_one-light
@@ -177,3 +179,5 @@ alias blue=base16_atelier-sulphurpool
 alias darkgreen=base16_flat
 alias palegreen=base16_atelier-lakeside-light
 alias darkblue=base16_phd
+alias pink=base16_horizon-terminal-light
+
