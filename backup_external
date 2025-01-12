@@ -13,6 +13,12 @@ if [ ! -d ${BACK} ]; then
 else
 	echo found ${BACK}
 fi
+if [ ! -d ${BACK}/backup ]; then
+	echo "Could not find ${BACK}/backup, maybe wrong drive mounted"
+	exit 1
+else
+	echo found ${BACK}
+fi
 if [ ! -d ${SOURCE} ]; then
 	echo Could not find ${SOURCE} volume
 	exit 1

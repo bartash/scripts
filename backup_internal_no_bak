@@ -6,7 +6,8 @@ cd /cygdrive
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group   g/data o/backup
 
 
-rsync -av --exclude '*.lnk' --delete --no-owner --no-group --backup --suffix=.bak  g/andrew_itunes o/backup
+# rsync -av --exclude '*.lnk' --delete --no-owner --no-group --backup --suffix=.bak  g/andrew_itunes o/backup
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/andrew_itunes o/backup
 
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
 
