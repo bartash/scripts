@@ -54,5 +54,5 @@ export IMPYLA_REPO=~/git/cloudera/impyla
 export IMPYLA_SKIP_HIVE_TESTS=True
 
 export IMPALA_LINKER=mold
-export IMPALA_MINIMAL_DEBUG_INFO=true
+export IMPALA_MINIMAL_DEBUG_INFO=false
 
