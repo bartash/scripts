@@ -20,3 +20,4 @@ ${IMPALA_HOME}/bin/start-impala-cluster.py \
     --statestore_heartbeat_frequency_ms=50"
 
 # impala-shell -q 'set request_pool=root.queueF; select * from foo'
+# impala-shell -q 'set request_pool=root.queueF; set mt_dop=8 ;select * from foo'
