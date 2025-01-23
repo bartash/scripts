@@ -10,6 +10,7 @@ fi
 FAIR=fair-scheduler-test2.xml
 LLAMA=llama-site-test2.xml
 
+# need --admission_control_slots
 ${IMPALA_HOME}/bin/start-impala-cluster.py \
  --cluster_size=3 --num_coordinators=3 --log_dir=/tmp/ --log_level=1 \
     --catalogd_args="--enable_workload_mgmt=true" \
