@@ -18,3 +18,5 @@ ${IMPALA_HOME}/bin/start-impala-cluster.py \
     -llama_site_path ${IMPALA_HOME}/fe/src/test/resources/${LLAMA}" \
  --state_store_args="--statestore_update_frequency_ms=50   --statestore_priority_update_frequency_ms=50 \
     --statestore_heartbeat_frequency_ms=50"
+
+# impala-shell -q 'set request_pool=root.queueF; select * from foo'
