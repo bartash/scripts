@@ -12,7 +12,7 @@ LLAMA=llama-site-test2.xml
 
 # need --admission_control_slots
 ${IMPALA_HOME}/bin/start-impala-cluster.py \
- --cluster_size=3 --num_coordinators=3 --log_dir=/tmp/ --log_level=1 \
+ --cluster_size=3 --num_coordinators=3  --log_level=1 \
     --catalogd_args="--enable_workload_mgmt=true" \
  --impalad_args="-fair_scheduler_allocation_path ${IMPALA_HOME}/fe/src/test/resources/${FAIR} \
     --enable_workload_mgmt=true \
