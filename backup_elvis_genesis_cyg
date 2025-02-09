@@ -10,7 +10,7 @@ fi
 SOURCE_VOL=elvis
 SOURCE_DRIVE=g
 BACKUP_VOL=genesis
-BACKUP_DRIVE=f
+BACKUP_DRIVE=d
 
 
 cd /cygdrive
