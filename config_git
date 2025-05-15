@@ -18,8 +18,10 @@ git config --global branch.sort -committerdate
 #  if it fails...
 #  git config --unset  --global merge.conflictstyle zdiff3
 
+# The idea is never use CRLF
+git config --global core.autocrlf input`
 
 echo also type email...
-echo "git config --global user.email asherman@cloudera.com"
+echo "git config --global user.email andrew@ohair-sherman.com"
 echo or ...
 echo "git config user.email asherman@apache.org"
