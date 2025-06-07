@@ -10,15 +10,12 @@ else
 	exit 1
 fi
 SOURCE_VOL=elvis
-SOURCE_DRIVE=g
+SOURCE_DRIVE=d
 BACKUP_VOL=clash
 BACKUP_DRIVE=f
-ANDREW_VOL=andrew
-ANDREW_DRIVE=d
 cd /cygdrive
 g_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
 f_str=$(cat $SOURCE_DRIVE/VOLUME.txt)
-d_str=$(cat $ANDREW_DRIVE/VOLUME.txt)
 if [  "$f_str" != ${SOURCE_VOL} ]; then
     	echo "/cygdrive/$SOURCE_DRIVE is not ${SOURCE_VOL} volume, is $f_str"
 	exit 1
@@ -31,12 +28,6 @@ if [  "$g_str" != ${BACKUP_VOL} ]; then
 else
 	echo found ${BACKUP_VOL}
 fi
-if [  "$d_str" != ${ANDREW_VOL} ]; then
-    	echo "/cygdrive/$ANDREW_DRIVE is not ${ANDREW_VOL} volume, is $d_str"
-	exit 1
-else
-	echo found ${ANDREW_VOL}
-fi
 # copy from home (CLash) to Elvis
 #
 RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
@@ -46,11 +37,6 @@ ${RSYNC_CMD} ${BACKUP_DRIVE}/backup ${SOURCE_DRIVE}/from_home | delete_dir_lines
 echo "copy itunes forward - new"
 # rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/itunes ${BACKUP_DRIVE}/andrew_itunes
 ${RSYNC_CMD} ${BACKUP_DRIVE}/andrew_itunes/itunes/Music ${SOURCE_DRIVE}/itunes | delete_dir_lines_from_rsync
-
-echo "copy itunes to Andrew drive"
-# rsync -av --delete --ignore-errors ${SOURCE_DRIVE}/itunes ${BACKUP_DRIVE}/andrew_itunesndrew drive
-${RSYNC_CMD} ${BACKUP_DRIVE}/andrew_itunes/itunes/Music ${ANDREW_DRIVE}/itunes | delete_dir_lines_from_rsync
-
 
 echo "copy docs to andrew_docs"
 ${RSYNC_CMD} ${SOURCE_DRIVE}/docs ${BACKUP_DRIVE}/andrew_docs | delete_dir_lines_from_rsync
