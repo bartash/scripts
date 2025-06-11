@@ -55,5 +55,11 @@ echo "fulldisc ..."
 ${RSYNC_CMD}   ${BACKUP_DRIVE}/dvd/FullDisc ${SOURCE_DRIVE}/dvd | delete_dir_lines_from_rsync
 echo "movies ..."
 ${RSYNC_CMD} ${BACKUP_DRIVE}/dvd/handbrake_out/Movies ${SOURCE_DRIVE}/dvd | delete_dir_lines_from_rsync
+echo   "TV ..."
+${RSYNC_CMD} ${BACKUP_DRIVE}/dvd/handbrake_out/'TV Shows' ${SOURCE_DRIVE}/dvd | delete_dir_lines_from_rsync
+echo   "Radio ..."
+${RSYNC_CMD} ${BACKUP_DRIVE}/dvd/handbrake_out/Radio ${SOURCE_DRIVE}/dvd | delete_dir_lines_from_rsync
+echo   "Home Movies ..." 
+${RSYNC_CMD} ${BACKUP_DRIVE}/dvd/handbrake_out/'Home Movies' ${SOURCE_DRIVE}/dvd | delete_dir_lines_from_rsync
 # echo "dvd ..."
 # rsync -av --delete --ignore-errors  ${BACKUP_DRIVE}/dvd ${SOURCE_DRIVE}/dvd
