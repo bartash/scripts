@@ -5,6 +5,7 @@
 set -o errexit
 OUTPUT=merged_book.pdf
 
+PDF_DIRECTORY=/mnt/g/data/Photos-Amy/432Flood-project/0-Sunnyside/05-Walks-Book/REMAKE
 PDF_DIRECTORY=$WINHOME/tmp/testpdfs
 
 # Check if the specified directory exists.
