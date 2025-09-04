@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 #
-if $(id -G | grep -qE '\<(114|544)\>')
-then
-	echo "running as admin"
-else
-	echo "not admin"
-	exit 1
+# Check if the effective user ID is not 0 (i.e., not root)
+if (( EUID != 0 )); then
+  echo "Error: This script must be run as root or with sudo." >&2
+  exit 1
 fi
+
 SOURCE_VOL=elvis
 SOURCE_DRIVE=g
 BACKUP_VOL=husker
