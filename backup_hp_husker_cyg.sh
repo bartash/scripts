@@ -27,12 +27,8 @@ if [  "$b_str" != ${BACKUP_VOL} ]; then
 	exit 1
 fi
 
-echo here OK
-
-exit 1
 
 RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
-
 
 # copy g drive completely
 echo "backup g"
