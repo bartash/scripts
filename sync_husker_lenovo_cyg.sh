@@ -31,5 +31,5 @@ RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN*  --no-owner --no-group --i
 
 # copy g drive completely
 echo "backup g"
-# ${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy /cygdrive/g | delete_dir_lines_from_rsync 
-${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy /cygdrive/g 
+${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy/g/* /cygdrive/g 
+# | delete_dir_lines_from_rsync 
