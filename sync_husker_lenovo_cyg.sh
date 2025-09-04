@@ -9,7 +9,7 @@ else
 fi
 
 current_hostname=$(hostname)
-expected_hostname="HP2-DiningRoom"
+expected_hostname="LENOVO-DINING"
 if [[ "$current_hostname" != "$expected_hostname" ]]; then
 	echo "Hostname is not as expected was: $current_hostname (expected: $expected_hostname)"
 	exit 1
@@ -31,5 +31,5 @@ RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN*  --no-owner --no-group --i
 
 # copy g drive completely
 echo "backup g"
-# ${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy /cygdive/g | delete_dir_lines_from_rsync 
-${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy /cygdive/g 
+# ${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy /cygdrive/g | delete_dir_lines_from_rsync 
+${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy /cygdrive/g 
