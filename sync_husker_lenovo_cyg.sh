@@ -12,10 +12,11 @@ current_hostname=$(hostname)
 expected_hostname="HP2-DiningRoom"
 if [[ "$current_hostname" != "$expected_hostname" ]]; then
 	echo "Hostname is not as expected was: $current_hostname (expected: $expected_hostname)"
+	exit 1
 fi
 
 BACKUP_VOL=husker
-BACKUP_DRIVE=f
+BACKUP_DRIVE=e
 
 
 cd /cygdrive
