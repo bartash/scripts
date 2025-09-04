@@ -13,28 +13,20 @@ if [[ "$current_hostname" != "$expected_hostname" ]]; then
 	echo "Hostname is not as expected was: $current_hostname (expected: $expected_hostname)"
 fi
 
-SOURCE_VOL=elvis
-SOURCE_DRIVE=g
 BACKUP_VOL=husker
 BACKUP_DRIVE=f
 
-exit 1
 
-cd /cygdrive
+cd /mnt
 b_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
-s_str=$(cat $SOURCE_DRIVE/VOLUME.txt)
-if [  "$s_str" != ${SOURCE_VOL} ]; then
-    	echo "/cygdrive/$SOURCE_DRIVE is not ${SOURCE_VOL} volume, is $s_str"
-	exit 1
-else
-	echo found ${SOURCE_VOL}
-fi
 if [  "$b_str" != ${BACKUP_VOL} ]; then
     	echo "/cygdrive/$BACKUP_DRIVE is not ${BACKUP_VOL} volume, is $b_str"
 	exit 1
-else
-	echo found ${BACKUP_VOL}
 fi
+
+echo here OK
+
+exit 1
 
 RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
 
