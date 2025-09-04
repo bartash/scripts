@@ -6,11 +6,19 @@ if (( EUID != 0 )); then
   exit 1
 fi
 
+
+current_hostname=$(hostname)
+expected_hostname="HP2-DiningRoom"
+if [[ "$current_hostname" != "$expected_hostname" ]]; then
+	echo "Hostname is not as expected was: $current_hostname (expected: $expected_hostname)"
+fi
+
 SOURCE_VOL=elvis
 SOURCE_DRIVE=g
 BACKUP_VOL=husker
 BACKUP_DRIVE=f
 
+exit 1
 
 cd /cygdrive
 b_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
