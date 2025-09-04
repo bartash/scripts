@@ -20,7 +20,7 @@ BACKUP_VOL=husker
 BACKUP_DRIVE=f
 
 
-cd /mnt
+cd /cygdrive
 b_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
 if [  "$b_str" != ${BACKUP_VOL} ]; then
     	echo "/cygdrive/$BACKUP_DRIVE is not ${BACKUP_VOL} volume, is $b_str"
@@ -36,5 +36,5 @@ RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
 
 # copy g drive completely
 echo "backup g"
-# ${RSYNC_CMD} /mnt/g ${BACKUP_DRIVE}/g_drive_copy | delete_dir_lines_from_rsync 
-${RSYNC_CMD} /mnt/g ${BACKUP_DRIVE}/g_drive_copy
+# ${RSYNC_CMD} /cygdrive/g ${BACKUP_DRIVE}/g_drive_copy | delete_dir_lines_from_rsync 
+${RSYNC_CMD} /cygdrive/g ${BACKUP_DRIVE}/g_drive_copy 
