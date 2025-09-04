@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
+# need to copy to cygwin with
+#  cp backup_hp_husker_cyg.sh /mnt/c/cygwin64/home/Andrew/scripts
 #
-# Check if the effective user ID is not 0 (i.e., not root)
-if (( EUID != 0 )); then
-  echo "Error: This script must be run as root or with sudo." >&2
-  exit 1
+if $(id -G | grep -qE '\<(114|544)\>')
+then
+	echo "running as admin"
+else
+	echo "not admin"
+	exit 1
 fi
-
 
 current_hostname=$(hostname)
 expected_hostname="HP2-DiningRoom"
