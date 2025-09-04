@@ -31,11 +31,7 @@ exit 1
 RSYNC_CMD='rsync -av --delete   --no-owner --no-group --ignore-errors'
 
 
-# copy Elvis completely
-echo "backup dvd"
-${RSYNC_CMD} ${SOURCE_DRIVE}/dvd ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync echo "backup docs"
-${RSYNC_CMD} ${SOURCE_DRIVE}/docs ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
-echo "backup the from_home dir"
-${RSYNC_CMD} ${SOURCE_DRIVE}/from_home ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
-echo "backup itunes"
-${RSYNC_CMD} ${SOURCE_DRIVE}/itunes ${BACKUP_DRIVE}/from_elvis/Elvis | delete_dir_lines_from_rsync
+# copy g drive completely
+echo "backup g"
+# ${RSYNC_CMD} /mnt/g ${BACKUP_DRIVE}/g_drive_copy | delete_dir_lines_from_rsync 
+${RSYNC_CMD} /mnt/g ${BACKUP_DRIVE}/g_drive_copy
