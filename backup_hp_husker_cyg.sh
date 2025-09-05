@@ -31,7 +31,11 @@ fi
 
 RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN*  --no-owner --no-group --ignore-errors'
 
+echo "backup thuderbird"
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group c/Users/Amy/AppData/Roaming/Thunderbird/Profiles ${BACKUP_DRIVE}/amy-thunderbird-email 
+
 # copy g drive completely
 echo "backup g"
 # ${RSYNC_CMD} /cygdrive/g ${BACKUP_DRIVE}/g_drive_copy | delete_dir_lines_from_rsync 
 ${RSYNC_CMD} /cygdrive/g ${BACKUP_DRIVE}/g_drive_copy 
+
