@@ -3,7 +3,7 @@
 #
 #
 set -o errexit
-OUTPUT=OHair_book.pdf
+OUTPUT=OHAIR_2025_09_history_walks.pdf
 
 PDF_DIRECTORY=/mnt/g/data/Photos-Amy/432Flood-project/0-Sunnyside/05-Walks-Book/REMAKE/PDFs_rev
 
