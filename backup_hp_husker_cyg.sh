@@ -31,8 +31,12 @@ fi
 
 RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN*  --no-owner --no-group --ignore-errors'
 
+echo "backup chrome profiles alo"
+rsync -av --exclude '*.lnk' --delete --no-owner --no-group "c/Users/Amy/AppData/Local/Google/Chrome/User Data" ${BACKUP_DRIVE}/amy-chrome-profiles
+
 echo "backup thuderbird"
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group c/Users/Amy/AppData/Roaming/Thunderbird/Profiles ${BACKUP_DRIVE}/amy-thunderbird-email 
+
 
 # copy g drive completely
 echo "backup g"
