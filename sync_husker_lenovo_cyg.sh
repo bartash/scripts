@@ -27,7 +27,7 @@ if [  "$b_str" != ${BACKUP_VOL} ]; then
 fi
 
 
-RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN*  --no-owner --no-group --ignore-errors'
+RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN* --exclude=*FVE2* --no-owner --no-group --ignore-errors'
 
 # sync g drive completely, use * so that anything else ther is not deleted.
 echo "backup g"
