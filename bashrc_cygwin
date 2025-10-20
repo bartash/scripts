@@ -1,3 +1,4 @@
 #
 export MAVEN_HOME="/cygdrive/c/cygwin64/home/Andrew/devsw/apache-maven-3.5.0"
 export PATH="$PATH:${MAVEN_HOME}/bin"
+export WINHOME="/cygdrive/c/users/ac9"
