@@ -13,7 +13,11 @@ echo "backup media"
 rsync -av --exclude '*.lnk' --delete --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
 
 
-# Users/Amy/AppData/Roaming/Thunderbird/Profiles/jfpbkkhj.default/Mail/pop.so
-echo "backup email"
-rsync -av --exclude '*.lnk' --delete --no-owner --no-group c/Users/Amy/AppData/Roaming/Thunderbird/Profiles o/backup/profiles
+current_hostname=$(hostname)
+expected_hostname="HP2-DiningRoom"
+if [[ "$current_hostname" == "$expected_hostname" ]]; then
+	# Users/Amy/AppData/Roaming/Thunderbird/Profiles/jfpbkkhj.default/Mail/pop.so
+	echo "backup email"
+	rsync -av --exclude '*.lnk' --delete --no-owner --no-group c/Users/Amy/AppData/Roaming/Thunderbird/Profiles o/backup/profiles
+fi
 
