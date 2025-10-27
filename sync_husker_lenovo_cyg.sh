@@ -34,6 +34,8 @@ AMY2="/cygdrive/e/amy-chrome-profiles/User Data/Amy2"
 AMY2_TARGET="/cygdrive/g/data/Profiles/sunnyside"
 
 cp -v "$AMY2"/Bookmarks $AMY2_TARGET/Default/Bookmarks
+cp -v "$AMY2"/History $AMY2_TARGET/Default/History
+cp -v "$AMY2"/History-journal $AMY2_TARGET/Default/History-journal
 
 # Sessions/Tbas not easily copyable!!
 ## rm $AMY2_TARGET/Default/Sessions/*
