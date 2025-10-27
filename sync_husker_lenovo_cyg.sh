@@ -27,9 +27,23 @@ if [  "$b_str" != ${BACKUP_VOL} ]; then
 fi
 
 
+
+echo "cp chrome profiles"
+
+AMY2="/cygdrive/e/amy-chrome-profiles/User Data/Amy2"
+AMY2_TARGET="/cygdrive/g/data/Profiles/sunnyside"
+
+cp -v "$AMY2"/Bookmarks $AMY2_TARGET/Default/Bookmarks
+
+echo "exiting early -FIXME remove"
+exit 1
+
+
 RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN* --exclude=*FVE2* --no-owner --no-group --ignore-errors'
 
 # sync g drive completely, use * so that anything else ther is not deleted.
 echo "backup g"
 ${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy/g/* /cygdrive/g  | delete_dir_lines_from_rsync
-# | delete_dir_lines_from_rsync 
+
+
+
