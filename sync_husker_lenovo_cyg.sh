@@ -35,6 +35,10 @@ AMY2_TARGET="/cygdrive/g/data/Profiles/sunnyside"
 
 cp -v "$AMY2"/Bookmarks $AMY2_TARGET/Default/Bookmarks
 
+# Sessions/Tbas not easily copyable!!
+## rm $AMY2_TARGET/Default/Sessions/*
+## cp -v "$AMY2"/Sessions/* $AMY2_TARGET/Default/Sessions
+
 echo "exiting early -FIXME remove"
 exit 1
 
