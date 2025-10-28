@@ -50,10 +50,6 @@ rm -rf $THUNDER_TARGET/*
 cp -r $THUNDER_SRC/* $THUNDER_TARGET
 chown -R Amy $THUNDER_TARGET
 
-echo "exiting early FIXME remove"
-exit 1
-
-
 RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN* --exclude=*FVE2* --no-owner --no-group --ignore-errors'
 
 # sync g drive completely, use * so that anything else there is not deleted.
