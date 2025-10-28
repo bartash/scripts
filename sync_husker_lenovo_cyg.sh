@@ -37,17 +37,26 @@ cp -v "$AMY2"/Bookmarks $AMY2_TARGET/Default/Bookmarks
 cp -v "$AMY2"/History $AMY2_TARGET/Default/History
 cp -v "$AMY2"/History-journal $AMY2_TARGET/Default/History-journal
 
-# Sessions/Tbas not easily copyable!!
+# Sessions/Tabs not easily copyable!!
 ## rm $AMY2_TARGET/Default/Sessions/*
 ## cp -v "$AMY2"/Sessions/* $AMY2_TARGET/Default/Sessions
 
-echo "exiting early -FIXME remove"
+echo "copy thunderbird profile"
+THUNDER_SRC="/cygdrive/e/amy-thunderbird-email/profiles/jfpbkkhj.default"
+THUNDER_TARGET="/cygdrive/g/data/AmyThunderbirdProfile"
+ls -ld $THUNDER_SRC
+ls -ld $THUNDER_TARGET
+rm -rf $THUNDER_TARGET/*
+cp -r $THUNDER_SRC/* $THUNDER_TARGET
+chown -R Amy $THUNDER_TARGET
+
+echo "exiting early FIXME remove"
 exit 1
 
 
 RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN* --exclude=*FVE2* --no-owner --no-group --ignore-errors'
 
-# sync g drive completely, use * so that anything else ther is not deleted.
+# sync g drive completely, use * so that anything else there is not deleted.
 echo "backup g"
 ${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy/g/* /cygdrive/g  | delete_dir_lines_from_rsync
 
