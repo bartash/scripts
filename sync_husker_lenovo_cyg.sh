@@ -30,27 +30,28 @@ fi
 
 echo "cp chrome profiles"
 
-for FROM in Amy2 Amy3 Default
+for i in "Amy2 sunnyside" "Amy3 balboa" "Default chrome1"
 do
-  for TO in sunnyside balboa chrome1
-  do
-    SOURCE="/cygdrive/e/amy-chrome-profiles/User Data/$FROM"
-    TARGET="/cygdrive/g/data/Profiles/$TO"
-    # mkdir -p $TARGET/Default
-    #
-    # The profile directory (e.g. sunnyside) must be there on ALO side and populated.
-    # Note that ALO must have full permissions on ghe Profile directory or you get
-    # errors about the Profile.
-    # After profile dir is made them chrome should be started using --user=data-dir
-    # this will fill in the profile files.
-    cp -v "$SOURCE"/Bookmarks $TARGET/Default/Bookmarks
-    cp -v "$SOURCE"/History $TARGET/Default/History
-    cp -v "$SOURCE"/History-journal $TARGET/Default/History-journal
-    chown -R Amy $TARGET
-    chgrp -R ac9 $TARGET
-    chmod -R a+rwx $TARGET
-  done
-  break
+  arr=( $i )
+  FROM="${arr[0]}"
+  TO="${arr[1]}"
+  echo "FROM=$FROM TO=$TO"
+
+  SOURCE="/cygdrive/e/amy-chrome-profiles/User Data/$FROM"
+  TARGET="/cygdrive/g/data/Profiles/$TO"
+  # mkdir -p $TARGET/Default
+  #
+  # The profile directory (e.g. sunnyside) must be there on ALO side and populated.
+  # Note that ALO must have full permissions on ghe Profile directory or you get
+  # errors about the Profile.
+  # After profile dir is made them chrome should be started using --user=data-dir
+  # this will fill in the profile files.
+  cp -v "$SOURCE"/Bookmarks $TARGET/Default/Bookmarks
+  cp -v "$SOURCE"/History $TARGET/Default/History
+  cp -v "$SOURCE"/History-journal $TARGET/Default/History-journal
+  chown -R Amy $TARGET
+  chgrp -R ac9 $TARGET
+  chmod -R a+rwx $TARGET
 done
 
 exit 1
@@ -69,7 +70,7 @@ rm -rf $THUNDER_TARGET/*
 cp -r $THUNDER_SRC/* $THUNDER_TARGET
 chown -R Amy $THUNDER_TARGET
 chgrp -R ac9 $THUNDER_TARGET
-chmod -R a+rwx $THUNDER_TARGET
+chmod -R arr+rwx $THUNDER_TARGET
 
 RSYNC_CMD='rsync -av --delete \
            --exclude=*RECYCLE.BIN* \
