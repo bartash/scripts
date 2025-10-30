@@ -68,7 +68,7 @@ rm -rf $THUNDER_TARGET/*
 cp -r $THUNDER_SRC/* $THUNDER_TARGET
 chown -R Amy $THUNDER_TARGET
 chgrp -R ac9 $THUNDER_TARGET
-chmod -R arr+rwx $THUNDER_TARGET
+chmod -R a+rwx $THUNDER_TARGET
 
 RSYNC_CMD='rsync -av --delete \
            --exclude=*RECYCLE.BIN* \
