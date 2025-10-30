@@ -30,9 +30,9 @@ fi
 
 echo "cp chrome profiles"
 
-for FROM in Amy2
+for FROM in Amy2 Amy3 Default
 do
-  for TO in sunnyside
+  for TO in sunnyside balboa chrome1
   do
     SOURCE="/cygdrive/e/amy-chrome-profiles/User Data/$FROM"
     TARGET="/cygdrive/g/data/Profiles/$TO"
@@ -50,6 +50,7 @@ do
     chgrp -R ac9 $TARGET
     chmod -R a+rwx $TARGET
   done
+  break
 done
 
 exit 1
