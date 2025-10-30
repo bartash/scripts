@@ -30,25 +30,33 @@ fi
 
 echo "cp chrome profiles"
 
-AMY2="/cygdrive/e/amy-chrome-profiles/User Data/Amy2"
-AMY2_TARGET="/cygdrive/g/data/Profiles/sunnyside"
-# mkdir -p $AMY2_TARGET/Default
-#
-# The profile directory (e.g. sunnyside) must be there on ALO side and populated.
-# Note that ALO must have full permissions on ghe Profile directory or you get
-# errors about the Profile.
-# After profile dir is made them chrome should be started using --user=data-dir
-# this will fill in the profile files.
-cp -v "$AMY2"/Bookmarks $AMY2_TARGET/Default/Bookmarks
-cp -v "$AMY2"/History $AMY2_TARGET/Default/History
-cp -v "$AMY2"/History-journal $AMY2_TARGET/Default/History-journal
-chown -R Amy $AMY2_TARGET
-chgrp -R ac9 $AMY2_TARGET
-chmod -R a+rwx $AMY2_TARGET
+for FROM in Amy2
+do
+  for TO in sunnyside
+  do
+    SOURCE="/cygdrive/e/amy-chrome-profiles/User Data/$FROM"
+    TARGET="/cygdrive/g/data/Profiles/$TO"
+    # mkdir -p $TARGET/Default
+    #
+    # The profile directory (e.g. sunnyside) must be there on ALO side and populated.
+    # Note that ALO must have full permissions on ghe Profile directory or you get
+    # errors about the Profile.
+    # After profile dir is made them chrome should be started using --user=data-dir
+    # this will fill in the profile files.
+    cp -v "$SOURCE"/Bookmarks $TARGET/Default/Bookmarks
+    cp -v "$SOURCE"/History $TARGET/Default/History
+    cp -v "$SOURCE"/History-journal $TARGET/Default/History-journal
+    chown -R Amy $TARGET
+    chgrp -R ac9 $TARGET
+    chmod -R a+rwx $TARGET
+  done
+done
+
+exit 1
 
 # Sessions/Tabs not easily copyable!!
-## rm $AMY2_TARGET/Default/Sessions/*
-## cp -v "$AMY2"/Sessions/* $AMY2_TARGET/Default/Sessions
+## rm $TARGET/Default/Sessions/*
+## cp -v "$SOURCE"/Sessions/* $TARGET/Default/Sessions
 
 echo "copy thunderbird profile"
 THUNDER_SRC="/cygdrive/e/amy-thunderbird-email/profiles/jfpbkkhj.default"
@@ -62,9 +70,14 @@ chown -R Amy $THUNDER_TARGET
 chgrp -R ac9 $THUNDER_TARGET
 chmod -R a+rwx $THUNDER_TARGET
 
-exit 1
-
-RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN* --exclude=*FVE2* --no-owner --no-group --ignore-errors'
+RSYNC_CMD='rsync -av --delete \
+           --exclude=*RECYCLE.BIN* \
+           --exclude=*FVE2* \
+           --exclude=AmyThunderbirdProfile/* \
+           --exclude=AmyThunderbirdProfile \
+           --exclude=Profiles/* \
+           --exclude=Profiles \
+           --no-owner --no-group --ignore-errors'
 
 # sync g drive completely, use * so that anything else there is not deleted.
 echo "backup g"
