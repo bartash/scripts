@@ -49,6 +49,9 @@ ls -ld $THUNDER_TARGET
 rm -rf $THUNDER_TARGET/*
 cp -r $THUNDER_SRC/* $THUNDER_TARGET
 chown -R Amy $THUNDER_TARGET
+chgrp -R ac9 $THUNDER_TARGET
+chmod g+rwx $THUNDER_TARGET
+
 
 RSYNC_CMD='rsync -av --delete --exclude=*RECYCLE.BIN* --exclude=*FVE2* --no-owner --no-group --ignore-errors'
 
