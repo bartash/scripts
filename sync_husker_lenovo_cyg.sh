@@ -44,8 +44,8 @@ cp -v "$AMY2"/History-journal $AMY2_TARGET/Default/History-journal
 echo "copy thunderbird profile"
 THUNDER_SRC="/cygdrive/e/amy-thunderbird-email/profiles/jfpbkkhj.default"
 THUNDER_TARGET="/cygdrive/g/data/AmyThunderbirdProfile"
-ls -ld $THUNDER_SRC
-ls -ld $THUNDER_TARGET
+#ls -ld $THUNDER_SRC
+#ls -ld $THUNDER_TARGET
 rm -rf $THUNDER_TARGET/*
 cp -r $THUNDER_SRC/* $THUNDER_TARGET
 chown -R Amy $THUNDER_TARGET
