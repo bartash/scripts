@@ -54,8 +54,6 @@ do
   chmod -R a+rwx $TARGET
 done
 
-exit 1
-
 # Sessions/Tabs not easily copyable!!
 ## rm $TARGET/Default/Sessions/*
 ## cp -v "$SOURCE"/Sessions/* $TARGET/Default/Sessions
