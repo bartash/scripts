@@ -26,7 +26,12 @@ if [  "$b_str" != ${BACKUP_VOL} ]; then
 	exit 1
 fi
 
+echo "cp firefox bookmarks"
 
+FF_SRC="/cygdrive/e/amy-firefox/ocrgdcfk.default/places.sqlite"
+FF_TARGET="/cygdrive/g/data/Profiles/firefox/0zrmor65.firefox4/places.sqlite"
+cp -v $FF_SRC $FF_TARGET
+chown -R Amy $FF_TARGET
 
 echo "cp chrome profiles"
 
