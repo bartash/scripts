@@ -3,9 +3,9 @@
 #
 #
 set -o errexit
-OUTPUT=OHAIR_2025_09_history_walks.pdf
+OUTPUT=Walks_book_OHAIR_2026.pdf
 
-PDF_DIRECTORY=/mnt/g/data/Photos-Amy/432Flood-project/0-Sunnyside/05-Walks-Book/REMAKE/PDFs_rev
+PDF_DIRECTORY=/mnt/g/data/Photos-Amy/432Flood-project/0-Sunnyside/05-Walks-Book/0_REMAKE_2/FINAL_PDFs
 
 # Check if the specified directory exists.
 if [ ! -d "$PDF_DIRECTORY" ]; then
