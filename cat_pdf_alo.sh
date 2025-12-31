@@ -3,7 +3,7 @@
 #
 #
 set -o errexit
-OUTPUT=Walks_book_OHAIR_2026.pdf
+OUTPUT=Revised_Walks_book_OHAIR_2026.pdf
 OUTPUT1=ONE_Walks_book_OHAIR_2026.pdf
 OUTPUT2=TWO_Walks_book_OHAIR_2026.pdf
 OUTPUT3=THREE_Walks_book_OHAIR_2026.pdf
@@ -18,16 +18,9 @@ fi
 
 cd ${PDF_DIRECTORY}
 
-# Iterates over all PDF files in directory,
-# sorting them in numeric order before processing.
-# Replace this with the path to your directory.
-
-
 echo "Processing PDF files in '$PDF_DIRECTORY'..."
-
 echo running pdfunite [0-9]*.pdf $OUTPUT
 pdfunite [0-9]*.pdf $OUTPUT
-
 echo "Merged file is ${OUTPUT}."
 
 LIST1=$(ls 0[1-7]*.pdf)
