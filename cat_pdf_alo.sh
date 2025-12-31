@@ -39,6 +39,6 @@ ls  0[8-9]*.pdf 1[0-3]*.pdf
 pdfunite 0[8-9]*.pdf 1[0-3]*.pdf ${OUTPUT2}
 
 echo "building THREE ${OUTPUT3} from "
-ls 0[1-7]*.pdf
-pdfunite 0[1-7]*.pdf ${OUTPUT3}
+ls 1[4-9]*.pdf
+pdfunite 1[4-9]*.pdf ${OUTPUT3}
 
