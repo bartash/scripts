@@ -4,6 +4,9 @@
 #
 set -o errexit
 OUTPUT=Walks_book_OHAIR_2026.pdf
+OUTPUT1=ONE_Walks_book_OHAIR_2026.pdf
+OUTPUT2=TWO_Walks_book_OHAIR_2026.pdf
+OUTPUT3=THREE_Walks_book_OHAIR_2026.pdf
 
 PDF_DIRECTORY=/mnt/g/data/Photos-Amy/432Flood-project/0-Sunnyside/05-Walks-Book/0_REMAKE_2/FINAL_03_PDFS
 
@@ -26,4 +29,16 @@ echo running pdfunite [0-9]*.pdf $OUTPUT
 pdfunite [0-9]*.pdf $OUTPUT
 
 echo "Merged file is ${OUTPUT}."
+
+echo "building ONE ${OUTPUT1} from "
+ls 0[1-7]*.pdf
+pdfunite 0[1-7]*.pdf ${OUTPUT1}
+
+echo "building TWO ${OUTPUT2} from "
+ls  0[8-9]*.pdf 1[0-3]*.pdf
+pdfunite 0[8-9]*.pdf 1[0-3]*.pdf ${OUTPUT2}
+
+echo "building THREE ${OUTPUT3} from "
+ls 0[1-7]*.pdf
+pdfunite 0[1-7]*.pdf ${OUTPUT3}
 
