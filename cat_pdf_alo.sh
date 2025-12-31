@@ -30,15 +30,15 @@ pdfunite [0-9]*.pdf $OUTPUT
 
 echo "Merged file is ${OUTPUT}."
 
-echo "building ONE ${OUTPUT1} from "
-ls 0[1-7]*.pdf
-pdfunite 0[1-7]*.pdf ${OUTPUT1}
+LIST1=$(ls 0[1-7]*.pdf)
+echo "building ONE ${OUTPUT1} from ${LIST1}"
+pdfunite ${LIST1} ${OUTPUT1}
 
-echo "building TWO ${OUTPUT2} from "
-ls  0[8-9]*.pdf 1[0-3]*.pdf
-pdfunite 0[8-9]*.pdf 1[0-3]*.pdf ${OUTPUT2}
+LIST2=$(ls  0[8-9]*.pdf 1[0-3]*.pdf)
+echo "building TWO ${OUTPUT2} from ${LIST2}"
+pdfunite ${LIST2} ${OUTPUT2}
 
-echo "building THREE ${OUTPUT3} from "
-ls 1[4-9]*.pdf
-pdfunite 1[4-9]*.pdf ${OUTPUT3}
+LIST3=$(ls 1[4-9]*.pdf)
+echo "building THREE ${OUTPUT3} from ${LIST3}"
+pdfunite ${LIST3} ${OUTPUT3}
 
