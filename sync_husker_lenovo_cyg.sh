@@ -86,7 +86,11 @@ RSYNC_CMD='rsync -av --delete \
 
 # sync g drive completely, use * so that anything else there is not deleted.
 echo "backup g"
-${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy/g/* /cygdrive/g  | delete_dir_lines_from_rsync
+G_DRIVE=/cygdrive/g
+${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy/g/* ${G_DRIVE}  | delete_dir_lines_from_rsync
 
+chown -R Amy $G_DRIVE
+chgrp -R ac9 $G_DRIVE
+chmod -R a+rwx $G_DRIVE
 
 
