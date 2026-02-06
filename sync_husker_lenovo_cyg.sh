@@ -17,6 +17,8 @@ fi
 
 BACKUP_VOL=husker
 BACKUP_DRIVE=e
+DATA_DRIVE=/cygdrive/g
+DAILY_DRIVE=/cygdrive/o
 
 
 cd /cygdrive
@@ -86,11 +88,16 @@ RSYNC_CMD='rsync -av --delete \
 
 # sync g drive completely, use * so that anything else there is not deleted.
 echo "backup g"
-G_DRIVE=/cygdrive/g
-${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy/g/* ${G_DRIVE}  | delete_dir_lines_from_rsync
+${RSYNC_CMD} ${BACKUP_DRIVE}/g_drive_copy/g/* ${DATA_DRIVE}  | delete_dir_lines_from_rsync
 
-chown -R Amy $G_DRIVE
-chgrp -R ac9 $G_DRIVE
-chmod -R a+rwx $G_DRIVE
+# Make everything readable so that daily backups (backup_internal) can work
+for drive in "${DATA_DRIVE} ${DAILY_DRIVE}"
+do
+  echo "chown etc on $drive"
+  chown -R Amy $drive
+  chgrp -R ac9 $drive
+  chmod -R a+rwx $drive
+done
+
 
 
