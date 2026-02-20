@@ -18,7 +18,7 @@ if [[ "$current_hostname" != "$expected_hostname" ]]; then
 fi
 
 BACKUP_VOL=husker
-BACKUP_DRIVE=h
+BACKUP_DRIVE=f
 
 
 cd /cygdrive
