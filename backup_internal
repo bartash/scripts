@@ -18,6 +18,8 @@ echo "backup g"
 rsync -av --exclude '*.lnk' \
     --exclude=*RECYCLE.BIN* \
     --exclude='System Volume Information' \
+    --exclude='parent.lock' \
+    --exclude='Cookies-journal' \
     --delete --no-perms --no-owner --no-group  g/* o/backup
 
 current_hostname=$(hostname)
