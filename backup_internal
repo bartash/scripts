@@ -15,7 +15,10 @@ rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group g/dvd/hand
 
 # backup everything
 echo "backup g"
-rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/* o/backup
+rsync -av --exclude '*.lnk' \
+    --exclude=*RECYCLE.BIN* \
+    --exclude='System Volume Information' \
+    --delete --no-perms --no-owner --no-group  g/* o/backup
 
 current_hostname=$(hostname)
 expected_hostname="HP2-DiningRoom"
