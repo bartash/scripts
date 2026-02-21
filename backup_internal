@@ -3,10 +3,6 @@ echo backup_internal ...
 
 cd /cygdrive
 
-# backup everything
-echo "backup g"
-rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/* o/backup
-
 # rsync -av --exclude '*.lnk' --delete --no-owner --no-group --backup --suffix=.bak  g/data o/backup
 echo "old backup data"
 rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/data o/backup
@@ -17,6 +13,9 @@ rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/andrew_
 echo "backup media"
 rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
 
+# backup everything
+echo "backup g"
+rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/* o/backup
 
 current_hostname=$(hostname)
 expected_hostname="HP2-DiningRoom"
