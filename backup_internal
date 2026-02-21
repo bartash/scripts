@@ -8,7 +8,12 @@ echo "old backup data"
 rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/data o/backup
 
 echo "backup itunes"
-rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/andrew_itunes o/backup
+rsync -av --exclude '*.lnk' \
+    --exclude=*RECYCLE.BIN* \
+    --exclude='System Volume Information' \
+    --exclude='parent.lock' \
+    --exclude='Cookies-journal' \
+    --delete --no-perms --no-owner --no-group  g/andrew_itunes o/backup
 
 echo "backup media"
 rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
