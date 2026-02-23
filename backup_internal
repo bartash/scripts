@@ -3,35 +3,37 @@ echo backup_internal ...
 
 cd /cygdrive
 
-# rsync -av --exclude '*.lnk' --delete --no-owner --no-group --backup --suffix=.bak  g/data o/backup
-echo "old backup data"
-rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/data o/backup
+echo "backup_internal NOT BACKING UP"
 
-echo "backup itunes"
-rsync -av --exclude '*.lnk' \
-    --exclude=*RECYCLE.BIN* \
-    --exclude='System Volume Information' \
-    --exclude='parent.lock' \
-    --exclude='Cookies-journal' \
-    --delete --no-perms --no-owner --no-group  g/andrew_itunes o/backup
-
-echo "backup media"
-rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
-
-# backup everything
-echo "backup g"
-rsync -av --exclude '*.lnk' \
-    --exclude=*RECYCLE.BIN* \
-    --exclude='System Volume Information' \
-    --exclude='parent.lock' \
-    --exclude='Cookies-journal' \
-    --delete --no-perms --no-owner --no-group  g/* o/backup
-
-current_hostname=$(hostname)
-expected_hostname="HP2-DiningRoom"
-if [[ "$current_hostname" == "$expected_hostname" ]]; then
-	# Users/Amy/AppData/Roaming/Thunderbird/Profiles/jfpbkkhj.default/Mail/pop.so
-	echo "backup email"
-	rsync -av --exclude '*.lnk' --delete --no-owner --no-group c/Users/Amy/AppData/Roaming/Thunderbird/Profiles o/backup/profiles
-fi
-
+## # rsync -av --exclude '*.lnk' --delete --no-owner --no-group --backup --suffix=.bak  g/data o/backup
+## echo "old backup data"
+## rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  g/data o/backup
+## 
+## echo "backup itunes"
+## rsync -av --exclude '*.lnk' \
+##     --exclude=*RECYCLE.BIN* \
+##     --exclude='System Volume Information' \
+##     --exclude='parent.lock' \
+##     --exclude='Cookies-journal' \
+##     --delete --no-perms --no-owner --no-group  g/andrew_itunes o/backup
+## 
+## echo "backup media"
+## rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group g/dvd/handbrake_out o/backup/dvd
+## 
+## # backup everything
+## echo "backup g"
+## rsync -av --exclude '*.lnk' \
+##     --exclude=*RECYCLE.BIN* \
+##     --exclude='System Volume Information' \
+##     --exclude='parent.lock' \
+##     --exclude='Cookies-journal' \
+##     --delete --no-perms --no-owner --no-group  g/* o/backup
+## 
+## current_hostname=$(hostname)
+## expected_hostname="HP2-DiningRoom"
+## if [[ "$current_hostname" == "$expected_hostname" ]]; then
+## 	# Users/Amy/AppData/Roaming/Thunderbird/Profiles/jfpbkkhj.default/Mail/pop.so
+## 	echo "backup email"
+## 	rsync -av --exclude '*.lnk' --delete --no-owner --no-group c/Users/Amy/AppData/Roaming/Thunderbird/Profiles o/backup/profiles
+## fi
+## 
