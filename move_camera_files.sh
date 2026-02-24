@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# backup phone by dragging Camera folder to g:/data/CameraPhotosBackup
+# backup phone by dragging Camera folder to h:/data/CameraPhotosBackup
 # after mvoging old folder.
 # Then run this script in the backup directory (Camera).
 set -e
@@ -15,7 +15,7 @@ echo arg is $arg
 MONTHS=(ZERO Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec)
 
 
-TARGET="/cygdrive/g/data/Home Photos/0-Phone-1-Photos"
+TARGET="/cygdrive/h/data/Home Photos/0-Phone-1-Photos"
 if [ ! -d "$TARGET" ]
 then
 	echo "no target dir $TARGET"
