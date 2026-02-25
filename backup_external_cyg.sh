@@ -25,6 +25,8 @@ if [ ! -d ${SOURCE} ]; then
 else
 	echo found ${SOURCE}
 fi
-
-rsync -av --exclude '*.lnk'  --exclude '.canary' --delete  --no-owner --no-group   $SOURCE/* $BACK/backup | ~/scripts/delete_dir_lines_from_rsync
+echo "source is $SOURCE backup to $BACK"
+echo "backup data"
 rsync -av --exclude '*.lnk'  --exclude '.canary' --delete  --no-owner --no-group   $SOURCE/data $BACK/backup | ~/scripts/delete_dir_lines_from_rsync
+echo "backup everything on $SOURCE"
+rsync -av --exclude '*.lnk'  --exclude '.canary' --delete  --no-owner --no-group   $SOURCE/* $BACK/backup | ~/scripts/delete_dir_lines_from_rsync
