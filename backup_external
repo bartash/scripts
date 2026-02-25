@@ -3,6 +3,9 @@
 cd /cygdrive
 echo backup_external ...
 
+echo try new _cyg version
+exit 1
+
 SOURCE=g
 BACK=f
 
