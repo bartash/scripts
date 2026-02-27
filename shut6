@@ -1,0 +1,2 @@
+# shotdown in 6 hour = 3600 * 6 seconds
+shutdown /s /t 21600
