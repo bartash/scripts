@@ -23,6 +23,11 @@ rsync -av --exclude '*.lnk' \
     --exclude=*RECYCLE.BIN* \
     --exclude='System Volume Information' \
     --exclude='parent.lock' \
+    --exclude='Service Worker' \
+    --exclude='IndexedDB' \
+    --exclude='Code Cache' \
+    --exclude='Safe Browsing' \
+    --exclude='Session Storage' \
     --exclude='Cookies-journal' \
     --delete --no-perms --no-owner --no-group  h/* p/backup
 
