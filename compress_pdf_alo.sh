@@ -9,14 +9,26 @@ INPUT=$1
 # gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=screen_$INPUT $INPUT
 
 
-gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH \
-   -dColorImageFilter=/DCTEncode -dColorImageResolution=150 \
-   -dGrayImageFilter=/DCTEncode -dGrayImageResolution=150 \
-   -dMonoImageFilter=/CCITTFaxEncode -dMonoImageResolution=300 \
-   -sOutputFile=150_$INPUT $INPUT
+# gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH \
+   # -dColorImageFilter=/DCTEncode -dColorImageResolution=150 \
+   # -dGrayImageFilter=/DCTEncode -dGrayImageResolution=150 \
+   # -dMonoImageFilter=/CCITTFaxEncode -dMonoImageResolution=300 \
+   # -sOutputFile=150_$INPUT $INPUT
+# 
+# gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH \
+   # -dColorImageFilter=/DCTEncode -dColorImageResolution=100 \
+   # -dGrayImageFilter=/DCTEncode -dGrayImageResolution=100 \
+   # -dMonoImageFilter=/CCITTFaxEncode -dMonoImageResolution=300 \
+   # -sOutputFile=100_$INPUT $INPUT
 
-gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH \
-   -dColorImageFilter=/DCTEncode -dColorImageResolution=100 \
-   -dGrayImageFilter=/DCTEncode -dGrayImageResolution=100 \
-   -dMonoImageFilter=/CCITTFaxEncode -dMonoImageResolution=300 \
-   -sOutputFile=100_$INPUT $INPUT
+# Sometimes "print as image" doesn't create one big photo of a page; it creates thousands of tiny "image masks" for every letter. Ghostscript’s standard image compressors often ignore these small fragments to prevent quality loss.
+# The "Shrink My Image-Text" Command
+# 
+# If you want to force that "text-image" to actually get smaller, use this combination. It lowers the DPI and forces JPEG compression:
+gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dQUIET \
+   -dPDFSETTINGS=/ebook \
+   -dColorImageFilter=/DCTEncode \
+   -dAutoFilterColorImages=false \
+   -dColorImageResolution=150 \
+   -dGrayImageResolution=150 \
+   -sOutputFile=shrunk_$INPUT $INPUT
