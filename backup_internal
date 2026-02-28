@@ -4,7 +4,18 @@ echo backup_internal ...
 cd /cygdrive
 
 echo "old backup data"
-rsync -av --exclude '*.lnk' --delete --no-perms --no-owner --no-group  h/data p/backup
+rsync -av --exclude '*.lnk' \
+    --exclude=*RECYCLE.BIN* \
+    --exclude='System Volume Information' \
+    --exclude='parent.lock' \
+    --exclude='Service Worker' \
+    --exclude='IndexedDB' \
+    --exclude='Code Cache' \
+    --exclude='Safe Browsing' \
+    --exclude='Session Storage' \
+    --exclude='Cookies-journal' \
+    --exclude='.canary' \
+    --delete --no-perms --no-owner --no-group  h/data p/backup
 
 echo "backup itunes"
 rsync -av --exclude '*.lnk' \
@@ -29,6 +40,7 @@ rsync -av --exclude '*.lnk' \
     --exclude='Safe Browsing' \
     --exclude='Session Storage' \
     --exclude='Cookies-journal' \
+    --exclude='.canary' \
     --delete --no-perms --no-owner --no-group  h/* p/backup
 
 current_hostname=$(hostname)
