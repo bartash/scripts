@@ -11,6 +11,7 @@ rsync -av --exclude '*.lnk' \
     --exclude='Service Worker' \
     --exclude='IndexedDB' \
     --exclude='Code Cache' \
+    --exclude='Cache_Data' \
     --exclude='Safe Browsing' \
     --exclude='Session Storage' \
     --exclude='Cookies-journal' \
@@ -37,6 +38,7 @@ rsync -av --exclude '*.lnk' \
     --exclude='Service Worker' \
     --exclude='IndexedDB' \
     --exclude='Code Cache' \
+    --exclude='Cache_Data' \
     --exclude='Safe Browsing' \
     --exclude='Session Storage' \
     --exclude='Cookies-journal' \
