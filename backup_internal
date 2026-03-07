@@ -13,6 +13,8 @@ rsync -av --exclude '*.lnk' \
     --exclude='Code Cache' \
     --exclude='Cache_Data' \
     --exclude='CertificateRevocation' \
+    --exclude='GrShaderCache' \
+    --exclude='JumpListIconsMostVisited' \
     --exclude='Safe Browsing' \
     --exclude='Session Storage' \
     --exclude='Cookies-journal' \
@@ -41,6 +43,8 @@ rsync -av --exclude '*.lnk' \
     --exclude='Code Cache' \
     --exclude='Cache_Data' \
     --exclude='CertificateRevocation' \
+    --exclude='GrShaderCache' \
+    --exclude='JumpListIconsMostVisited' \
     --exclude='Safe Browsing' \
     --exclude='Session Storage' \
     --exclude='Cookies-journal' \
