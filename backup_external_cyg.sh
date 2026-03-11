@@ -26,8 +26,8 @@ else
 	echo found ${SOURCE}
 fi
 echo "source is $SOURCE backup to $BACK"
-echo "backup data"
-rsync -av --exclude '*.lnk'  --exclude '.canary' --delete  --no-owner --no-group   $SOURCE/data $BACK/backup | ~/scripts/delete_dir_lines_from_rsync
+echo "skip backup data"
+## rsync -av --exclude '*.lnk'  --exclude '.canary' --delete  --no-owner --no-group   $SOURCE/data $BACK/backup | ~/scripts/delete_dir_lines_from_rsync
 echo "backup everything on $SOURCE"
 rsync -av \
 	--exclude '*.lnk' \
