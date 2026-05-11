@@ -3,7 +3,7 @@ echo backup_internal ...
 
 cd /cygdrive
 
-echo "old backup data"
+echo "quick backup data"
 rsync -av --exclude '*.lnk' \
     --exclude=*RECYCLE.BIN* \
     --exclude='System Volume Information' \
