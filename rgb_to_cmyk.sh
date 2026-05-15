@@ -2,6 +2,11 @@
 # convert rgb to cmyk
 #
 # sudo apt install imagemagick
+
+#####
+##### THIS MAYBE OBSOLETE AS FUNCTIONALITY IS MERGED INTO  cat_pdf_alo.sh
+#####
+
 set -o errexit
 INPUT=Revised_Walks_book_OHAIR_2026.pdf
 OUTPUT=CMYK_Revised_Walks_book_OHAIR_2026.pdf
