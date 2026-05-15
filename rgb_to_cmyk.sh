@@ -31,3 +31,13 @@ then
 else
   echo output does not have rgb
 fi
+
+## can check dpi with (see first 2 lines of output for header names)
+# pdfimages -list $OUTPUT  | grep jpeg
+
+
+## Check that print uses k channel only
+# gs -o - -sDEVICE=inkcov $OUTPUT | sed -n '/Page 7/{n;p;q;}'
+# should see
+# 0.00000  0.00000  0.00000  0.11081 CMYK OK
+
