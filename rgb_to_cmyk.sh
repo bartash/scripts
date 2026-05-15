@@ -6,9 +6,28 @@ set -o errexit
 INPUT=Revised_Walks_book_OHAIR_2026.pdf
 OUTPUT=CMYK_Revised_Walks_book_OHAIR_2026.pdf
 
-if identify -verbose output_cmyk.pdf $INPUT 2> /dev/null| grep Colorspace | grep -i srgb > /dev/null;
+if identify -verbose $INPUT | grep Colorspace | grep -i srgb > /dev/null;
 then
   echo input has RGB
 else
   echo input does not have rgb
+fi
+
+# https://gemini.google.com/app/c44b6ec45425466b
+gs -o $OUTPUT \
+   -sDEVICE=pdfwrite \
+   -dPDFSETTINGS=/prepress \
+   -sColorConversionStrategy=CMYK \
+   -dProcessColorModel=/DeviceCMYK \
+   -dEncodeColorImages=true \
+   -dDownsampleColorImages=false \
+   -dCompatibilityLevel=1.4 \
+   $INPUT
+
+
+if identify -verbose $OUTPUT | grep Colorspace | grep -i srgb > /dev/null;
+then
+  echo output has RGB
+else
+  echo output does not have rgb
 fi
