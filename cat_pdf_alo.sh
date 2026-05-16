@@ -27,8 +27,8 @@ if [ -f "$INPUT" ]; then
 fi
 
 echo "Processing PDF files in '$PDF_DIRECTORY'..."
-echo running pdfunite [0-9]*.pdf INPUT
-pdfunite [0-9]*.pdf INPUT
+echo running pdfunite [0-9]*.pdf $INPUT
+pdfunite [0-9]*.pdf $INPUT
 echo "Merged file is ${INPUT}."
 
 
