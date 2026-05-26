@@ -51,7 +51,7 @@ gs -o $OUTPUT \
    -dDownsampleColorImages=false \
    -dCompatibilityLevel=1.4 \
    -dEmbedAllFonts=true \
-   -dSubsetFonts=true \
+   -dSubsetFonts=false \
    -dCannotEmbedFontPolicy=/Error \
    $INPUT
 
