@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # concatenate pdfs
 #
+# possible blackmagic, I also did
+#  sudo apt-get install fonts-sil-gentiumplus
+#  sudo apt install fonts-croscore
 #
 set -o errexit
 OUTPUT=Revised_Walks_book_OHAIR_2026.pdf
