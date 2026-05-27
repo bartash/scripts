@@ -53,6 +53,7 @@ gs -o $OUTPUT \
    -dEmbedAllFonts=true \
    -dSubsetFonts=false \
    -dCannotEmbedFontPolicy=/Error \
+   -sFONTPATH="/mnt/c/Windows/Fonts" \
    $INPUT
 
 
