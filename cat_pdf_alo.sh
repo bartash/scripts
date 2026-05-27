@@ -20,12 +20,12 @@ fi
 cd ${PDF_DIRECTORY}
 
 if [ -f "$OUTPUT" ]; then
-    echo "Error: file $OUTPUT exists."
+    echo "Error: file $OUTPUT exists in $PDF_DIRECTORY."
     exit 1
 fi
 
 if [ -f "$INPUT" ]; then
-    echo "Error: file $INPUT exists."
+    echo "Error: file $INPUT exists in $PDF_DIRECTORY."
     exit 1
 fi
 
