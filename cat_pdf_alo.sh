@@ -7,7 +7,6 @@ OUTPUT=Revised_Walks_book_OHAIR_2026.pdf
 INPUT=RGB_Revised_Walks_book_OHAIR_2026.pdf
 
 PDF_DIRECTORY=/mnt/h/data/Photos-Amy/432Flood-project/0-Sunnyside/05-Walks-Book/00_REMAKE_4//New_PDFs_4/
-PDF_DIRECTORY=/mnt/c/Users/ac9/tmp/New_PDFs_4
 
 # Check if the specified directory exists.
 if [ ! -d "$PDF_DIRECTORY" ]; then
