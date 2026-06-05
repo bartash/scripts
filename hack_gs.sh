@@ -19,7 +19,6 @@ fi
 
 cd ${PDF_DIRECTORY}
 
-pdftops $INPUT temporary.ps
 
 # https://gemini.google.com/app/c44b6ec45425466b
 # Note gs will not see user-specific fonts in %APPDATA%/...
@@ -35,7 +34,7 @@ gs -o $OUTPUT \
    -dSubsetFonts=false \
    -dCannotEmbedFontPolicy=/Error \
    -sFONTPATH="/mnt/c/Windows/Fonts" \
-   temporary.ps
+   $INPUT
 
 
 
