@@ -36,6 +36,9 @@ gs -o $OUTPUT \
    -dNoOutputFonts=false \
    -dCompressFonts=false \
    -sFONTPATH="/mnt/c/Windows/Fonts" \
+   -dNOSAFER \
+   -c "<< /CandaraLight (/mnt/c/Windows/Fonts/CandaraLight.ttf) >> /FontFileMap exch def" \
+   -f \
    $INPUT
 
 
