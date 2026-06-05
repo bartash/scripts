@@ -25,7 +25,8 @@ cd ${PDF_DIRECTORY}
 gs -o $OUTPUT \
    -sDEVICE=pdfwrite \
    -dPDFSETTINGS=/prepress \
-   -sColorConversionStrategy=CMYK \
+   -sColorConversionStrategy=UseDeviceIndependentColor
+   -sColorConversionStrategyForImages=CMYK \
    -dProcessColorModel=/DeviceCMYK \
    -dEncodeColorImages=true \
    -dDownsampleColorImages=false \
