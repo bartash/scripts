@@ -29,7 +29,7 @@ gs -o $OUTPUT \
    -dProcessColorModel=/DeviceCMYK \
    -dEncodeColorImages=true \
    -dDownsampleColorImages=false \
-   -dCompatibilityLevel=1.4 \
+   -dCompatibilityLevel=1.6 \
    -dCannotEmbedFontPolicy=/Error \
    -dEmbedAllFonts=true \
    -dSubsetFonts=false \
