@@ -30,9 +30,12 @@ gs -o $OUTPUT \
    -dEncodeColorImages=true \
    -dDownsampleColorImages=false \
    -dCompatibilityLevel=1.4 \
-   -dEmbedAllFonts=true \
    -dSubsetFonts=false \
    -dCannotEmbedFontPolicy=/Error \
+   -dEmbedAllFonts=true \
+   -dSubsetFonts=false \
+   -dNoOutputFonts=false \
+   -dCompressFonts=false \
    -sFONTPATH="/mnt/c/Windows/Fonts" \
    $INPUT
 
