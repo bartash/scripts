@@ -22,6 +22,17 @@ cd ${PDF_DIRECTORY}
 
 # https://gemini.google.com/app/c44b6ec45425466b
 # Note gs will not see user-specific fonts in %APPDATA%/...
+# Pass 1: embed fonts properly with Unicode CMap
+gs -o embedded_temp.pdf \
+   -sDEVICE=pdfwrite \
+   -dCompatibilityLevel=1.6 \
+   -dEmbedAllFonts=true \
+   -dSubsetFonts=false \
+   -dCannotEmbedFontPolicy=/Error \
+   -sFONTPATH="/mnt/c/Windows/Fonts" \
+   $INPUT
+
+# Pass 2: CMYK conversion on the now-embedded PDF
 gs -o $OUTPUT \
    -sDEVICE=pdfwrite \
    -dPDFSETTINGS=/prepress \
@@ -30,17 +41,11 @@ gs -o $OUTPUT \
    -dEncodeColorImages=true \
    -dDownsampleColorImages=false \
    -dCompatibilityLevel=1.6 \
-   -dCannotEmbedFontPolicy=/Error \
    -dEmbedAllFonts=true \
    -dSubsetFonts=false \
-   -dNoOutputFonts=false \
-   -dCompressFonts=false \
+   -dCannotEmbedFontPolicy=/Error \
    -sFONTPATH="/mnt/c/Windows/Fonts" \
-   -dNOSAFER \
-   -c "<< /CandaraLight (/mnt/c/Windows/Fonts/CandaraLight.ttf) >> /FontFileMap exch def" \
-   -f \
-   $INPUT
-
+   embedded_temp.pdf
 
 
 
