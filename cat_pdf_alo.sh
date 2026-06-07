@@ -45,6 +45,16 @@ fi
 
 # https://gemini.google.com/app/c44b6ec45425466b
 # Note gs will not see user-specific fonts in %APPDATA%/...
+
+#
+# NOTE! https://claude.ai/chat/a4dc643c-73f2-4946-8076-cfe9aacc25d5
+# If you ever return to a GS-based workflow and want proper ICC color management, the flags to add would be:
+#  -sOutputICCProfile=/path/to/JapanColor2001Coated.icc \
+#  -sDefaultRGBProfile=/path/to/sRGB.icc \
+#  -dRenderIntent=1 \
+# Where -dRenderIntent=1 is Relative Colorimetric. But given the font embedding problems
+# you've encountered, Acrobat is the better tool for this particular document.
+
 gs -o $OUTPUT \
    -sDEVICE=pdfwrite \
    -dPDFSETTINGS=/prepress \
