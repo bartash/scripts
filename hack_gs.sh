@@ -29,6 +29,7 @@ gs -o embedded_temp.pdf \
    -dEmbedAllFonts=true \
    -dSubsetFonts=false \
    -dCannotEmbedFontPolicy=/Error \
+   -dFontObjectsUseCIDFonts=true \
    -sFONTPATH="/mnt/c/Windows/Fonts" \
    $INPUT
 
