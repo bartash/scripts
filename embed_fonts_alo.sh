@@ -23,5 +23,12 @@ gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
    -dSubsetFonts=true \
    -dCannotEmbedFontPolicy=/Error \
    -sFONTPATH="/mnt/c/Windows/Fonts" \
+   -dDownsampleColorImages=false \
+   -dDownsampleGrayImages=false \
+   -dDownsampleMonoImages=false \
+   -dAutoFilterColorImages=false \
+   -dAutoFilterGrayImages=false \
+   -dEncodeColorImages=false \
+   -dEncodeGrayImages=false \
    -sOutputFile=$OUTPUT \
    $INPUT
