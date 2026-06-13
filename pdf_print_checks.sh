@@ -50,7 +50,18 @@ echo "Use 'pdfimages -list' to see all images"
 cat $TMP2 | head -24
 
 echo "pages with low raw dpis are:"
+# spreada are 10,11 32,33 60,61 82,83 118,119
 cat $TMP2 | awk '$1 != "page" && \
+  $1 != 10 && \
+  $1 != 11 && \
+  $1 != 32 && \
+  $1 != 33 && \
+  $1 != 60 && \
+  $1 != 61 && \
+  $1 != 82 && \
+  $1 != 83 && \
+  $1 != 118 && \
+  $1 != 119 && \
   $9 == "jpeg" && \
   ( $13 < 300 || $14 < 300 ) \
    {printf "page %d: %d %d\n", $1, $13, $14}'
