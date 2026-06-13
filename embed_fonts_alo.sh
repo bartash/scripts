@@ -21,5 +21,7 @@ gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
    -dPDFSETTINGS=/prepress \
    -dEmbedAllFonts=true \
    -dSubsetFonts=true \
+   -dCannotEmbedFontPolicy=/Error \
+   -sFONTPATH="/mnt/c/Windows/Fonts" \
    -sOutputFile=$OUTPUT \
    $INPUT
