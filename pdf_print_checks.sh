@@ -16,7 +16,7 @@ TMP=/tmp/check_fonts$$
 if identify -verbose $INPUT | grep Colorspace | grep -i srgb > /dev/null;
 then
   echo "❌ ERROR input file $INPUT has RGB"
-#  exit
+  echo "needs exit"
 else
   echo "✅ input  file $INPUT checked and has no rgb images"
 fi
@@ -26,19 +26,17 @@ pdffonts $INPUT > $TMP
 check=$(head -1 $TMP  |cut -c 73-75)
 count=$(cat $TMP | wc -l)
 body=$((count -2))
-echo check is $check
-echo count is $count
-echo body is $body
 if [[ "$check" == "emb" ]]; then
     echo "✅ pdffonts output is OK"
 else
-    echo "❌ ERROR pdffonts output looks wrongg"
+    echo "❌ ERROR pdffonts output looks wrong"
+    echo "needs exit"
 fi
 embedded=$(cat $TMP | tail -$body | cut -c 73-75 | sort -u)
-echo embeded = $embedded
 if echo $embedded | grep no > /dev/null
 then
-  echo "saw no"
+  echo "❌ ERROR pdffonts sees un-embedded font"
+  echo "needs exit"
 else
-  echo no no
+  echo "✅ all fonts are embedded"
 fi
