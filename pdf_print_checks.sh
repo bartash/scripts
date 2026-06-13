@@ -49,5 +49,8 @@ echo "Please check x-dpi and y-dpi look good below"
 echo "Use 'pdfimages -list' to see all images"
 cat $TMP2 | head -24
 
-echo "raw dpis are:"
-cat $TMP2 | awk '$1 != "page" && $9 == "jpeg" {printf "%d %d\n", $13, $14}'
+echo "pages with low raw dpis are:"
+cat $TMP2 | awk '$1 != "page" && \
+  $9 == "jpeg" && \
+  ( $13 < 300 || $14 < 300 ) \
+   {printf "page %d: %d %d\n", $1, $13, $14}'
