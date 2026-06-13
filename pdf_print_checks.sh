@@ -11,11 +11,12 @@ fi
 INPUT=$1
 echo "Checking file $INPUT"
 TMP=/tmp/check_fonts$$
+TMP2=/tmp/check_2fonts$$
 
 # Check for cmyk
 if identify -verbose $INPUT | grep Colorspace | grep -i srgb > /dev/null;
 then
-  echo "❌ ERROR input file $INPUT has RGB"
+  echo "❌ ERROR input file $INPUT has RGB, needs CMYK"
   echo "needs exit"
 else
   echo "✅ input  file $INPUT checked and has no rgb images"
@@ -40,3 +41,10 @@ then
 else
   echo "✅ all fonts are embedded"
 fi
+
+# check for low dpi images
+pdfimages -list $INPUT > $TMP2
+echo
+echo "Please check x-dpi and y-dpi look good below"
+echo "Use 'pdfimages -list' to see all images"
+cat $TMP2 | head -24
