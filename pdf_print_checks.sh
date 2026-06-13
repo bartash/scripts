@@ -48,3 +48,6 @@ echo
 echo "Please check x-dpi and y-dpi look good below"
 echo "Use 'pdfimages -list' to see all images"
 cat $TMP2 | head -24
+
+echo "raw dpis are:"
+cat $TMP2 | awk '$1 != "page" {printf "%d %d\n", $13, $14}'
