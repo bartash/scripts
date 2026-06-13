@@ -17,7 +17,7 @@ TMP2=/tmp/check_2fonts$$
 if identify -verbose $INPUT | grep Colorspace | grep -i srgb > /dev/null;
 then
   echo "❌ ERROR input file $INPUT has RGB, needs CMYK"
-  echo "needs exit"
+  exit 1
 else
   echo "✅ input  file $INPUT checked and has no rgb images"
 fi
@@ -31,13 +31,13 @@ if [[ "$check" == "emb" ]]; then
     echo "✅ pdffonts output is OK"
 else
     echo "❌ ERROR pdffonts output looks wrong"
-    echo "needs exit"
+    exit 1
 fi
 embedded=$(cat $TMP | tail -$body | cut -c 73-75 | sort -u)
 if echo $embedded | grep no > /dev/null
 then
   echo "❌ ERROR pdffonts sees un-embedded font"
-  echo "needs exit"
+  exit 1
 else
   echo "✅ all fonts are embedded"
 fi
@@ -49,8 +49,10 @@ echo "Please check x-dpi and y-dpi look good below"
 echo "Use 'pdfimages -list' to see all images"
 cat $TMP2 | head -24
 
-echo "pages with low raw dpis are:"
-# spreada are 10,11 32,33 60,61 82,83 118,119
+echo "Pages with dpis less than 300 are:"
+# Spreads in walks book are 10,11 32,33 60,61 82,83 118,119
+# Hard code these
+# FIXME maybe use awk arrays but it looks non-trivial
 cat $TMP2 | awk '$1 != "page" && \
   $1 != 10 && \
   $1 != 11 && \
@@ -64,4 +66,4 @@ cat $TMP2 | awk '$1 != "page" && \
   $1 != 119 && \
   $9 == "jpeg" && \
   ( $13 < 300 || $14 < 300 ) \
-   {printf "page %d: %d %d\n", $1, $13, $14}'
+   {printf "Page %d: %d %d\n", $1, $13, $14}'
