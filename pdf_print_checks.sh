@@ -15,8 +15,16 @@ echo "Checking file $INPUT"
 if identify -verbose $INPUT | grep Colorspace | grep -i srgb > /dev/null;
 then
   echo "❌ ERROR input file $INPUT has RGB"
+#  exit
 else
   echo "✅ input  file $INPUT checked and has no rgb images"
-  exit
 fi
 
+# check for embedded fonts
+check=$(pdffonts $INPUT | head -1 |cut -c 73-75)
+echo check is $check
+if [[ "$check" == "emb" ]]; then
+    echo "✅ pdffonts output isOK"
+else
+    echo "❌ ERROR pdffonts output looks wrongg"
+fi
