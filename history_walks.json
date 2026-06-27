@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Your Book Title",
+  "author": {
+    "@type": "Person",
+    "name": "Your Name"
+  },
+  "isbn": "9781234567890",
+  "numberOfPages": 176,
+  "bookFormat": "https://schema.org/Paperback",
+  "description": "A compelling description...",
+  "image": "https://yoursite.com/cover.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Your Imprint"
+  },
+  "url": "https://yoursite.com/your-book"
+}
