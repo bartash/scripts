@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #
 # backup phone by dragging Camera folder to h:/data/CameraPhotosBackup
-# after mvoging old folder.
-# Then run this script in the backup directory (Camera).
+# after moving old folder.
+# Then cd to that Camera folder and run this script in the backup directory (Camera).
 set -e
 if [ "$#" -ne 1 ]
 then
- echo "usage $0 arg1 are you sure, did you read the source? arg is junk"
+ echo "usage $0 arg1 are you sure, you must be in Caera dir, did you read the source? arg is junk"
  exit 1
 fi
 arg=$1
