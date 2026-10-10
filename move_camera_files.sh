@@ -8,6 +8,11 @@ set -e
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$script_dir/detect_env.sh"
 env_type=$(detect_env)
+if [ "$env_type" != "cygwin"]
+then
+  echo "most run on cygwin, this is $env_type"
+  exit 1
+fi
 echo "Running on: $env_type"
 
 if [ "$#" -ne 1 ]
