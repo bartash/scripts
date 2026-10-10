@@ -4,6 +4,12 @@
 # after moving old folder.
 # Then cd to that Camera folder and run this script in the backup directory (Camera).
 set -e
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$script_dir/detect_env.sh"
+env_type=$(detect_env)
+echo "Running on: $env_type"
+
 if [ "$#" -ne 1 ]
 then
  echo "usage $0 arg1 are you sure, you must be in Camera dir, did you read the source? arg is junk"
@@ -61,7 +67,5 @@ do
 	else
 		cp -uv "$file" "$DIR" 
 	fi
-
-	
 done
 
