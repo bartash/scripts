@@ -12,7 +12,7 @@ fi
 SOURCE_VOL=elvis
 SOURCE_DRIVE=d
 BACKUP_VOL=clash
-BACKUP_DRIVE=f
+BACKUP_DRIVE=g
 cd /cygdrive
 g_str=$(cat $BACKUP_DRIVE/VOLUME.txt)
 f_str=$(cat $SOURCE_DRIVE/VOLUME.txt)
